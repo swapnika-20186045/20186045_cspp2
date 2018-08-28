@@ -19,12 +19,11 @@ public final class MySolution {
     *@param args is parameter for this function.
     **/
     public static void main(final String[] args) {
-        float a, b;
-        float pow = 1;
+        int a, b;
         Scanner s = new Scanner(System.in);
-        a = s.nextFloat();
-        b = s.nextFloat();
-        pow = power(a, b);
+        a = s.nextInt();
+        b = s.nextInt();
+        long pow = power(a, b);
         System.out.println(pow);
     }
     /**
@@ -33,7 +32,7 @@ public final class MySolution {
     *@param b is parameter for this function.
     *@return int
     **/
-    public static float power(final float a, final float b) {
+    public static long power(final int a, final int b) {
         if (b != 0) {
             return (a * power(a, b - 1));
         } else {
