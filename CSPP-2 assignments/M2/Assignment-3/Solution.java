@@ -21,12 +21,10 @@ public final class Solution {
         int a, b;
         int pow = 1;
         Scanner s = new Scanner(System.in);
-        System.out.println("enter the value a: ");
         a = s.nextInt();
-        System.out.println("enter the value b: ");
         b = s.nextInt();
         pow = power(a, b);
-        System.out.println("power is: " + pow);
+        System.out.println(pow);
     }
     /**
     *factorial function.
