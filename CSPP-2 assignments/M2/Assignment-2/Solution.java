@@ -20,12 +20,12 @@ public final class Solution {
     *main function.
     *@param args is parameter for this function.
     **/
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
         int b = scan.nextInt();
         int c = scan.nextInt();
-        
+
         rootsOfQuadraticEquation(a, b, c);
     }
     /*
