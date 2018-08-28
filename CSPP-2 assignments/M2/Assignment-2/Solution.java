@@ -41,8 +41,8 @@ public final class Solution {
     public static float rootsOfQuadraticEquation(final int a, final int b, final int c) {
     	double det = (b * b) - (4 * a * c);
     	double r1, r2;
-        r1 = (- b + Math.sqrt(det)) / (2 * a);
-        r2 = (- b - Math.sqrt(det)) / (2 * a);
+        r1 = (-b + Math.sqrt(det)) / (2 * a);
+        r2 = (-b - Math.sqrt(det)) / (2 * a);
         System.out.println(+ r1 + " " + r2);
         return 0;
     }
