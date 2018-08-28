@@ -43,7 +43,7 @@ public final class Solution {
     	double r1, r2;
         r1 = (-b + Math.sqrt(det)) / (2 * a);
         r2 = (-b - Math.sqrt(det)) / (2 * a);
-        System.out.println(+ r1 + " " + r2);
+        System.out.println(+r1 + " " +r2);
         return 0;
     }
 }
