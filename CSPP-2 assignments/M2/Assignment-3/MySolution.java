@@ -1,4 +1,3 @@
-
 /**
 *Power of a number.
 *@author Swapnika
@@ -40,4 +39,3 @@ public final class MySolution {
         }
     }
 }
-
