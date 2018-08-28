@@ -13,6 +13,10 @@ public final class Solution {
     /**
     *empty constructor.
     **/
+    private static final int CONST = 4;
+    /**
+    *@variable CONST
+    **/
     private Solution() {
     //I am not using this function
     }
@@ -40,7 +44,7 @@ public final class Solution {
     **/
     public static float rootsOfQuadraticEquation(final int a, final int b,
                                                  final int c) {
-        double det = (b * b) - (4 * a * c);
+        double det = (b * b) - (CONST * a * c);
         double r1, r2;
         r1 = (-b + Math.sqrt(det)) / (2 * a);
         r2 = (-b - Math.sqrt(det)) / (2 * a);
