@@ -18,20 +18,19 @@ public final class Solution {
     *@param args is parameter for this function.
     **/
     public static void main(final String[] args) {
-    	int i, j = 1;
         Scanner s=new Scanner(System.in);      
         int n = s.nextInt();
         int count = 0;
-        for (i = 0; i <= n; i++) {
-        	while (j < 0) {
-        		j = j / 10;
-        		if (j % 10 == 7) {
-        			count++;
-        	System.out.print(count);
-        		}
-        	
+        for (int i = 0; i <= n; i++) {
+        	int temp = i;
+            while (temp != 0) {
+                if (temp % 10 == 7) {
+                    count++;
+                }
+                temp = temp / 10;
         	}
         }
+        System.out.println(count);
         
     }
 }
