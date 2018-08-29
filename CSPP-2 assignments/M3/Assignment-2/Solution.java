@@ -11,9 +11,12 @@ public final class Solution {
     *empty constructor.
     **/
     private static final int SEVEN = 7;
+    /**
+    *@variable SEVEN
+    **/
     private static final int TEN = 10;
     /**
-    *@variable PIVALUE
+    *@variable TEN
     **/
     private Solution() {
     //I am not using this function
