@@ -26,7 +26,7 @@ public final class Solution {
         System.out.println(gcd(n1, n2));
     }
     /**
-    Need to write the gcd function and print the output.   
+    Need to write the gcd function and print the output.
     *@param      n1    The n 1
     *@param      n2    The n 2
     *@return  int   { description_of_the_return_value }
@@ -47,4 +47,5 @@ public final class Solution {
         return ONE;
     }
 }
+
 
