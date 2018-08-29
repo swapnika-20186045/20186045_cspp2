@@ -3,12 +3,17 @@
 *@author Swapnika.
 **/
 import java.util.Scanner;
-	/**
-	Do not modify this main function.
-	**/
+    /**
+    Do not modify this main function.
+    **/
 public final class Solution {
-	/**
+    /**
     *empty constructor.
+    **/
+    private static final int SEVEN = 7;
+    private static final int TEN = 10;
+    /**
+    *@variable PIVALUE
     **/
     private Solution() {
     //I am not using this function
@@ -18,19 +23,18 @@ public final class Solution {
     *@param args is parameter for this function.
     **/
     public static void main(final String[] args) {
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int count = 0;
         for (int i = 0; i <= n; i++) {
-        	int temp = i;
+            int temp = i;
             while (temp != 0) {
-                if (temp % 10 == 7) {
+                if (temp % TEN == SEVEN) {
                     count++;
                 }
-                temp = temp / 10;
-        	}
+                temp = temp / TEN;
+            }
         }
         System.out.println(count);
-        
     }
 }
