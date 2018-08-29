@@ -27,8 +27,9 @@ public final class Solution {
         		j = j / 10;
         		if (j % 10 == 7) {
         			count++;
-        		}
         	System.out.print(count);
+        		}
+        	
         	}
         }
         
