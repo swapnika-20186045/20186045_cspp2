@@ -16,14 +16,13 @@ public class Solution {
 	Need to write the gcd function and print the output.
 	*/
     public static int gcd(final int n1, final int n2) {
-        int g = 0;
-        for(int i = 1; i <= n1 && i <= n2; ++i)
-        {
+        for(int i = 1; i <= n1 && i <= n2; ++i) {
             // Checks if i is factor of both integers
             if(n1 % i == 0 && n2 % i == 0) {
                 return i;
             }
         }
-    return 1;
+        return 1;
+    }
 }
-}
+
