@@ -22,7 +22,7 @@ public final class Solution {
         Scanner s = new Scanner(System.in);
         rows1 = s.nextInt();
         cols1 = s.nextInt();
-        int a[][] = new int [rows1][cols1];
+        int a[][] = new int[rows1][cols1];
         for (int i = 0; i < rows1; i++) {
             for (int j = 0; j < cols1; j++) {
                 a[i][j] = s.nextInt();
@@ -36,7 +36,7 @@ public final class Solution {
         // }
         rows2 = s.nextInt();
         cols2 = s.nextInt();
-        int b[][] = new int [rows2][cols2];
+        int b[][] = new int[rows2][cols2];
         for (int i = 0; i < rows2; i++) {
             for (int j = 0; j < cols2; j++) {
                 b[i][j] = s.nextInt();
@@ -48,7 +48,7 @@ public final class Solution {
         //     }
         //     System.out.println("");
         // }
-        int c[][] = new int [rows2][cols2];
+        int c[][] = new int[rows2][cols2];
         if (rows1 == rows2 && cols1 == cols2) {
             String res = "";
             for (int i = 0; i < rows1; i++) {
