@@ -51,19 +51,17 @@ public final class Solution {
         // }
         int c[][] = new int[rows2][cols2];
         if (rows1 == rows2 && cols1 == cols2) {
+            String res = "";
             for (int i = 0; i < rows1; i++) {
                 for (int j = 0; j < cols2; j++) {
                     for (int k = 0; k < cols1; k++) {
                         c[i][j] = a[i][j] + b[i][j];
+                        res += c[i][j] + " ";
                     }
+                    res = res.trim() + "\n";
                 }
             }
-            for (int i = 0; i < rows1; i++) {
-                for (int j = 0; j < cols2; j++) {
-                    System.out.print(c[i][j] + " ");
-                }
-                System.out.println(" ");
-                }
+                System.out.print(res);
             } else {
                 System.out.println("not possible");
             }
