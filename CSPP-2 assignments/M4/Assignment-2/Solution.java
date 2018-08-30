@@ -17,7 +17,7 @@ public final class Solution {
     *main function.
     *@param args is parameter for this function.
     **/
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         int rows1, cols1, rows2, cols2;
         Scanner s = new Scanner(System.in);
         rows1 = s.nextInt();
@@ -28,7 +28,6 @@ public final class Solution {
                 a[i][j] = s.nextInt();
             }
         }
-            
         // for (int i = 0; i < rows1; i++) {
         //     for (int j = 0; j < cols1; j++) {
         //         System.out.print(a[i][j] + " ");
