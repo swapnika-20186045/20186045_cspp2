@@ -61,7 +61,12 @@ public final class Solution {
                     res = res.trim() + "\n";
                 }
             }
-                System.out.print(res);
+            for (int i = 0; i < rows1; i++) {
+                for (int j = 0; j < cols2; j++) {
+                    System.out.print(res);
+                }
+                System.out.println(" ");
+                }
             } else {
                 System.out.println("not possible");
             }
