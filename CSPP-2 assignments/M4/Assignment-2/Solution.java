@@ -24,7 +24,7 @@ public final class Solution {
         cols1 = s.nextInt();
         rows2 = s.nextInt();
         cols2 = s.nextInt();
-        if (rows1 == rows2 || cols1 == cols2) {
+        if (rows1 != rows2 && cols1 != cols2) {
             int a[][] = new int[rows1][cols1];
             int b[][] = new int[rows2][cols2];
             int c[][] = new int[rows2][cols2];
