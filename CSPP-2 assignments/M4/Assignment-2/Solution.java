@@ -62,7 +62,8 @@ public final class Solution {
                 for (int j = 0; j < cols2; j++) {
                     System.out.print(c[i][j] + " ");
                 }
-            }
+                System.out.println("");
+                }
             } else {
                 System.out.println("not possible");
             }
