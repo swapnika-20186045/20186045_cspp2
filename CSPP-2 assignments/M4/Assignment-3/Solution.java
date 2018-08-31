@@ -37,7 +37,7 @@ public final class Solution {
         int sum = 0, power = 1;
         for (int i = 0;i < s.length(); i++) {
             if (s.charAt(i) == '1') {
-                sum += Math.pow(2, s.length() - i -1);
+                sum += Math.pow(2, s.length() - i - 1);
             }
             // sum += ((int) (s.charAt(i)) - '0') * power;
             // power *= 2;
