@@ -21,10 +21,10 @@ public final class Solution {
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        sc.nextLine();
+        // sc.nextLine();
         for (int i = 0; i <= n; i++) {
-            String s = sc.nextLine();
-            long res = binaryToDecimal(s);
+            String s = sc.next();
+            int res = binaryToDecimal(s);
             System.out.println(res);
         }
     }
@@ -33,8 +33,8 @@ public final class Solution {
     *@param s is parameter for this function.
     *@return string
     **/
-    public static long binaryToDecimal(final String s) {
-        long sum = 0, power = 1;
+    public static int binaryToDecimal(final String s) {
+        int sum = 0, power = 1;
         for (int i = s.length() - 1; i >= 0; i--) {
             sum += ((int) (s.charAt(i)) - '0') * power;
             power *= 2;
