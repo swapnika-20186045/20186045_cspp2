@@ -3,10 +3,10 @@ import java.util.Scanner;
 *returns the decimal value for the given binary string.
 *@author Swapnika.
 */
-public class Solution {
+public final class Solution {
 	/**
     *empty constructor.
-    */
+    **/
     // private static final double PIVALUE = 22 / 7.0;
     /**
     *@variable PIVALUE
@@ -18,19 +18,19 @@ public class Solution {
     *main function.
     *@param args is parameter for this function.
     **/
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		for (int i = 0; i <= n; i++) {
 			String s = sc.nextLine();
-			String res = binaryToDecimal(s);//Write binaryToDecimal function
+			String res = binaryToDecimal(s);
 			System.out.println(res);
 		}
 	}
 	/**
     *binary to decimal function.
-    <!-- *@param r is parameter for this function. -->
-    <!-- *@return double -->
+    *@param s is parameter for this function.
+    *@return string
     **/
     public static String binaryToDecimal(final String s) {
         long sum = 0, power = 1;
