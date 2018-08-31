@@ -23,6 +23,6 @@ public final class Concatinate {
         /* Declaring array of n elements, the value
          * of n is provided by the user
          */
-        System.out.println("Hello " + name + "!");
+        System.out.println("Hello " .concat(name) + "!");
     }
 }
