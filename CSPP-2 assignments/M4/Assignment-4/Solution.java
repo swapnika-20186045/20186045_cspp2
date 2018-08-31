@@ -17,12 +17,11 @@ public final class Solution {
     *main function.
     *@param args is parameter for this function.
     **/
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
 		String s = sc.nextLine();
 		String reverse = reverseString(s);	
 		System.out.println(reverse);
-		
 	}
 	//Write reverseString function
 
