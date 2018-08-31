@@ -23,7 +23,7 @@ public final class Solution {
         int n = sc.nextInt();
         for (int i = 0; i <= n; i++) {
             String s = sc.nextLine();
-            String res = binaryToDecimal(s);
+            long res = binaryToDecimal(s);
             System.out.println(res);
         }
     }
@@ -32,12 +32,12 @@ public final class Solution {
     *@param s is parameter for this function.
     *@return string
     **/
-    public static String binaryToDecimal(final String s) {
+    public static long binaryToDecimal(final String s) {
         long sum = 0, power = 1;
         for (int i = s.length() - 1; i >= 0; i--) {
             sum += ((int) (s.charAt(i)) - '0') * power;
             power *= 2;
         }
-        return String.valueOf(sum);
+        return sum;
     }
 }
