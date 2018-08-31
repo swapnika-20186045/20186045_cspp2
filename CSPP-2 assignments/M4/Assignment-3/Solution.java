@@ -35,7 +35,7 @@ public final class Solution {
     public static long binaryToDecimal(final String s) {
         long sum = 0, power = 1;
         for (int i = s.length() - 1; i >= 0; i--) {
-            sum += ((int) (s.charAt(i)) - '0') * power;
+            sum += ((int) (s.charAt(i)) - '1') * power;
             power *= 2;
         }
         return sum;
