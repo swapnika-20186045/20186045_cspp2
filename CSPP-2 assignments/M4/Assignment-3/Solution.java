@@ -38,6 +38,6 @@ public final class Solution {
             sum += ((int) (s.charAt(i)) - '0') * power;
             power *= 2;
         }
-        return sum + "";
+        return String.valueOf(sum);
     }
 }
