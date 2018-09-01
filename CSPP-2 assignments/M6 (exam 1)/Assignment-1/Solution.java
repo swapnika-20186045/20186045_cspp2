@@ -13,7 +13,7 @@ public final class Solution {
         //not used
     }
     /**
-     * Prints the odd composite numbers between 2 and n.
+     * checks whether the given number is odd and composite.
      *
      * @param      n     n value
      **/
@@ -25,10 +25,14 @@ public final class Solution {
         }
         return false;
     }
+    /**
+     * Prints the odd composite numbers between 2 and n.
+     *
+     * @param      n     n value
+     **/
     static void oddComposites(final int n) {
     // write your code here
-        for (int i = 3; i <= n;) {
-            i += 2;
+        for (int i = 3; i <= n; i += 2) {
             if (checkcomposite(i)) {
                 System.out.println(i);
             }
