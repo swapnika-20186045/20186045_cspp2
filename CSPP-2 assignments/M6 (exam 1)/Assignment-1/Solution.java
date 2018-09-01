@@ -26,8 +26,9 @@ public final class Solution {
         return false;
     }
     static void oddComposites(final int n) {
-	// write your code here
-        for (int i = 3; i <= n; i++) {
+    // write your code here
+        for (int i = 3; i <= n;) {
+            i += 2;
             if (checkcomposite(i)) {
                 System.out.println(i);
             }
