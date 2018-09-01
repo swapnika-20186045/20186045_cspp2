@@ -9,6 +9,12 @@ final class Solution {
     /**
      * Constructs the object.
      */
+    private static final int HUNDRED = 100;
+    private static final int FIFTY = 50;
+    /**
+    *@variable HUNDRED
+    *@variable FIFTY
+    **/
     private Solution() {
         //not used
     }
@@ -30,9 +36,10 @@ final class Solution {
     for (int i = 0; i < a.length; i++) {
         for (int j = 0; j < a[i].length; j++) {
             if (a[i][j] % 100 > 50) {
-               a1[i][j] = (a[i][j] / 100) * 100 + 100; 
+               a1[i][j] = (a[i][j] / 100) * 100 + 100;
+            } else {
+                a1[i][j] = (a[i][j] / 100) * 100;
             }
-            a1[i][j] = (a[i][j] / 100) * 100;
         }
     }
     return a1;
