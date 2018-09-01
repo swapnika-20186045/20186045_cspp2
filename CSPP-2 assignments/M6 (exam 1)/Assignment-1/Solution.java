@@ -9,6 +9,10 @@ public final class Solution {
     /**
     * Empty constructor.
     */
+    private static final int THREE = 3;
+    /**
+    *@variable THREE
+    **/
     private Solution() {
         //not used
     }
@@ -33,7 +37,7 @@ public final class Solution {
      **/
     static void oddComposites(final int n) {
     // write your code here
-        for (int i = 2; i <= n; i += 2) {
+        for (int i = THREE; i <= n; i += 2) {
             if (checkcomposite(i)) {
                 System.out.println(i);
             }
