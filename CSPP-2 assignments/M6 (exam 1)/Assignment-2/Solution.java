@@ -10,9 +10,11 @@ final class Solution {
      * Constructs the object.
      */
     private static final int HUNDRED = 100;
-    private static final int FIFTY = 50;
     /**
     *@variable HUNDRED
+    **/
+    private static final int FIFTY = 50;
+    /**
     *@variable FIFTY
     **/
     private Solution() {
