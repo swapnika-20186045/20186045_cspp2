@@ -18,7 +18,7 @@ public final class Solution {
      * @param      n     n value
      **/
     static boolean checkcomposite(final int n) {
-        for (int i = 2; i <= n - 1; i++) {
+        for (int i = 2; i <= n; i++) {
             if (n % i == 0) {
                 return true;
             }
@@ -27,7 +27,7 @@ public final class Solution {
     }
     static void oddComposites(final int n) {
 	// write your code here
-        for (int i = 3; i <= n - 1; i++) {
+        for (int i = 3; i <= n; i++) {
             if (checkcomposite(i)) {
                 System.out.println(i);
             }
