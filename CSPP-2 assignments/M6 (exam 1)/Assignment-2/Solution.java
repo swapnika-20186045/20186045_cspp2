@@ -34,9 +34,9 @@ final class Solution {
                                 final int rows, final int columns) {
 
     // write ypur code here
-    int[][] a1 = new int[a.length][a[0].length];
-    for (int i = 0; i < a.length; i++) {
-        for (int j = 0; j < a[i].length; j++) {
+    int[][] a1 = new int[rows][columns];
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
             if (a[i][j] % HUNDRED > FIFTY) {
                a1[i][j] = (a[i][j] / HUNDRED) * HUNDRED + HUNDRED;
             } else {
