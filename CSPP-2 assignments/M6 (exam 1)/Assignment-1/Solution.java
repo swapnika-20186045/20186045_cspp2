@@ -16,6 +16,7 @@ public final class Solution {
      * checks whether the given number is odd and composite.
      *
      * @param      n     n value
+     * @return boolean
      **/
     static boolean checkcomposite(final int n) {
         for (int i = 2; i <= n - 1; i++) {
@@ -32,7 +33,7 @@ public final class Solution {
      **/
     static void oddComposites(final int n) {
     // write your code here
-        for (int i = 3; i <= n; i += 2) {
+        for (int i = 2; i <= n; i += 2) {
             if (checkcomposite(i)) {
                 System.out.println(i);
             }
