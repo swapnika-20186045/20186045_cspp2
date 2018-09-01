@@ -31,9 +31,8 @@ final class Solution {
         for (int j = 0; j < a[i].length; j++) {
             if (a[i][j] % 100 > 50) {
                a1[i][j] = (a[i][j] / 100) * 100 + 100; 
-            } else {
-                a1[i][j] = (a[i][j] / 100) * 100;
             }
+            a1[i][j] = (a[i][j] / 100) * 100;
         }
     }
     return a1;
