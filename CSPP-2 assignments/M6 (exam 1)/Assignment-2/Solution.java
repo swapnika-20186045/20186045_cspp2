@@ -35,10 +35,10 @@ final class Solution {
     int[][] a1 = new int[a.length][a[0].length];
     for (int i = 0; i < a.length; i++) {
         for (int j = 0; j < a[i].length; j++) {
-            if (a[i][j] % 100 > 50) {
-               a1[i][j] = (a[i][j] / 100) * 100 + 100;
+            if (a[i][j] % HUNDRED > FIFTY) {
+               a1[i][j] = (a[i][j] / HUNDRED) * HUNDRED + HUNDRED;
             } else {
-                a1[i][j] = (a[i][j] / 100) * 100;
+                a1[i][j] = (a[i][j] / HUNDRED) * HUNDRED;
             }
         }
     }
