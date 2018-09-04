@@ -163,7 +163,7 @@ public class List {
         return -1;
     }
 
-    /*
+    /**
      * What happens when you print an object using println?
      * Java provides a method named toString that is internally
      * invoked when an object variable is used in println.
@@ -182,7 +182,7 @@ public class List {
      * toString should only return the items in the list and
      * not all the elements of the array.
      *
-     */
+     **/
     public String toString() {
         // Replace the code below
         String s = "[";
@@ -194,13 +194,13 @@ public class List {
         return s;
     }
 
-    /*
+    /**
      * Contains return true if the list has
      * the item passed as an argument to the method
      * So, iterate through the list and return true if
      * the item exists and otherwise false
-     */
-    public boolean contains(int item) {
+     **/
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
@@ -209,12 +209,12 @@ public class List {
         }
         return false;
     }
-    /*
-     * Returns the index of the first occurrence 
+    /**
+     * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
-     */
-    public int indexOf(int item) {
+     **/
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
