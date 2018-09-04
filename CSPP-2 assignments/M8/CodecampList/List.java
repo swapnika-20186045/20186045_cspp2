@@ -86,7 +86,6 @@ public class List {
         // An empty list has how many items?
         // That is the initial value to use for size.
     }
-    
     /*
      * The add method does what the name suggests.
      * Add an int item to the list.
@@ -128,7 +127,7 @@ public class List {
      * The remove method does what the name suggests.
      * Removes an int item, specified by the index argument, from the list
      * It also does an additional step.
-     * Think about what happens when 
+     * Think about what happens when
      * an item is removed from the middle of the list
      * It creates a hole in the list, right?
      * This would mean, all the items that are
