@@ -8,8 +8,8 @@ import java.util.Scanner;
 *using scanner to give inputs.
 **/
 public class List {
-	//Implement all the methods mentioned to build a ListADT
-    
+    //Implement all the methods mentioned to build a ListADT
+
     /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -65,7 +65,7 @@ public class List {
      * class variables with some default values.
      */
     public List() {
-        
+
         // what are the two variables to be initialized here?
         // think about the private variables described above.
         // What should be the default values?
@@ -193,7 +193,7 @@ public class List {
         s += list[i] + "]";
         return s;
     }
-    
+
     /*
      * Contains return true if the list has
      * the item passed as an argument to the method
@@ -224,7 +224,7 @@ public class List {
         return -1;
     }
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -267,5 +267,5 @@ public class List {
                 break;
             }
         }
-	}
+    }
 }
