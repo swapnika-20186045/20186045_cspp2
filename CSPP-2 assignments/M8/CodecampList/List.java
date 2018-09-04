@@ -153,7 +153,7 @@ public class List {
             }
             size--;
         } else {
-            System.out.println("invalid position exception");
+            System.out.println("Invalid Position Exception");
         }
     }
 
