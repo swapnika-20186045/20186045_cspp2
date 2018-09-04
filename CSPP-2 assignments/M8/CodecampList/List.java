@@ -223,8 +223,11 @@ public class List {
         }
         return -1;
     }
-
-    public static void main(String[] args) {
+    /**
+    *main function.
+    *@param args is parameter for this function.
+    **/
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
