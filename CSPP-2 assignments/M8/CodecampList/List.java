@@ -91,6 +91,11 @@ public class List {
      * 
      * The method returns void (nothing)
      */
+    /**
+     * add the elements to list.
+     *
+     * @param      item  The item
+     **/
     public void add(int item) {
         //Inserts the specified element at the end of the list.
         if (size < list.length) {
@@ -106,6 +111,9 @@ public class List {
      * 
      * The method returns an int. Empty list should return 0.
      */
+    /**
+     * size of array.
+     **/
     public int size() {
         // replace the code below to implement the size method
         return size;
@@ -131,6 +139,11 @@ public class List {
      * array = [1,3,0,0,0,0,0,0,0,0]
      * The method returns void (nothing)
      */
+    /**
+     * remove the elements in array.
+     *
+     * @param      index  The index
+     **/
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
@@ -155,6 +168,13 @@ public class List {
      * How do we check if the position is greater than the 
      * number of items in the list? Would size variable be useful?
      */
+    /**
+     * return the item at the index.
+     *
+     * @param      index  The index
+     *
+     * @return    int
+     */
     public int get(int index) {
         // Replace the code below to write the code for get
         if (index >= 0 && index < size) {
@@ -163,7 +183,7 @@ public class List {
         return -1;
     }
 
-    /**
+    /*
      * What happens when you print an object using println?
      * Java provides a method named toString that is internally
      * invoked when an object variable is used in println.
@@ -182,7 +202,12 @@ public class List {
      * toString should only return the items in the list and
      * not all the elements of the array.
      *
-     **/
+     */
+    /**
+     * display the items in list.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         // Replace the code below
         String s = "[";
@@ -194,12 +219,19 @@ public class List {
         return s;
     }
 
-    /**
+    /*
      * Contains return true if the list has
      * the item passed as an argument to the method
      * So, iterate through the list and return true if
      * the item exists and otherwise false
-     **/
+     */
+    /**
+     * return true or false if the item is in list.
+     *
+     * @param      item  The item
+     *
+     * @return     boolean
+     */
     public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
@@ -209,11 +241,18 @@ public class List {
         }
         return false;
     }
-    /**
+    /*
      * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
-     **/
+     */
+    /**
+     * index of occurrence of element.
+     *
+     * @param      item  The item
+     *
+     * @return     int
+     */
     public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
