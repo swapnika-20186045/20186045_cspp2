@@ -69,6 +69,9 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
+    /**
+     * Constructs the object.
+     */
     public List() {
 
         // what are the two variables to be initialized here?
@@ -82,7 +85,6 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-
     }
     
     /*
@@ -93,18 +95,16 @@ public class List {
      * Is it the same as the end of the array?
      * Think about how you can use the size variable to add item
      * to the list.
-     * 
      * The method returns void (nothing)
      */
     /**
      * add the elements to list.
-     *
      * @param      item  The item
      **/
     public void add(final int item) {
         //Inserts the specified element at the end of the list.
         if (size < list.length) {
-            list [size] = item;
+            list[size] = item;
         size++;
         }
     }
@@ -113,11 +113,11 @@ public class List {
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
-     * 
      * The method returns an int. Empty list should return 0.
      */
     /**
      * size of array.
+     *@return int
      **/
     public int size() {
         // replace the code below to implement the size method
