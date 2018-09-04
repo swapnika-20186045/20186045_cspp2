@@ -1,6 +1,12 @@
+/**
+*list abstract data types.
+*@author Swapnika.
+**/
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-
+/**
+*using scanner to give inputs.
+**/
 public class List {
 	//Implement all the methods mentioned to build a ListADT
     
