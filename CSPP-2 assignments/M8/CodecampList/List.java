@@ -178,7 +178,7 @@ public class List {
     public int get(final int index) {
         // Replace the code below to write the code for get
         if (index >= 0 && index < size) {
-            return list[index];
+            System.out.println(list[index]);
         }
         return -1;
     }
