@@ -46,7 +46,7 @@ public final class Solution {
     * Empty constructor.
     */
     private Solution() {
-    	//not used
+        //not used
     }
     /**
     * @param args is the parameter for this method.
@@ -59,3 +59,4 @@ public final class Solution {
         System.out.println(i.validateData(input));
     }
 }
+
