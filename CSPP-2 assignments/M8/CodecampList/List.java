@@ -219,7 +219,7 @@ public class List {
         // Replace the code below
         String s = "[";
         int i;
-        for (i = 0; i < size() - 1; i++) {
+        for (i = 0; i < size - 1; i++) {
             s += list[i] + ",";
         }
         s += list[i] + "]";
