@@ -32,6 +32,10 @@ public class List {
      *
     */
     /**
+    *@variable TEN
+    **/
+    private static final int TEN = 10;
+    /**
      *declaration private.
      **/
     private int[] list;
@@ -79,7 +83,7 @@ public class List {
         // What should be the default values?
         // In the case of the list, it should be empty but
         // it should be initialized with an array size like 10
-        this.list = new int[10];
+        this.list = new int[TEN];
         this.size = 0;
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
