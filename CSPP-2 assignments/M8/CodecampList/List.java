@@ -96,7 +96,7 @@ public class List {
      *
      * @param      item  The item
      **/
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         if (size < list.length) {
             list [size] = item;
@@ -144,7 +144,7 @@ public class List {
      *
      * @param      index  The index
      **/
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index >= 0 && index < size) {
@@ -175,7 +175,7 @@ public class List {
      *
      * @return    int
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index >= 0 && index < size) {
             return list[index];
