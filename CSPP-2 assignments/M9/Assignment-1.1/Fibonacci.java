@@ -27,7 +27,7 @@ public class Fibonacci
      */
     public static List fib(int n) {
         // todo - complete this method
-        List list = new List();
+        List list = new List(n);
 		int a = 0;
 		list.add(a);
 		int b = 1;
