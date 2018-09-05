@@ -110,13 +110,12 @@ public class List {
      * 
      * The method returns void (nothing)
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
-        if (size < list.length) {
-            list[size++] = item;
-        } else {
+        if (size >= list.length) {
             resize();
         }
+        list[size++] = item;
     }
 
     /*
@@ -151,11 +150,8 @@ public class List {
      */
 
     // todo create resize method
-    public int[] resize() {
-        int capacity = 2 * size;
-        int[] l = new int[capacity];
-        l = Arrays.copyOf(list, capacity);
-        return l;
+    private void resize() {
+        list = Arrays.copyOf(list, 2 * size);
     }
 
     /*
