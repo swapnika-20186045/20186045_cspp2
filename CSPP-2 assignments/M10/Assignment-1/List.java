@@ -304,7 +304,7 @@ public class List {
         return count;
     }
     public void add(final int index, final int item) {
-        if (index >= 0 && index < size) {
+        if (index >= 0) {
             for (int i = size; i > index; i--) {
                 list[i] = list[i - 1];
             }
