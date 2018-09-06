@@ -339,15 +339,16 @@ public class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                if ((tokens.length) == 2){
+                if ((tokens.length) == 2) {
                 String[] t = tokens[1].split(",");
-                if (t.length == 1){
+                if (t.length == 1) {
                     l.add(Integer.parseInt(tokens[1]));
                 } else {
-                    if (t.length > 1)
+                    if (t.length > 1) {
                         l.add(Integer.parseInt(t[0]),Integer.parseInt(t[1]));
                     }
                 }
+            }
                 break;
                 case "count":
                 System.out.println(l.count(Integer.parseInt(tokens[1])));
