@@ -111,7 +111,7 @@ public class List {
             resize();
         }
         list[size++] = item;
-        }
+    }
 
     /*
      * The size method returns the value of the size.
@@ -321,9 +321,6 @@ public class List {
      * @param      items  The items
      */
     public void addAll(final int[] items) {
-        if (size + items.length >= list.length) {
-            resize();
-        }
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
