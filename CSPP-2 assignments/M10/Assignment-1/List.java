@@ -121,8 +121,6 @@ public class List {
      */
     /**
      * resize the array.
-     *
-     * @return     { description_of_the_return_value }
      */
     private void resize() {
         // int capacity = 2 * size;
