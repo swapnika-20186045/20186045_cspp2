@@ -308,7 +308,7 @@ public class List {
             resize();
         }
     }
-    public void addall(final int[] items) {
+    public void addAll(final int[] items) {
         for (int i = 0;i < items.length; i++) {
             add(items[i]);
         }
@@ -332,7 +332,28 @@ public class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                l.add(Integer.parseInt(tokens[1]));
+                if((tokens.length)==2){
+                String[] t = tokens[1].split(",");
+                if(t.length==1){
+                    l.add(Integer.parseInt(tokens[1]));
+                }
+                else{
+                    if(t.length>1)
+                        l.add(Integer.parseInt(t[0]),Integer.parseInt(t[1]));
+                    }
+                }
+                break;
+                case "count":
+                System.out.println(l.count(Integer.parseInt(tokens[1])));
+                break;
+                case "addAll":
+                if(tokens.length==2){
+                String[] t1 = tokens[1].split(",");
+                int temp[]=new int[t1.length];
+                for(int i=0;i<temp.length;i++)
+                    temp[i]=Integer.parseInt(t1[i]);
+                l.addAll(temp);
+                }
                 break;
                 case "size":
                 // invoke size method and print the list size
@@ -345,7 +366,6 @@ public class List {
                 // expected format is [item-1,item-2,...,item-n]
                 // review the output testcase file
                 System.out.println(l);
-
                 break;
                 case "remove":
                 l.remove(Integer.parseInt(tokens[1]));
