@@ -107,12 +107,11 @@ public class List {
      **/
     public void add(final int item) {
         //Inserts the specified element at the end of the list.
-        if (size < list.length) {
-            list[size++] = item;
-        } else {
+        if (size >= list.length) {
             resize();
         }
-    }
+        list[size++] = item;
+        }
 
     /*
      * The size method returns the value of the size.
