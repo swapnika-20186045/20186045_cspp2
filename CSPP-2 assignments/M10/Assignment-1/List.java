@@ -199,9 +199,8 @@ public class List {
         // Replace the code below to write the code for get
         if (index >= 0 && index < size) {
             return list[index];
-        } else {
-            return -1;
         }
+        return -1;
     }
 
     /*
@@ -383,7 +382,7 @@ public class List {
                 break;
                 case "get":
                 int n = l.get(Integer.parseInt(tokens[1]));
-                if (n != -1) {
+                if (n == -1) {
                     System.out.println(n);
                 }
                 break;
