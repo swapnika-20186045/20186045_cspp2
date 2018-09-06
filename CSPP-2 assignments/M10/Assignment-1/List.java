@@ -124,11 +124,10 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    private int[] resize() {
-        int capacity = 2 * size;
-        int[] l = new int[capacity];
-        l = Arrays.copyOf(list, capacity);
-        return l;
+    private void resize() {
+        // int capacity = 2 * size;
+        // int[] l = new int[capacity];
+        list = Arrays.copyOf(list, 2 * size);
     }
     /**
      * size of array.
