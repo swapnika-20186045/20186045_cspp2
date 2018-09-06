@@ -2,16 +2,16 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-// interface StringListInterface
-// {
-// 	 public void add(String item);
-// 	 public void addAll(String items[]);
-// 	 public String get(int index);
-// 	 public int size();
-// 	 public void remove(int index);
-// 	 public boolean contains(String item);
-// 	 public int indexOf(String item);
-// }
+interface StringListInterface
+{
+	 public void add(String item);
+	 public void addAll(String items[]);
+	 public String get(int index);
+	 public int size();
+	 public void remove(int index);
+	 public boolean contains(String item);
+	 public int indexOf(String item);
+}
 //Write a StringList class which implements StringListInterface 
 
 public class StringList {
