@@ -5,18 +5,18 @@ import java.util.Arrays;
 
 interface StringListInterface
 {
-	 public void add(String item);
-	 public void addAll(String items[]);
-	 public String get(int index);
-	 public int size();
-	 public void remove(int index);
-	 public boolean contains(String item);
-	 public int indexOf(String item);
+     public void add(String item);
+     public void addAll(String items[]);
+     public String get(int index);
+     public int size();
+     public void remove(int index);
+     public boolean contains(String item);
+     public int indexOf(String item);
 }
 //Write a StringList class which implements StringListInterface 
 
 public class StringList implements StringListInterface {
-	//Implement all the methods mentioned to build a ListADT
+    //Implement all the methods mentioned to build a ListADT
 
     /*
      * The goal for the list is to store items.
@@ -74,9 +74,6 @@ public class StringList implements StringListInterface {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
-    
-    
-
     public StringList() {
 
         // what are the two variables to be initialized here?
@@ -110,7 +107,7 @@ public class StringList implements StringListInterface {
 
     // todo - add an overloaded constructor here
 
-    
+
     /*
      * The add method does what the name suggests.
      * Add an String item to the list.
@@ -131,12 +128,12 @@ public class StringList implements StringListInterface {
     }
     /*Inserts all the elements of specified int 
     array to the end of list*/
-   
+
     public void addAll(String[] items) {
-		for (int i = 0; i < items.length; i++) {
+        for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
-	}
+    }
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
@@ -239,7 +236,7 @@ public class StringList implements StringListInterface {
         // }
         return s;
     }
-    
+
     /*
      * Contains return true if the list has
      * the item passed as an argument to the method
@@ -276,7 +273,8 @@ public class StringList implements StringListInterface {
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         StringList sl = new StringList();
-        StringListInterface l=(StringListInterface)sl;//Typecasting is done for StringListInterface
+        StringListInterface l=(StringListInterface)sl;
+        //Typecasting is done for StringListInterface
         // code to read the test cases input file
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         // check if there is one more line to process
