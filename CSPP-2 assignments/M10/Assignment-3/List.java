@@ -49,6 +49,9 @@ public class List<E> {
      * to the list.
      */
     public void add(E item) {
+        if(size == list.length) {
+            resize();
+        }
         //Inserts the specified element at the end of the list.
         //You can modify the code in this method.
         list[(size++)] = item;
