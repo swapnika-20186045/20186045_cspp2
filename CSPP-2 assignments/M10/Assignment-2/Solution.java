@@ -1,7 +1,19 @@
+/**
+*list abstract data types.
+*@author Swapnika.
+**/
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-
+/**
+*using scanner to give inputs.
+**/
 public class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //not used
+    }
 	public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         StringList sl = new StringList();
