@@ -2,6 +2,7 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
+
 interface StringListInterface
 {
 	 public void add(String item);
@@ -14,7 +15,7 @@ interface StringListInterface
 }
 //Write a StringList class which implements StringListInterface 
 
-public class StringList implements StringListInterface{
+public class StringList implements StringListInterface {
 	//Implement all the methods mentioned to build a ListADT
 
     /*
@@ -267,6 +268,11 @@ public class StringList implements StringListInterface{
         }
         return -1;
     }
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         StringList sl = new StringList();
@@ -285,7 +291,7 @@ public class StringList implements StringListInterface{
                     l.add(tokens[1]);
                 break;
                 case "addAll":
-                if(tokens.length==2){
+                if (tokens.length == 2) {
                 String[] t1 = tokens[1].split(",");
                 l.addAll(t1);
                 }
