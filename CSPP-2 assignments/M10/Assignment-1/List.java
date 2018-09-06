@@ -316,7 +316,7 @@ public class List {
         }
     }
     public void addAll(final int[] items) {
-        for (int i = 0;i < items.length; i++) {
+        for (int i = 0; i < items.length; i++) {
             add(items[i]);
         }
     }
@@ -339,12 +339,11 @@ public class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                if((tokens.length)==2){
+                if ((tokens.length) == 2){
                 String[] t = tokens[1].split(",");
                 if (t.length == 1){
                     l.add(Integer.parseInt(tokens[1]));
-                }
-                else{
+                } else {
                     if (t.length > 1)
                         l.add(Integer.parseInt(t[0]),Integer.parseInt(t[1]));
                     }
@@ -357,8 +356,9 @@ public class List {
                 if (tokens.length == 2){
                 String[] t1 = tokens[1].split(",");
                 int temp[] = new int[t1.length];
-                for (int i = 0;i < temp.length;i++)
+                for (int i = 0; i < temp.length; i++) {
                     temp[i] = Integer.parseInt(t1[i]);
+                }
                 l.addAll(temp);
                 }
                 break;
