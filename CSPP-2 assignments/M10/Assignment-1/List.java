@@ -238,9 +238,9 @@ public class List {
             s += list[i] + ",";
         }
         s += list[i] + "]";
-        // if (get[0] == 0) {
-
-        // }
+        if (get(0) == 0) {
+            s += "\nInvalid Position Exception";
+        }
         return s;
     }
 
