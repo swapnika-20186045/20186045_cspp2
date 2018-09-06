@@ -302,6 +302,12 @@ public class List {
         }
         return count;
     }
+    /**
+     * add function.
+     *
+     * @param      index  The index
+     * @param      item   The item
+     */
     public void add(final int index, final int item) {
         if (index >= 0) {
             for (int i = size; i > index; i--) {
