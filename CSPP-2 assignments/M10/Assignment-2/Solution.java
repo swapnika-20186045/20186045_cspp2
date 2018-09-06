@@ -20,7 +20,7 @@ public class Solution {
 	                l.add(tokens[1]);
                 break;
                 case "addAll":
-                if(tokens.length==2){
+                if (tokens.length == 2) {
                 String[] t1 = tokens[1].split(",");
                 l.addAll(t1);
                 }
