@@ -17,7 +17,8 @@ public class Solution {
 	public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         StringList sl = new StringList();
-        StringListInterface l=(StringListInterface)sl;//Typecasting is done for StringListInterface
+        StringListInterface l = (StringListInterface)sl;
+        //Typecasting is done for StringListInterface
         // code to read the test cases input file
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
         // check if there is one more line to process
