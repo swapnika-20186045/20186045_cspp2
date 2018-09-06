@@ -199,8 +199,7 @@ public class List {
         // Replace the code below to write the code for get
         if (index >= 0 && index < size) {
             return list[index];
-        }
-        return -1;
+        } return -1;
     }
 
     /*
