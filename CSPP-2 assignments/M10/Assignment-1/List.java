@@ -312,6 +312,8 @@ public class List {
             size++;
         } else if (list.length == size) {
             resize();
+        } else {
+            System.out.println("Negative Index Exception");
         }
     }
     /**
