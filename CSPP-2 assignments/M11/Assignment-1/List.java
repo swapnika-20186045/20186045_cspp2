@@ -267,9 +267,9 @@ public class List {
      * @param      newArray  The new array
      */
     public void addAll(final int[] newArray) {
-        if (size + newArray.length >= list.length) {
-            resize();
-        }
+        // if (size + newArray.length >= list.length) {
+        //     resize();
+        // }
         for (int i = 0; i < newArray.length; i++) {
             add(newArray[i]);
         }
