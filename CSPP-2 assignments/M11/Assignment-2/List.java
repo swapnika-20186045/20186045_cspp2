@@ -1,3 +1,7 @@
+/**
+ *list adt including new methods.
+ *@author Swapnika Vakacharla
+ */
 import java.util.Arrays;
 /*
      * The goal for the list is to store items.
