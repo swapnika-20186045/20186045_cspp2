@@ -238,7 +238,7 @@ public class List {
         // Replace the code below
         // return indexOf(item) != -1;
         for (int i = 0; i < size; i++) {
-            if(item == list[i]) {
+            if (item == list[i]) {
                 return true;
             }
         }
@@ -318,10 +318,12 @@ public class List {
         if (start <= 0 || end <= 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        } if (start > size || end > size) {
+        }
+        if (start > size || end > size) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        } if (start > end) {
+        }
+        if (start > end) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         } else {
