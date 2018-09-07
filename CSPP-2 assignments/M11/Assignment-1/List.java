@@ -154,7 +154,7 @@ public class List {
      *
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
         if (index >= 0 && index < size) {
@@ -183,7 +183,7 @@ public class List {
      *
      * @return     int
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index >= 0 && index < size) {
             return list[index];
@@ -234,7 +234,7 @@ public class List {
      *
      * @return     Boolean
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
@@ -254,7 +254,7 @@ public class List {
      *
      * @return     int
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
@@ -271,7 +271,7 @@ public class List {
      *
      * @param      newArray  The new array
      */
-    public void addAll(int[] newArray) {
+    public void addAll(final int[] newArray) {
         if (size + newArray.length >= list.length) {
             resize();
         }
@@ -288,7 +288,7 @@ public class List {
       *
       * @param      newArray  The new array
       */
-     public void removeAll(int[] newArray) {
+     public void removeAll(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
             remove(indexOf(newArray[i]));
         }
@@ -308,9 +308,9 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public List subList(int start, int end) {
+    public List subList(final int start, final int end) {
         List l = new List();
-        int size = 0;
+        size = 0;
         if (start < 0 || end < 0 || start > end) {
             System.out.println("Index Out of Bounds Exception");
         } else {
@@ -332,7 +332,7 @@ public class List {
      *
      * @return     boolean
      */
-    public boolean equals(List lis) {
+    public boolean equals(final List lis) {
     // Replace the code below
         // lis = new List();
         int count = 0;
