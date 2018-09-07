@@ -236,7 +236,13 @@ public class List {
      */
     public boolean contains(final int item) {
         // Replace the code below
-        return indexOf(item) != -1;
+        // return indexOf(item) != -1;
+        for (int i = 0; i < size; i++) {
+            if(item == list[i]) {
+                return true;
+            }
+        }
+        return false;
     }
     /*
      * Returns the index of the first occurrence of the specified element in
@@ -316,9 +322,7 @@ public class List {
             for (int i = start; i < end; i++) {
                 l.add(list[i]);
             }
-
-        }  
-            
+        }    
         return l;
     }
     /*
