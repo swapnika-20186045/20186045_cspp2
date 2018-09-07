@@ -195,15 +195,12 @@ public class List {
      */
     public String toString() {
         // Replace the code below
-        if (size == 0) {
-            return "[]";
-        }
-        String s = "";
+        String s = "[";
         int i;
         for (i = 0; i < size - 1; i++) {
             s += list[i] + ",";
         }
-        s += list[i];
+        s += list[i] + "]";
         return s;
     } 
     /*
