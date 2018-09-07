@@ -4,6 +4,7 @@
 **/
 import java.io.BufferedInputStream;
 import java.util.Scanner;
+import java.util.Arrays;
 /**
 *using scanner to give inputs.
 **/
@@ -107,8 +108,9 @@ public class List {
     public void add(final int item) {
         //Inserts the specified element at the end of the list.
         if (size < list.length) {
-            list[size] = item;
-        size++;
+            list[size++] = item;
+        } else {
+            resize();
         }
     }
 
@@ -118,6 +120,17 @@ public class List {
      * to the objects outside the list
      * The method returns an int. Empty list should return 0.
      */
+    /**
+     * resize the array.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    private int[] resize() {
+        int capacity = 2 * size;
+        int[] l = new int[capacity];
+        l = Arrays.copyOf(list, capacity);
+        return l;
+    }
     /**
      * size of array.
      *@return int
@@ -240,13 +253,7 @@ public class List {
      * @return     boolean
      */
     public boolean contains(final int item) {
-        // Replace the code below
-        for (int i = 0; i < size; i++) {
-            if (list[i] == item) {
-                return true;
-            }
-        }
-        return false;
+        return indexOf(item) > -1;
     }
     /*
      * Returns the index of the first occurrence
@@ -261,13 +268,57 @@ public class List {
      * @return     int
      */
     public int indexOf(final int item) {
-        // Replace the code below
         for (int i = 0; i < size; i++) {
             if (list[i] == item) {
                 return i;
             }
         }
         return -1;
+    }
+    /**
+     * frequency count of given item in list.
+     *
+     * @param      item  The item
+     *
+     * @return     int
+     */
+    public int count(final int item) {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (item == list[i]) {
+                count++;
+            }
+        }
+        return count;
+    }
+    /**
+     * add function.
+     *
+     * @param      index  The index
+     * @param      item   The item
+     */
+    public void add(final int index, final int item) {
+        if (index >= 0) {
+            for (int i = size; i > index; i--) {
+                list[i] = list[i - 1];
+            }
+            list[index] = item;
+            size++;
+        } else if (list.length == size) {
+            resize();
+        } else {
+            System.out.println("Negative Index Exception");
+        }
+    }
+    /**
+     * Adds all.
+     *
+     * @param      items  The items
+     */
+    public void addAll(final int[] items) {
+        for (int i = 0; i < items.length; i++) {
+            add(items[i]);
+        }
     }
     /**
     *main function.
