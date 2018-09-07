@@ -236,12 +236,7 @@ public class List {
      */
     public boolean contains(final int item) {
         // Replace the code below
-        for (int i = 0; i < size; i++) {
-            if (list[i] == item) {
-                return true;
-            }
-        }
-        return false;
+        return indexOf(item) != -1;
     }
     /*
      * Returns the index of the first occurrence of the specified element in
@@ -310,17 +305,20 @@ public class List {
      */
     public List subList(final int start, final int end) {
         List l = new List();
-        size = 0;
-        if (start < 0 && end < 0 && start >= end) {
+        if (start >= end) {
             System.out.println("Index Out of Bounds Exception");
+            return null;
+        } else if (start < 0 || end < 0) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
         } else {
+                        
             for (int i = start; i < end; i++) {
                 l.add(list[i]);
-                size++;
             }
-        }
-    return l;
+        return l;
     }
+}
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
