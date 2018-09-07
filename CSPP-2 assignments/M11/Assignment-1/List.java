@@ -328,7 +328,7 @@ public class List {
     /**
      * List object is matching with the given list or not.
      *
-     * @param      list  The list
+     * @param      lis  The list
      *
      * @return     boolean
      */
@@ -355,8 +355,12 @@ public class List {
     // write the logic for clear.
         size = 0;
     }
-
-    public static void main(String[] args) {
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
