@@ -132,7 +132,7 @@ public class List {
     /**
      * resize the array.
      */
-    private void resize() {
+    public void resize() {
         list = Arrays.copyOf(list, 2 * size);
     }
     /*
