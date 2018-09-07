@@ -308,14 +308,13 @@ public class List {
         if (start >= end) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        } else if (start < 0 || end < 0) {
+        } if (start < 0 || end < 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        } else {    
+        }    
             for (int i = start; i < end; i++) {
                 l.add(list[i]);
             }
-        }
         return l;
     }
     /*
