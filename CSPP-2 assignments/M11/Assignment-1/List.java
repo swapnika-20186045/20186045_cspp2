@@ -311,22 +311,21 @@ public class List {
      */
     public List subList(final int start, final int end) {
         List l = new List();
-        if (start >= 0 || end >= 0) {
+        if (start <= 0 || end <= 0) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        } if (start >= end) {
+        } if (start > size || end > size) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        } if (start < 0 || end < 0) {
+        } if (start > end) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        }  
-        else {
+        } else {
             for (int i = start; i < end; i++) {
-                l.add(list[i]);
+                    l.add(list[i]);
             }
-        }    
-        return l;
+            return l;
+        }
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
