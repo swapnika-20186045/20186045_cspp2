@@ -32,6 +32,13 @@ public class List {
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
+    /**
+    *@variable TEN
+    **/
+    private static final int TEN = 10;
+    /**
+     * constructor.
+     */
     private int[] list;
     // declare a private int[]
     // don't create the array yet using new
@@ -56,6 +63,9 @@ public class List {
      * to be accessed by the methods that are outside of the List class.
      * 
      */
+    /**
+     *variable initialization.
+     */
     private int size;
     // declare a private int size
     // again, don't initialize it here
@@ -65,18 +75,21 @@ public class List {
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
      */
+    /**
+     * Constructs the object.
+     */
     public List() {
 
         // what are the two variables to be initialized here? think about the
         // private variables described above. What should be the default values?
         // In the case of the list, it should be empty but it should be
         // initialized with an array size like 10
-    	list = new int[10];
+        list = new int[TEN];
         // Think about the initial value for size.
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-    	size = 0;
+        size = 0;
     }
     
     /*
@@ -92,7 +105,7 @@ public class List {
      *
      * @param      item  The item
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         if (size >= list.length) {
             resize();
@@ -116,6 +129,9 @@ public class List {
         // replace the code below to implement the size method
         return size;
     }
+    /**
+     * resize the array.
+     */
     private void resize() {
         list = Arrays.copyOf(list, 2 * size);
     }
@@ -256,9 +272,9 @@ public class List {
      * @param      newArray  The new array
      */
     public void addAll(int[] newArray) {
-    	if (size + newArray.length >= list.length) {
-    		resize();
-    	}
+        if (size + newArray.length >= list.length) {
+            resize();
+        }
         for (int i = 0; i < newArray.length; i++) {
             add(newArray[i]);
         }
@@ -293,16 +309,16 @@ public class List {
      * @return     { description_of_the_return_value }
      */
     public List subList(int start, int end) {
-    	List l = new List();
-    	int size = 0;
-    	if (start < 0 || end < 0 || start > end) {
-    		System.out.println("Index Out of Bounds Exception");
-    	} else {
-    		for (int i = start; i < end; i++) {
-    			l.add(list[i]);
-    			size++;
-    		}
-    	}
+        List l = new List();
+        int size = 0;
+        if (start < 0 || end < 0 || start > end) {
+            System.out.println("Index Out of Bounds Exception");
+        } else {
+            for (int i = start; i < end; i++) {
+                l.add(list[i]);
+                size++;
+            }
+        }
     return l;
     }
     /*
@@ -318,13 +334,13 @@ public class List {
      */
     public boolean equals(List lis) {
     // Replace the code below
-    	// lis = new List();
-    	int count = 0;
-    	for (int i = 0; i < lis.size(); i++) {
-    		if (contains(lis.get(i))) {
-    			count++;
-    		}
-    	}
+        // lis = new List();
+        int count = 0;
+        for (int i = 0; i < lis.size(); i++) {
+            if (contains(lis.get(i))) {
+                count++;
+            }
+        }
     return (count == lis.size());
     }
     /*
@@ -337,7 +353,7 @@ public class List {
      */
     public void clear() {
     // write the logic for clear.
-    	size = 0;
+        size = 0;
     }
 
     public static void main(String[] args) {
