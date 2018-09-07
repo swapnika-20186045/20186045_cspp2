@@ -61,7 +61,7 @@ public class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
      */
     /**
      *variable initialization.
@@ -91,7 +91,7 @@ public class List {
         // That is the initial value to use for size.
         size = 0;
     }
-    
+
     /*
      * The add method does what the name suggests. Add an int item to the list.
      * The assumption is to store the item at the end of the list What is the
@@ -221,7 +221,7 @@ public class List {
         }
         s += list[i] + "]";
         return s;
-    } 
+    }
     /*
      * Contains return true if the list has the item passed as an argument to
      * the method So, iterate through the list and return true if the item
@@ -264,7 +264,7 @@ public class List {
         return -1;
     }
     /*
-    Inserts all the elements of specified int array to the end of list    
+    Inserts all the elements of specified int array to the end of list
     */
     /**
      * Adds all.
@@ -280,7 +280,7 @@ public class List {
         }
     }
     /*
-     Removes all of its elements that are contained in the specified int 
+     Removes all of its elements that are contained in the specified int
      array.
     */
      /**
@@ -296,7 +296,7 @@ public class List {
     /*
     Returns a list object containing elements, including startIndex and
     excluding endIndex. The first parameter indicates the startIndex and the
-    second parameter indicates the endIndex. Returns null and print 
+    second parameter indicates the endIndex. Returns null and print
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
@@ -371,7 +371,7 @@ public class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                    if (tokens.length == 2){
+                    if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
                         if (t.length == 1) {
                             l.add(Integer.parseInt(tokens[1]));
@@ -426,15 +426,16 @@ public class List {
                         l.removeAll(a);
                     }
                 break;
-                case "subList": {
+                case "subList":
                     if (tokens.length != 2) break;
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(Integer.parseInt(arrstring3[0]),
                             Integer.parseInt(arrstring3[1]));
-                    if (object != null) 
+                    if (object != null) {
                         System.out.println(object);
+
+                    }
                     break;
-                }
                 case "equals":
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
