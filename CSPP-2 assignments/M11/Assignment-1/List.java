@@ -311,7 +311,10 @@ public class List {
      */
     public List subList(final int start, final int end) {
         List l = new List();
-        if (start >= end) {
+        if (start >= 0 || end >= 0) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        } if (start >= end) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         } if (start < 0 || end < 0) {
