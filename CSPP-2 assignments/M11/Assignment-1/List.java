@@ -335,13 +335,14 @@ public class List {
     public boolean equals(final List lis) {
     // Replace the code below
         // lis = new List();
-        int count = 0;
-        for (int i = 0; i < lis.size(); i++) {
-            if (contains(lis.get(i))) {
-                count++;
-            }
-        }
-    return (count == lis.size());
+    //     int count = 0;
+    //     for (int i = 0; i < lis.size(); i++) {
+    //         if (contains(lis.get(i))) {
+    //             count++;
+    //         }
+    //     }
+    // return (count == lis.size());
+        return lis.toString().equals(this.toString());
     }
     /*
     * Removes all the elements from list
