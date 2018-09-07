@@ -290,9 +290,11 @@ public class List {
       * @param      newArray  The new array
       */
      public void removeAll(final int[] newArray) {
-        for (int i = 0; i < newArray.length; i++) {
-            if (contains(newArray[i])) {
-                remove(indexOf(newArray[i]));
+        for (int each : newArray) {
+            for (int i = 0; i < newArray.length; i++) {
+                if (contains(newArray[i])) {
+                    remove(indexOf(newArray[i]));
+                }
             }
         }
      }
