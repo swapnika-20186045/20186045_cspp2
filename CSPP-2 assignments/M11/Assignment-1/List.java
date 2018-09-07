@@ -198,12 +198,12 @@ public class List {
         if (size == 0) {
             return "[]";
         }
-        String s = "[";
+        String s = "";
         int i;
         for (i = 0; i < size - 1; i++) {
             s += list[i] + ",";
         }
-        s += list[i] + "]";
+        s += list[i];
         return s;
     } 
     /*
