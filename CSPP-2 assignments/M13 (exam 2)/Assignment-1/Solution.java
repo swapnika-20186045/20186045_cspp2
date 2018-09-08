@@ -74,7 +74,7 @@ class Set {
         return s;
     }
     /**
-     * { function_description }
+     * get the index of elements.
      *
      * @param      index  The index
      *
@@ -122,7 +122,7 @@ class Set {
     public void add(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
             if (contains(newArray[i]) == false) {
-                add(newArray[i]);   
+                add(newArray[i]);
             }
         }
     }
@@ -137,9 +137,9 @@ class Set {
         Set value = new Set();
         int count = 0;
         for (int i = 0; i < size(); i++) {
-            if(newArray.contains(get(i))) {
+            if (newArray.contains(get(i))) {
                 int temp = (get(i));
-                value.add(temp);  
+                value.add(temp);
             }
         }
         if (value.size == 0) {
@@ -159,7 +159,7 @@ class Set {
         for (int i = 0; i < newArray.length; i++) {
             if (contains(newArray[i])) {
                 int temp = (get(indexOf(newArray[i])));
-                value.add(temp);  
+                value.add(temp);
             }
         }
         if (value.size == 0) {
