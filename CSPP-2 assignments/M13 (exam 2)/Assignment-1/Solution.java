@@ -158,7 +158,6 @@ class Set {
         Set value = new Set();
         for (int i = 0; i < newArray.length; i++) {
                 value.add(newArray[i]);
-            
         }
         return intersection(value);
     }
@@ -175,7 +174,7 @@ class Set {
         for (int i = 0; i < size(); i++) {
             for (int j = 0; j < newSet.size(); j++) {
             // System.out.print(set[i]+", "
-            //                  + newSet[j]); 
+            //                  + newSet[j]);
             }
         }
         return null;
