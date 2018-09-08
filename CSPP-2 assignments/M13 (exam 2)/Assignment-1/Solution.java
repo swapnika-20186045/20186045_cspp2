@@ -178,7 +178,10 @@ class Set {
     public int[][] cartesianProduct(final Set newSet) {
         int[][] matrix;
         for (int i = 0; i < size(); i++) {
-
+            for (int j = 0; j < newSet.size(); j++) {
+            // System.out.print(set[i]+", "
+            //                  + newSet[j]); 
+            }
         }
         return null;
     }
