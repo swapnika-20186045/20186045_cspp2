@@ -157,15 +157,10 @@ class Set {
     public Set retainAll(final int[] newArray) {
         Set value = new Set();
         for (int i = 0; i < newArray.length; i++) {
-            if (contains(newArray[i])) {
-                int temp = (get(indexOf(newArray[i])));
-                value.add(temp);
-            }
+                value.add(newArray[i]);
+            
         }
-        if (value.size == 0) {
-            return value;
-        }
-        return value;
+        return intersection(value);
     }
     /**
      * Return a 2D array to represent the ordered pairs that results
