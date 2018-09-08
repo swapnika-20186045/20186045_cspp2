@@ -156,7 +156,6 @@ class Set {
      */
     public Set retainAll(final int[] newArray) {
         Set value = new Set();
-        // int count = 0;
         for (int i = 0; i < newArray.length; i++) {
             if (contains(newArray[i])) {
                 int temp = (get(indexOf(newArray[i])));
