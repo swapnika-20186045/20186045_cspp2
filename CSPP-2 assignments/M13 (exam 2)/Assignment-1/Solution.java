@@ -121,7 +121,7 @@ class Set {
      */
     public void add(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
-            if (contains(newArray[i]) == false) {
+            if (!contains(newArray[i])) {
                 add(newArray[i]);
             }
         }
@@ -175,6 +175,7 @@ class Set {
             for (int j = 0; j < newSet.size(); j++) {
             // System.out.print(set[i]+", "
             //                  + newSet[j]);
+                break;
             }
         }
         return null;
@@ -276,3 +277,4 @@ public final class Solution {
         }
     }
 }
+
