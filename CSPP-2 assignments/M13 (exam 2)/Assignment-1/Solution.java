@@ -22,7 +22,7 @@ class Set {
     /**
      * Constructs the object.
      */
-    public Set() {
+    Set() {
         set = new int[TEN];
         size = 0;
     }
