@@ -68,7 +68,7 @@ class Set {
         String s = "{";
         int i;
         for (i = 0; i < size - 1; i++) {
-            s += set[i] + ",";
+            s += set[i] + ", ";
         }
         s += set[i] + "}";
         return s;
@@ -179,7 +179,7 @@ class Set {
     public int[][] cartesianProduct(final Set newSet) {
         int[][] matrix;
         for (int i = 0; i < size(); i++) {
-        
+
         }
         return null;
     }
