@@ -36,7 +36,7 @@ public class List<E> {
     **/
     public List() {
         // Create a variable of the type Object[]
-        list = ((E[])new Object[TEN]);
+        list = ((E[]) new Object[TEN]);
         //Object is the base class for all the classes
         size = 0;
     }
@@ -45,7 +45,7 @@ public class List<E> {
     *@param param The param
     **/
     public List(final int param) {
-        list = ((E[])new Object[param]);
+        list = ((E[]) new Object[param]);
         size = 0;
     }
     /* The add method does what the name suggests.
@@ -68,7 +68,7 @@ public class List<E> {
         list[(size++)] = item;
     }
     /**Inserts all the elements of specified int
-    array to the end of list
+    *array to the end of list.
     *@param items  The items
     **/
     public void addAll(final E[] items) {
@@ -97,7 +97,7 @@ public class List<E> {
      * @return     int
      */
     public int size() {
-    	return size;
+        return size;
     }
     /*
      * The remove method does what the name suggests.
@@ -208,7 +208,7 @@ public class List<E> {
      * @return     { description_of_the_return_value }
      */
     public boolean contains(final E item) {
-		return indexOf(item) > -1;
+        return indexOf(item) > -1;
     }
     /*
      * Returns the index of the first occurrence
@@ -234,6 +234,11 @@ public class List<E> {
     /* Removes all of its elements that
      * are contained in the specified int array.
      */
+    /**
+     * Removes all.
+     *
+     * @param      items  The items
+     */
     public void removeAll(final E[] items) {
         for (int i = 0; i < items.length; i++) {
             if (contains(items[i])) {
@@ -247,6 +252,14 @@ public class List<E> {
      indicates the startIndex and the second parameter
      indicates the endIndex.
      */
+     /**
+      * checks the sublist.
+      *
+      * @param      n     { parameter_description }
+      * @param      n2    The n 2
+      *
+      * @return     { description_of_the_return_value }
+      */
     public List subList(final int n, final int n2) {
         List l = new List();
         if (n < 0 || n2 < 0) {
@@ -262,7 +275,7 @@ public class List<E> {
             return null;
         } else {
             for (int i = n; i < n2; i++) {
-                    l.add(list[i]);
+                l.add(list[i]);
             }
             return l;
         }
@@ -270,11 +283,21 @@ public class List<E> {
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
      */
+    /**
+    * checks whether the list object is in given list or not.
+    *
+    * @param      listdata  The listdata
+    *
+    * @return     { description_of_the_return_value }
+    */
     public boolean equals(final List<E> listdata)
     {
         return listdata.toString().equals(this.toString());
     }
     /*Removes all the elements from list*/
+    /**
+     * clears all the elements.
+     */
     public void clear()
     {
         size = 0;
