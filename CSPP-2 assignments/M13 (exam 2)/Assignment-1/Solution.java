@@ -170,15 +170,19 @@ class Set {
      * @return     int[][]
      */
     public int[][] cartesianProduct(final Set newSet) {
-        int[][] matrix;
-        for (int i = 0; i < size(); i++) {
+        // Set value = new Set();
+        if (newSet.size() == 0 || this.size() == 0) {
+          return null;
+        }
+        int[][] matrix = new int[this.size() * newSet.size()][2];
+        int count = 0;
+        for (int i = 0; i < this.size(); i++) {
             for (int j = 0; j < newSet.size(); j++) {
-            // System.out.print(set[i]+", "
-            //                  + newSet[j]);
-                break;
+                matrix[count][0] = this.get(i);
+                matrix[count++][1] = newSet.get(j);
             }
         }
-        return null;
+        return matrix;
     }
 
 }
