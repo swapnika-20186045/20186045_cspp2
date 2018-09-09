@@ -290,16 +290,14 @@ public class List<E> {
     *
     * @return     { description_of_the_return_value }
     */
-    public boolean equals(final List<E> listdata)
-    {
+    public boolean equals(final List<E> listdata) {
         return listdata.toString().equals(this.toString());
     }
     /*Removes all the elements from list*/
     /**
      * clears all the elements.
      */
-    public void clear()
-    {
+    public void clear() {
         size = 0;
     }
 }
