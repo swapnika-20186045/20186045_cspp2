@@ -19,21 +19,32 @@ import java.util.Arrays;
  * @param      <E>   { parameter_description }
  */
 public class List<E> {
+    /**
+     *declaration private.
+     **/
     private E[] list;
+    /**
+     * private declaration for size.
+     **/
     private int size;
+    /**
+    *@variable TEN
+    **/
+    private static final int TEN = 10;
     /**
     *object construction.
     **/
     public List() {
         // Create a variable of the type Object[]
-        list = ((E[])new Object[10]);
+        list = ((E[])new Object[TEN]);
         //Object is the base class for all the classes
         size = 0;
     }
     /**
     *Overloaded Constructor.
+    *@param param The param
     **/
-    public List(int param) {
+    public List(final int param) {
         list = ((E[])new Object[param]);
         size = 0;
     }
@@ -50,7 +61,7 @@ public class List<E> {
      *
      * @param      item  The item
      */
-    public void add(E item) {
+    public void add(final E item) {
         if (size == list.length) {
             resize();
         }
@@ -60,7 +71,7 @@ public class List<E> {
     array to the end of list
     *@param items  The items
     **/
-    public void addAll(E[] items) {
+    public void addAll(final E[] items) {
         //Write logic for addAll method
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
@@ -113,7 +124,7 @@ public class List<E> {
      *
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         if (index >= 0 && index < size) {
             for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
@@ -141,7 +152,7 @@ public class List<E> {
      *
      * @return     { description_of_the_return_value }
      */
-    public E get(int index) {
+    public E get(final int index) {
          //Write logic for get method
         // return list[index];
         return list[index];
@@ -196,7 +207,7 @@ public class List<E> {
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean contains(E item) {
+    public boolean contains(final E item) {
 		return indexOf(item) > -1;
     }
     /*
@@ -211,7 +222,7 @@ public class List<E> {
      *
      * @return     { description_of_the_return_value }
      */
-    public int indexOf(E item) {
+    public int indexOf(final E item) {
        for (int i = 0; i < size; i++) {
             if (list[i].equals(item)) {
                 return i;
@@ -223,7 +234,7 @@ public class List<E> {
     /* Removes all of its elements that
      * are contained in the specified int array.
      */
-    public void removeAll(E[] items) {
+    public void removeAll(final E[] items) {
         for (int i = 0; i < items.length; i++) {
             if (contains(items[i])) {
                 remove(indexOf(items[i]));
@@ -236,7 +247,7 @@ public class List<E> {
      indicates the startIndex and the second parameter
      indicates the endIndex.
      */
-    public List subList(int n, int n2) {
+    public List subList(final int n, final int n2) {
         List l = new List();
         if (n < 0 || n2 < 0) {
             System.out.println("Index Out of Bounds Exception");
@@ -259,7 +270,7 @@ public class List<E> {
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
      */
-    public boolean equals(List<E> listdata)
+    public boolean equals(final List<E> listdata)
     {
         return listdata.toString().equals(this.toString());
     }
