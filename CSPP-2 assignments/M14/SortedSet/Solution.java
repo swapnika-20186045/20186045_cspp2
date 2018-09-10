@@ -156,7 +156,7 @@ class Set {
             return null;
         }
         for (int i = 0; i < size(); i++) {
-            if(get(i)>=fromElement && get(i)<toElement){
+            if (get(i) >= fromElement && get(i) < toElement) {
                 s.add(set[i]);
             }
             // System.out.print(set[i]+" ");
@@ -182,7 +182,7 @@ class Set {
      * @param toElement   The last element
      */
     public Set headSet(int toElement) {
-        if (toElement<get(0)){
+        if (toElement < get(0)) {
             return new Set();
         }
         return this.subSet(get(0), toElement);
@@ -195,7 +195,7 @@ class Set {
     public int last() {
         if (size <= 0) {
             System.out.println("Set Empty Exception");
-
+            return 0;
         }
         return this.get(size - 1);
     }
@@ -283,7 +283,10 @@ public final class Solution {
                 System.out.println(s.headSet(toElement).toString());
                 break;
             case "last":
-                System.out.println(s.last());
+                int ls = s.last();
+                if(ls != 0){
+                    System.out.println(ls);
+                }
                 break;
             default:
                 break;
