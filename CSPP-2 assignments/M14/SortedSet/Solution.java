@@ -111,9 +111,36 @@ class Set {
                 resize();
             }
             set[size++] = value;
-            Arrays.sort(set);
+            sortSet();
         }
     }
+
+    public void sortSet() {
+        for (int i = 0; i < size(); i++) {
+            for (int j = 0; j < size(); j++) {
+                if (set[i] < set[j]) {
+                    int temp = set[j];
+                    set[j] = set[i];
+                    set[i] = temp;
+                }
+            }
+        }
+    }
+
+    /**
+     * Add the items given in the int array to the Set.
+     *
+     * @param      newArray  The new array
+     */
+    public void addAll(int[] newArray) {
+        for (int i = 0; i < newArray.length; i++) {
+            if (size+newArray.length >= set.length) {
+                resize();
+            }
+            add(newArray[i]);
+        }
+    }
+
     /**
      * subset.
      *
@@ -128,9 +155,11 @@ class Set {
             System.out.println("Invalid Arguments to Subset Exception");
             return null;
         }
-        for (int i = fromElement; i < toElement; i++) {
+        for (int i = indexOf(fromElement); i < indexOf(toElement); i++) {
             s.add(set[i]);
+            // System.out.print(set[i]+" ");
         }
+        // System.out.println();
         return s.toArray();
     }
     /**
@@ -151,7 +180,7 @@ class Set {
      * @param toElement   The last element
      */
     public int[] headSet(int toElement) {
-        return this.subSet(0, toElement);
+        return this.subSet(get(0), toElement);
     }
     /**
      * print the last element of the set.
@@ -164,18 +193,6 @@ class Set {
 
         }
         return this.get(size - 1);
-    }
-    /**
-     * Add the items given in the int array to the Set.
-     *
-     * @param      newArray  The new array
-     */
-    public void addAll(int[] newArray) {
-        for (int i = 0; i < newArray.length; i++) {
-            if (!contains(newArray[i])) {
-                add(newArray[i]);
-            }
-        }
     }
 }
 
@@ -232,7 +249,7 @@ public final class Solution {
                 System.out.println(s.size());
                 break;
             case "print":
-                System.out.println(s);
+                System.out.println(s.toString());
                 break;
             case "add":
                 int[] intArray1 = intArray(tokens[1]);
@@ -250,11 +267,12 @@ public final class Solution {
                 int[] intArray3 = intArray(tokens[1]);
                 int fromElement = intArray3[0];
                 int toElement = intArray3[1];
-                System.out.println(s.subSet(fromElement, toElement));
+                // System.out.println("subset");
+                System.out.println(s.subSet(fromElement, toElement).toString());
                 break;
             case "headSet":
                 toElement = Integer.parseInt(tokens[1]);
-                System.out.println(s.headSet(toElement));
+                System.out.println(s.headSet(toElement).toString());
                 break;
             case "last":
                 System.out.println(s.last());
