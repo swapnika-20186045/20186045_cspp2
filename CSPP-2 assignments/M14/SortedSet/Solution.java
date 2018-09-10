@@ -114,7 +114,9 @@ class Set {
             sortSet();
         }
     }
-
+    /**
+     * sort the set.
+     */
     public void sortSet() {
         for (int i = 0; i < size(); i++) {
             for (int j = 0; j < size(); j++) {
@@ -132,7 +134,7 @@ class Set {
      *
      * @param      newArray  The new array
      */
-    public void addAll(int[] newArray) {
+    public void addAll(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
             if (size + newArray.length >= set.length) {
                 resize();
@@ -149,7 +151,7 @@ class Set {
      *
      * @return     { description_of_the_return_value }
      */
-    public Set subSet(int fromElement, int toElement) {
+    public Set subSet(final int fromElement, final int toElement) {
         Set s = new Set();
         if (fromElement > toElement) {
             System.out.println("Invalid Arguments to Subset Exception");
@@ -180,8 +182,9 @@ class Set {
     /**
      * print elements that are strictly less than toElement.
      * @param toElement   The last element
+     * @return Set
      */
-    public Set headSet(int toElement) {
+    public Set headSet(final int toElement) {
         if (toElement < get(0)) {
             return new Set();
         }
