@@ -134,7 +134,7 @@ class Set {
      */
     public void addAll(int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
-            if (size+newArray.length >= set.length) {
+            if (size + newArray.length >= set.length) {
                 resize();
             }
             add(newArray[i]);
@@ -155,21 +155,10 @@ class Set {
             System.out.println("Invalid Arguments to Subset Exception");
             return null;
         }
-        int fromIndex = 0, toIndex = 0;
-        for(int i=0;i<size();i++){
-            if(fromElement<=get(i)){
-                fromIndex = i;
-                break;
+        for (int i = 0; i < size(); i++) {
+            if(get(i)>=fromElement && get(i)<toElement){
+                s.add(set[i]);
             }
-        }
-        for(int i=0;i<size();i++){
-            if(toElement<=get(i)){
-                toIndex = i;
-                break;
-            }
-        }
-        for (int i = fromIndex; i < toIndex; i++) {
-            s.add(set[i]);
             // System.out.print(set[i]+" ");
         }
         // System.out.println();
@@ -193,6 +182,9 @@ class Set {
      * @param toElement   The last element
      */
     public Set headSet(int toElement) {
+        if (toElement<get(0)){
+            return new Set();
+        }
         return this.subSet(get(0), toElement);
     }
     /**
@@ -281,7 +273,10 @@ public final class Solution {
                 int fromElement = intArray3[0];
                 int toElement = intArray3[1];
                 // System.out.println("subset");
-                System.out.println(s.subSet(fromElement, toElement).toString());
+                Set ss = s.subSet(fromElement, toElement);
+                if (ss != null) {
+                    System.out.println(ss.toString());
+                }
                 break;
             case "headSet":
                 toElement = Integer.parseInt(tokens[1]);
