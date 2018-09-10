@@ -195,7 +195,7 @@ class Set {
     public int last() {
         if (size <= 0) {
             System.out.println("Set Empty Exception");
-            return 0;
+            return -1;
         }
         return this.get(size - 1);
     }
@@ -283,10 +283,7 @@ public final class Solution {
                 System.out.println(s.headSet(toElement).toString());
                 break;
             case "last":
-                int ls = s.last();
-                if(ls != 0){
-                    System.out.println(ls);
-                }
+                System.out.println(s.last());
                 break;
             default:
                 break;
