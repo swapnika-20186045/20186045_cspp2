@@ -149,18 +149,31 @@ class Set {
      *
      * @return     { description_of_the_return_value }
      */
-    public int[] subSet(int fromElement, int toElement) {
+    public Set subSet(int fromElement, int toElement) {
         Set s = new Set();
         if (fromElement > toElement) {
             System.out.println("Invalid Arguments to Subset Exception");
             return null;
         }
-        for (int i = indexOf(fromElement); i < indexOf(toElement); i++) {
+        int fromIndex = 0, toIndex = 0;
+        for(int i=0;i<size();i++){
+            if(fromElement<=get(i)){
+                fromIndex = i;
+                break;
+            }
+        }
+        for(int i=0;i<size();i++){
+            if(toElement<=get(i)){
+                toIndex = i;
+                break;
+            }
+        }
+        for (int i = fromIndex; i < toIndex; i++) {
             s.add(set[i]);
             // System.out.print(set[i]+" ");
         }
         // System.out.println();
-        return s.toArray();
+        return s;
     }
     /**
      * Returns a array representation of the object.
@@ -179,7 +192,7 @@ class Set {
      * print elements that are strictly less than toElement.
      * @param toElement   The last element
      */
-    public int[] headSet(int toElement) {
+    public Set headSet(int toElement) {
         return this.subSet(get(0), toElement);
     }
     /**
