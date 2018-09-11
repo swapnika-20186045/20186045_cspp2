@@ -500,11 +500,11 @@ public class List {
                 case "equals":
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
-                        int[] temp = new int[lt.length];
-                        for (int i = 0; i < lt.length; i++) {
-                            temp[i] = Integer.parseInt(lt[i]);
+                        List l2 = new List();
+                        for (int k = 0; k < lt.length; k++) {
+                            l2.add(Integer.parseInt(lt[k]));
                         }
-                        l.equals(temp);
+                        System.out.println(l.equals(l2));
                     }
                 break;
                 case "clear":
