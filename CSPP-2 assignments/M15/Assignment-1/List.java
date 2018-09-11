@@ -153,7 +153,7 @@ public class List {
      *remove the element.
      *
      * @param      index  The index
-     * @throws Exception
+     * @throws Exception    { exception_description }
      */
     public void remove(final int index) throws Exception {
         // write the logic for remove here. Think about what to do to the size
@@ -324,7 +324,7 @@ public class List {
       * Removes all.
       *
       * @param      newArray  The new array
-      * @throws Exception
+      * @throws Exception   { exception_description }
       */
      public void removeAll(final int[] newArray) throws Exception {
         for (int each : newArray) {
@@ -349,7 +349,7 @@ public class List {
      * @param      end    The end
      *
      * @return     { description_of_the_return_value }
-     * @throws Exception
+     * @throws Exception    { exception_description }
      */
     public List subList(final int start, final int end) throws Exception {
         List l = new List();
