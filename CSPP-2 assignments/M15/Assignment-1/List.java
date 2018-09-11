@@ -434,7 +434,7 @@ public class List {
                 case "remove":
                     try {
                         l.remove(Integer.parseInt(tokens[1]));
-                    } catch(Exception e) {
+                    } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
                 break;
@@ -477,7 +477,7 @@ public class List {
                             a[i] = Integer.parseInt(t2[i]);
                         } try {
                             l.removeAll(a);
-                        } catch(Exception e) {
+                        } catch (Exception e) {
                             System.out.println(e.getMessage());
                         }
                     }
@@ -490,7 +490,7 @@ public class List {
                             temp[i] = Integer.parseInt(t1[i]);
                         } try {
                             l.subList(temp[0], temp[1]);
-                        } catch(Exception e) {
+                        } catch (Exception e) {
                             System.out.println(e.getMessage());
                         }
                     }
