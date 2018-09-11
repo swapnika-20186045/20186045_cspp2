@@ -264,6 +264,41 @@ public class List {
         }
         return -1;
     }
+    /**
+     * frequency count of given item in list.
+     *
+     * @param      item  The item
+     *
+     * @return     int
+     */
+    public int count(final int item) {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (item == list[i]) {
+                count++;
+            }
+        }
+        return count;
+    }
+    /**
+     * add function.
+     *
+     * @param      index  The index
+     * @param      item   The item
+     */
+    public void add(final int index, final int item) {
+        if (index >= 0) {
+            for (int i = size; i > index; i--) {
+                list[i] = list[i - 1];
+            }
+            list[index] = item;
+            size++;
+        } else if (list.length == size) {
+            resize();
+        } else {
+            System.out.println("Negative Index Exception");
+        }
+    }
     /*
     Inserts all the elements of specified int array to the end of list
     */
@@ -402,6 +437,9 @@ public class List {
                     } catch(Exception e) {
                         System.out.println(e.getMessage());
                     }
+                break;
+                case "count":
+                    System.out.println(l.count(Integer.parseInt(tokens[1])));
                 break;
                 case "indexOf":
                     if (tokens.length == 2) {
