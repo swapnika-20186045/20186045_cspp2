@@ -349,13 +349,13 @@ public class List {
     public List subList(final int start, final int end) throws Exception {
         List l = new List();
         if (start <= 0 || end <= 0) {
-            throw new Exception("Index Out of Bounds Exception");
+            throw new Exception();
         }
         if (start > size || end > size) {
-            throw new Exception("Index Out of Bounds Exception");
+            throw new Exception();
         }
         if (start > end) {
-            throw new Exception("Index Out of Bounds Exception");
+            throw new Exception();
         } else {
             for (int i = start; i < end; i++) {
                     l.add(list[i]);
@@ -483,16 +483,18 @@ public class List {
                     }
                 break;
                 case "subList":
-                    if (tokens.length != 2) {
-                        String[] t1 = tokens[1].split(",");
-                        int[] temp = new int[t1.length];
-                        for (int i = 0; i < t1.length; i++) {
-                            temp[i] = Integer.parseInt(t1[i]);
-                        } try {
-                            l.subList(temp[0], temp[1]);
-                        } catch (Exception e) {
-                            System.out.println(e.getMessage());
+                    try {
+                        if (tokens.length != 2) {
+                            break;
                         }
+                        String[] arrstring3 = tokens[1].split(",");
+                        List object = l.subList(Integer.parseInt(arrstring3[0]),
+                                               Integer.parseInt(arrstring3[1]));
+                        if (object != null) {
+                            System.out.println(object);
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Index Out of Bounds Exception");
                     }
                 break;
                 case "equals":
