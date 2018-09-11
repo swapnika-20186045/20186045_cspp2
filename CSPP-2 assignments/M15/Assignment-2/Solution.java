@@ -233,6 +233,41 @@ class Set {
         }
         return size();
     }
+    /**
+     * Return a Set that contains common elements of this set and given set.
+     *
+     * @param      newArray  The new set
+     *
+     * @return     Set
+     */
+    public Set intersection(final Set newArray) {
+        Set value = new Set();
+        int count = 0;
+        for (int i = 0; i < size(); i++) {
+            if (newArray.contains(get(i))) {
+                int temp = (get(i));
+                value.add(temp);
+            }
+        }
+        if (value.size == 0) {
+            return value;
+        }
+        return value;
+    }
+    /**
+     * Return a Set with the items that are contained in given int array.
+     *
+     * @param      newArray  The value
+     *
+     * @return     Set
+     */
+    public Set retainAll(final int[] newArray) {
+        Set value = new Set();
+        for (int i = 0; i < newArray.length; i++) {
+                value.add(newArray[i]);
+        }
+        return intersection(value);
+    }
 }
 
 /**
@@ -340,6 +375,22 @@ public final class Solution {
                 } catch (SetEmptyException e) {
                     System.out.println(e.getMessage());
                 }
+                break;
+            case "intersection":
+                s = new Set();
+                Set t = new Set();
+                int[] intArray = intArray(tokens[1]);
+                s.addAll(intArray);
+                intArray = intArray(tokens[2]);
+                t.addAll(intArray);
+                System.out.println(s.intersection(t));
+                break;
+            case "retainAll":
+                s = new Set();
+                intArray = intArray(tokens[1]);
+                s.addAll(intArray);
+                intArray = intArray(tokens[2]);
+                System.out.println(s.retainAll(intArray));
                 break;
             default:
                 break;
