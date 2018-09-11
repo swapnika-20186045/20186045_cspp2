@@ -30,6 +30,9 @@ class InvalidSubsetSelectionException extends Exception {
         super(s);
     }
 }
+/**
+ * Class for set.
+ */
 class Set {
     /**
     *@variable TEN
@@ -174,6 +177,7 @@ class Set {
      * @param      toElement    To element
      *
      * @return     { description_of_the_return_value }
+     * @throws     InvalidSubsetSelectionException  { exception_description }
      */
     public int[] subSet(final int fromElement, final int toElement) throws
                                         InvalidSubsetSelectionException {
