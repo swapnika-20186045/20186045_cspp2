@@ -53,6 +53,9 @@ class Patron {
 	// public String[] getbookedSeats() {
 	// 	return this.bookedSeats;
 	// }
+	/**
+	*gives the name and number as a string.
+	**/
 	public String toString() {
         return customerName + " " + phoneNumber;
     }
@@ -65,12 +68,23 @@ class BookYourShow {
         showlist = new ArrayList<>();
         ticketlist = new ArrayList<>();
     }
-
-    public void addAShow(Show show) {
+    /**
+     * Adds a show to the showlist.
+     *
+     * @param      show  The show
+     */
+    public void addAShow(final Show show) {
         showlist.add(show);
     }
-
-    public Show getAShow(String movieName, String showTime) {
+    /**
+     * Gets a show.
+     *
+     * @param      movieName  The movie name
+     * @param      showTime   The show time
+     *
+     * @return     A show.
+     */
+    public Show getAShow(final String movieName, final String showTime) {
         for (Show show : showlist) {
             if (show.getName().equals(movieName) && show.getshowTime().equals(showTime)) {
                 return show;
@@ -78,7 +92,16 @@ class BookYourShow {
         }
         return null;
     }
-    public void bookAShow(String movieName, String showTime, Patron patron, String[] seats) {
+    /**
+     * book tickets for a show.
+     *
+     * @param      movieName  The movie name
+     * @param      showTime   The show time
+     * @param      patron     The patron
+     * @param      seats      The seats
+     */
+    public void bookAShow(final String movieName, final String showTime,
+    						final Patron patron, final String[] seats) {
         Show show = getAShow(movieName, showTime);
         boolean flag = false;
         if (show == null) {
@@ -98,7 +121,15 @@ class BookYourShow {
             ticketlist.add(patron.getphoneNumber() + " " + movieName + " " + showTime);
         }
     }
-    public void printTicket(String movie, String showTime, String phoneNumber) {
+    /**
+     * prints the ticket.
+     *
+     * @param      movie        The movie
+     * @param      showTime     The show time
+     * @param      phoneNumber  The phone number
+     */
+    public void printTicket(final String movie, final String showTime,
+    							final String phoneNumber) {
         String t = phoneNumber + " " + movie + " " + showTime;
         if (ticketlist.contains(t)) {
             System.out.println(t);
@@ -106,10 +137,13 @@ class BookYourShow {
             System.out.println("Invalid");
         }
     }
+    /**
+     * Shows all the shows.
+     */
     public void showAll() {
         for (Show show : showlist) {
-            System.out.println(show.toString() + "," +
-                Arrays.toString(show.getseats()).replace(" ",""));
+            System.out.println(show.toString() + ","
+            	+ Arrays.toString(show.getseats()).replace(" " , ""));
         }
     }
 }
