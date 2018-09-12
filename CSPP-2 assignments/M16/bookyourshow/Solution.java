@@ -80,7 +80,9 @@ class Show {
         return movieName + "," + showTime;
     }
 }
-
+/**
+ * Class for patron.
+ */
 class Patron {
     /**
      * customername declaration.
@@ -90,9 +92,8 @@ class Patron {
      * phonenumber declaration.
      */
     private String phoneNumber;
-    // private String[] bookedSeats;
     /**
-    *default constructor
+    *default constructor.
     **/
     Patron() {
     }
@@ -128,6 +129,7 @@ class Patron {
     // }
     /**
     *gives the name and number as a string.
+    *@return string   The string
     **/
     public String toString() {
         return customerName + " " + phoneNumber;
@@ -226,7 +228,7 @@ class BookYourShow {
     public void showAll() {
         for (Show show : showlist) {
             System.out.println(show.toString() + ","
-                    + Arrays.toString(show.getseats()).replace(" " , ""));
+                    + Arrays.toString(show.getseats()).replace(" ", ""));
         }
     }
 }
