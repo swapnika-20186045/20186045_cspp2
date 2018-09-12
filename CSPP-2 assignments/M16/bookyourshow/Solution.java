@@ -54,7 +54,7 @@ class Patron {
 	// 	return this.bookedSeats;
 	// }
 	public String toString() {
-        return customerName + phoneNumber;
+        return customerName + " " + phoneNumber;
     }
 }
 class BookYourShow {
