@@ -34,7 +34,7 @@ class Show {
      * @param      showTime   The show time
      * @param      seats      The seats
      */
-    Show(String movieName, String showTime, String[] seats) {
+    Show(final String movieName, final String showTime, final String[] seats) {
         this.movieName = movieName;
         this.showTime = showTime;
         this.seats = seats;
@@ -94,7 +94,7 @@ class Patron {
     /**
     *default constructor
     **/
-    public Patron() {
+    Patron() {
     }
     /**
      * Constructs the object.
@@ -102,7 +102,7 @@ class Patron {
      * @param      customerName  The customer name
      * @param      phoneNumber   The phone number
      */
-    public Patron(String customerName, String phoneNumber) {
+    Patron(final String customerName, final String phoneNumber) {
         this.customerName = customerName;
         this.phoneNumber = phoneNumber;
         // this.bookedSeats = bookedSeats;
@@ -134,9 +134,17 @@ class Patron {
     }
 }
 class BookYourShow {
+    /**
+     * using arraylist to show shows.
+     */
     ArrayList<Show> showlist;
+    /**
+     * using arraylist to show tickets.
+     */
     ArrayList<String> ticketlist;
-
+    /**
+     * Constructs the object.
+     */
     BookYourShow() {
         showlist = new ArrayList<>();
         ticketlist = new ArrayList<>();
@@ -159,7 +167,8 @@ class BookYourShow {
      */
     public Show getAShow(final String movieName, final String showTime) {
         for (Show show : showlist) {
-            if (show.getName().equals(movieName) && show.getshowTime().equals(showTime)) {
+            if (show.getName().equals(movieName) && show.getshowTime().
+                                            equals(showTime)) {
                 return show;
             }
         }
@@ -191,7 +200,8 @@ class BookYourShow {
             }
         }
         if (flag) {
-            ticketlist.add(patron.getphoneNumber() + " " + movieName + " " + showTime);
+            ticketlist.add(patron.getphoneNumber() + " " + movieName
+                                                + " " + showTime);
         }
     }
     /**
@@ -216,7 +226,7 @@ class BookYourShow {
     public void showAll() {
         for (Show show : showlist) {
             System.out.println(show.toString() + ","
-                               + Arrays.toString(show.getseats()).replace(" " , ""));
+                    + Arrays.toString(show.getseats()).replace(" " , ""));
         }
     }
 }
