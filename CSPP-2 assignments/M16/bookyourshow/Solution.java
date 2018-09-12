@@ -5,52 +5,121 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
-
+/**
+ * Class for show.
+ */
 class Show {
+    /**
+     * moviename declaration.
+     */
     private String movieName;
+    /**
+     * showtime declaration.
+     */
     private String showTime;
+    /**
+     * seat numbers declaration.
+     */
     private String[] seats;
-
+    /**
+     * Constructs the object.
+     * default constructor.
+     */
     Show() {
     }
+    /**
+     * Constructs the object.
+     *
+     * @param      movieName  The movie name
+     * @param      showTime   The show time
+     * @param      seats      The seats
+     */
     Show(String movieName, String showTime, String[] seats) {
         this.movieName = movieName;
         this.showTime = showTime;
         this.seats = seats;
     }
+    /**
+     * Gets the name.
+     *
+     * @return  string   The name.
+     */
     public String getName() {
         return movieName;
     }
+    /**
+     * gets the showtime.
+     *
+     * @return   string  { description_of_the_return_value }
+     */
     public String getshowTime() {
         return showTime;
     }
+    /**
+     * gets the seat numbers.
+     *
+     * @return   stringarray  { description_of_the_return_value }
+     */
     public String[] getseats() {
         return seats;
     }
+    /**
+     * Sets the seats that are notavailable.
+     *
+     * @param      index  The index
+     */
     public void setSeatNA(int index) {
         seats[index] = "N/A";
     }
-
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return movieName + "," + showTime;
     }
 }
 
 class Patron {
+    /**
+     * customername declaration.
+     */
     private String customerName;
+    /**
+     * phonenumber declaration.
+     */
     private String phoneNumber;
     // private String[] bookedSeats;
-
+    /**
+    *default constructor
+    **/
     public Patron() {
     }
+    /**
+     * Constructs the object.
+     *
+     * @param      customerName  The customer name
+     * @param      phoneNumber   The phone number
+     */
     public Patron(String customerName, String phoneNumber) {
         this.customerName = customerName;
         this.phoneNumber = phoneNumber;
         // this.bookedSeats = bookedSeats;
     }
+    /**
+     * gets the customer name.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String getcustomerName() {
         return customerName;
     }
+    /**
+     * gets the phone number.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String getphoneNumber() {
         return phoneNumber;
     }
