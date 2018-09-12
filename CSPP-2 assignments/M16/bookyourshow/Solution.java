@@ -99,7 +99,7 @@ class BookYourShow {
         }
     }
     public void printTicket(String movie, String showTime, String phoneNumber) {
-        String t = phoneNumber + movie + showTime;
+        String t = phoneNumber + " " + movie + " " + showTime;
         if (ticketlist.contains(t)) {
             System.out.println(t);
         } else {
