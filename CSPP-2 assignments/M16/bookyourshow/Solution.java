@@ -34,10 +34,10 @@ class Show {
      * @param      showTime   The show time
      * @param      seats      The seats
      */
-    Show(final String movieName, final String showTime, final String[] seats) {
-        this.movieName = movieName;
-        this.showTime = showTime;
-        this.seats = seats;
+    Show(final String movieNamee, final String showTimee, final String[] seatss) {
+        this.movieName = movieNamee;
+        this.showTime = showTimee;
+        this.seats = seatss;
     }
     /**
      * Gets the name.
@@ -68,7 +68,7 @@ class Show {
      *
      * @param      index  The index
      */
-    public void setSeatNA(int index) {
+    public void setSeatNA(final int index) {
         seats[index] = "N/A";
     }
     /**
@@ -135,6 +135,9 @@ class Patron {
         return customerName + " " + phoneNumber;
     }
 }
+/**
+ * Class for book your show.
+ */
 class BookYourShow {
     /**
      * using arraylist to show shows.
