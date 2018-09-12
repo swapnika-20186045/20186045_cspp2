@@ -30,12 +30,11 @@ class Show {
     /**
      * Constructs the object.
      *
-     * @param      movieNamee  The movie name
-     * @param      showTimee   The show time
-     * @param      seatss      The seats
+     * @param      movieName  The movie name
+     * @param      showTime   The show time
+     * @param      seats      The seats
      */
-    Show(final String movieNamee, final String showTimee,
-                                final String[] seatss) {
+    Show(final String movieNamee, final String showTimee, final String[] seatss) {
         this.movieName = movieNamee;
         this.showTime = showTimee;
         this.seats = seatss;
@@ -101,10 +100,10 @@ class Patron {
     /**
      * Constructs the object.
      *
-     * @param      customerNamee  The customer name
-     * @param      phoneNumberr   The phone number
+     * @param      customerName  The customer name
+     * @param      phoneNumber   The phone number
      */
-    Patron(final String customerNamee, final String phoneNumberr) {
+    Patron(final String customerName, final String phoneNumber) {
         this.customerName = customerName;
         this.phoneNumber = phoneNumber;
         // this.bookedSeats = bookedSeats;
@@ -143,11 +142,11 @@ class BookYourShow {
     /**
      * using arraylist to show shows.
      */
-    private ArrayList<Show> showlist;
+    ArrayList<Show> showlist;
     /**
      * using arraylist to show tickets.
      */
-    private ArrayList<String> ticketlist;
+    ArrayList<String> ticketlist;
     /**
      * Constructs the object.
      */
