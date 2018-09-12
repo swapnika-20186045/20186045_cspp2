@@ -15,13 +15,13 @@ class Show {
 		this.seats = seats;
 	}
 	public String getName() {
-		return this.movieName;
+		return movieName;
 	}
 	public String getshowTime() {
-		return this.showTime;
+		return showTime;
 	}
 	public String[] getseats() {
-		return this.seats;
+		return seats;
 	}
 	public void setSeatNA(int index) {
         seats[index] = "N/A";
@@ -45,10 +45,10 @@ class Patron {
 		// this.bookedSeats = bookedSeats;
 	}
 	public String getcustomerName() {
-		return this.customerName;
+		return customerName;
 	}
 	public String getphoneNumber() {
-		return this.phoneNumber;
+		return phoneNumber;
 	}
 	// public String[] getbookedSeats() {
 	// 	return this.bookedSeats;
@@ -95,7 +95,7 @@ class BookYourShow {
                 }
             }
         if (flag) {
-            ticketlist.add(patron.getphoneNumber() + movieName + showTime);
+            ticketlist.add(patron.getphoneNumber() + " " + movieName + " " + showTime);
         }
     }
     public void printTicket(String movie, String showTime, String phoneNumber) {
