@@ -200,7 +200,7 @@ class ShoppingCart {
 		System.out.println("Total:" + total);
 		System.out.println("Disc%:" + (discount));
 		System.out.println("Tax:" + (0.15 * total));
-		System.out.println("Payable amount:" + getPayableAmount());
+		System.out.println("Payable amount: " + getPayableAmount());
 	}
 }
 public class Solution {
