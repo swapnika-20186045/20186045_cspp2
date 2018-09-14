@@ -194,7 +194,7 @@ class ShoppingCart {
 		System.out.println("Invalid coupon");
 	}
 	public void printInvoice() {
-		System.out.println("productname quantity unitprice");
+		System.out.println("Name quantity Price");
 		showCart();
 		double total = getTotalAmount();
 		System.out.println("Total:" + total);
