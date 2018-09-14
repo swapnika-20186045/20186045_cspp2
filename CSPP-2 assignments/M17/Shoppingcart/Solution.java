@@ -191,7 +191,7 @@ class ShoppingCart {
 	}
 	private void getcoupon() {
 		flag = true;
-		discount = discount / 10;
+		discount += discount / 10;
 	}
 	public void applycoupon(String coupon) {
 		for (int i = 0; i < coupons.length; i++) {
