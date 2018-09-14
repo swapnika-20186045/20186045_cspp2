@@ -20,18 +20,6 @@ class Item {
      */
     private double unitprice;
     /**
-    *@variable THREE
-    **/
-    private static final int THREE = 3;
-    /**
-    *@variable FIFTEEN
-    **/
-    private static final double FIFTEEN = 0.15;
-    /**
-    *@variable TEN
-    **/
-    private static final int TEN = 10;
-    /**
      * Constructs the object.
      * default constructor.
      */
@@ -136,6 +124,18 @@ class ShoppingCart {
      * discount declaration.
      */
     private double discount;
+    /**
+    *@variable THREE
+    **/
+    private static final int THREE = 3;
+    /**
+    *@variable FIFTEEN
+    **/
+    private static final double FIFTEEN = 0.15;
+    /**
+    *@variable TEN
+    **/
+    private static final int TEN = 10;
     /**
      * Constructs the object.
      */
@@ -278,7 +278,7 @@ class ShoppingCart {
         double amount = getTotalAmount();
         // System.out.println("187 " + discount);
         amount = (1 - discount) * amount;
-        amount += (0.15 * amount);
+        amount += (FIFTEEN * amount);
         return amount;
     }
     /**
@@ -290,8 +290,8 @@ class ShoppingCart {
         if (discount == 0) {
             for (int i = 0; i < coupons.length; i++) {
                 if (coupons[i].equals(coupon)) {
-                    discount = Double.parseDouble(coupon.substring(3,
-                        coupon.length() - 1)) / 10;
+                    discount = Double.parseDouble(coupon.substring(THREE,
+                        coupon.length() - 1)) / TEN;
                     // getcoupon();
                     return;
                 }
@@ -308,14 +308,14 @@ class ShoppingCart {
         double total = getTotalAmount();
         System.out.println("Total:" + (total));
         System.out.println("Disc%:" + (total * discount));
-        System.out.println("Tax:" + (0.15 * (total * (1 - discount))));
+        System.out.println("Tax:" + (FIFTEEN * (total * (1 - discount))));
         System.out.println("Payable amount: " + getPayableAmount());
     }
 }
 /**
  * Class for solution.
  */
-public class Solution {
+class Solution {
     /**
      * main function.
      *
