@@ -20,6 +20,18 @@ class Item {
      */
     private double unitprice;
     /**
+    *@variable THREE
+    **/
+    private static final int THREE = 3;
+    /**
+    *@variable FIFTEEN
+    **/
+    private static final double FIFTEEN = 0.15;
+    /**
+    *@variable TEN
+    **/
+    private static final int TEN = 10;
+    /**
      * Constructs the object.
      * default constructor.
      */
@@ -191,8 +203,8 @@ class ShoppingCart {
             } else {
                 //item is present in cart
                 Item oldItem = cart.get(indexCart);
-                oldItem.setquantity(oldItem.getQuantity() +
-                                        item.getQuantity());
+                oldItem.setquantity(oldItem.getQuantity()
+                                        + item.getQuantity());
             }
         }
 
@@ -216,8 +228,8 @@ class ShoppingCart {
             if (indexCart != -1) {
                 Item oldItem = cart.get(indexCart);
                 if (oldItem.getQuantity() - item.getQuantity() > 0) {
-                    oldItem.setquantity(oldItem.getQuantity() -
-                                        item.getQuantity());
+                    oldItem.setquantity(oldItem.getQuantity()
+                                        - item.getQuantity());
                 } else if (oldItem.getQuantity() - item.getQuantity() == 0) {
                     cart.remove(indexCart);
                 }
@@ -231,8 +243,8 @@ class ShoppingCart {
      */
     public void show() {
         for (int i = 0; i < cart.size(); i++) {
-            System.out.println(cart.get(i).getProductName() + " " +
-                               cart.get(i).getQuantity());
+            System.out.println(cart.get(i).getProductName() + " "
+                               + cart.get(i).getQuantity());
         }
     }
     /**
@@ -240,8 +252,8 @@ class ShoppingCart {
      */
     public void showCart() {
         for (int i = 0; i < cart.size(); i++) {
-            System.out.println(cart.get(i).getProductName() + " " +
-                cart.get(i).getQuantity() + " " + cart.get(i).getUnitPrice());
+            System.out.println(cart.get(i).getProductName() + " "
+             + cart.get(i).getQuantity() + " " + cart.get(i).getUnitPrice());
         }
     }
     /**
@@ -304,7 +316,12 @@ class ShoppingCart {
  * Class for solution.
  */
 public class Solution {
-    public static void main(String[] args) {
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         ShoppingCart cart = new ShoppingCart();
         Scanner scan = new Scanner(System.in);
         while (scan.hasNext()) {
@@ -312,21 +329,21 @@ public class Solution {
             switch (tokens[0]) {
             case "Item":
                 String[] items = tokens[1].split(",");
-                cart.addToCatalog(new Item(items[0], Integer.parseInt
-                                (items[1]), Double.parseDouble(items[2])));
+                cart.addToCatalog(new Item(items[0], Integer.parseInt(
+                                items[1]), Double.parseDouble(items[2])));
                 // System.out.println(tokens[1]);
                 break;
             case "add":
                 items = tokens[1].split(",");
-                cart.addToCart(new Item(items[0], Integer.parseInt
-                                        (items[1])));
+                cart.addToCart(new Item(items[0], Integer.parseInt(
+                                        items[1])));
                 // System.out.println(tokens[1]);
                 break;
             case "remove":
                 // System.out.println(tokens[1]);
                 items = tokens[1].split(",");
-                cart.removeFromCart(new Item(items[0], Integer.parseInt
-                                             (items[1])));
+                cart.removeFromCart(new Item(items[0], Integer.parseInt(
+                                             items[1])));
                 break;
             case "show":
                 // System.out.println("cart");
@@ -336,8 +353,8 @@ public class Solution {
                 System.out.println("totalAmount: " + cart.getTotalAmount());
                 break;
             case "payableAmount":
-                System.out.println("Payable amount: " +
-                                    cart.getPayableAmount());
+                System.out.println("Payable amount: "
+                                    + cart.getPayableAmount());
                 break;
             case "catalog":
                 cart.showCatalog();
