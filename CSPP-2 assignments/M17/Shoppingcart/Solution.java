@@ -2,21 +2,21 @@ import java.util.Scanner;
 import java.util.Arrays;
 class Item {
 	/**
-     * productname declaration.
-     */
-    private String productname;
-    /**
-     * quantity declaration.
-     */
-    private int quantity;
-    /**
-     * unitprice declaration.
-     */
-    private double unitprice;
-    /**
-     * Constructs the object.
-     * default constructor.
-     */
+	 * productname declaration.
+	 */
+	private String productname;
+	/**
+	 * quantity declaration.
+	 */
+	private int quantity;
+	/**
+	 * unitprice declaration.
+	 */
+	private double unitprice;
+	/**
+	 * Constructs the object.
+	 * default constructor.
+	 */
 	Item() {
 	}
 	/**
@@ -28,49 +28,49 @@ class Item {
 	 */
 	Item(final String name, final int toquantity, final double price) {
 		this.productname = name;
-        this.quantity = toquantity;
-        this.unitprice = price;
+		this.quantity = toquantity;
+		this.unitprice = price;
 	}
 	Item(String name, int toquantity) {
 		productname = name;
 		quantity = toquantity;
 	}
 	/**
-     * Gets the product name.
-     *
-     * @return  string   The name.
-     */
-    public String getProductName() {
-        return productname;
-    }
-    /**
-     * gets the quantity.
-     *
-     * @return   int  { description_of_the_return_value }
-     */
-    public int getQuantity() {
-        return quantity;
-    }
-    /**
-     * gets the unitprice.
-     *
-     * @return   double  { description_of_the_return_value }
-     */
-    public double getUnitPrice() {
-        return unitprice;
-    }
-    public void setproductname(String pname) {
-    	this.productname = pname;
-    }
-    public void setquantity(int quant) {
-    	this.quantity = quant;
-    }
-    public void setunitprice(double giveprice) {
-    	this.unitprice = giveprice;
-    }
-    public String toString() {
-    	return this.productname + " " + this.quantity + " " + this.unitprice;
-    }
+	 * Gets the product name.
+	 *
+	 * @return  string   The name.
+	 */
+	public String getProductName() {
+		return productname;
+	}
+	/**
+	 * gets the quantity.
+	 *
+	 * @return   int  { description_of_the_return_value }
+	 */
+	public int getQuantity() {
+		return quantity;
+	}
+	/**
+	 * gets the unitprice.
+	 *
+	 * @return   double  { description_of_the_return_value }
+	 */
+	public double getUnitPrice() {
+		return unitprice;
+	}
+	public void setproductname(String pname) {
+		this.productname = pname;
+	}
+	public void setquantity(int quant) {
+		this.quantity = quant;
+	}
+	public void setunitprice(double giveprice) {
+		this.unitprice = giveprice;
+	}
+	public String toString() {
+		return this.productname + " " + this.quantity + " " + this.unitprice;
+	}
 }
 class ShoppingCart {
 	private List<Item> catalog;
@@ -102,16 +102,16 @@ class ShoppingCart {
 	}
 	public void showCatalog() {
 		for (int i = 0; i < catalog.size(); i++) {
-            System.out.println(catalog.get(i));
-        }
+			System.out.println(catalog.get(i));
+		}
 	}
 	private int index(String productname, List<Item> search) {
 		for (int i = 0; i < search.size(); i++) {
 			if (search.get(i).getProductName().equals(productname)) {
-            	return i;
+				return i;
 			}
-        }
-        return -1;
+		}
+		return -1;
 	}
 	public void addToCart(Item item) {
 		int indexCatalog = index(item.getProductName(), catalog);
@@ -152,8 +152,7 @@ class ShoppingCart {
 				Item oldItem = cart.get(indexCart);
 				if (oldItem.getQuantity() - item.getQuantity() > 0) {
 					oldItem.setquantity(oldItem.getQuantity() - item.getQuantity());
-				}
-				else if (oldItem.getQuantity() - item.getQuantity() == 0) {
+				} else if (oldItem.getQuantity() - item.getQuantity() == 0) {
 					cart.remove(indexCart);
 				}
 			} else {
@@ -164,15 +163,15 @@ class ShoppingCart {
 	}
 	public void show() {
 		for (int i = 0; i < cart.size(); i++) {
-            System.out.println(cart.get(i).getProductName() + " " +
-            	cart.get(i).getQuantity());
-        }
+			System.out.println(cart.get(i).getProductName() + " " +
+			                   cart.get(i).getQuantity());
+		}
 	}
 	public void showCart() {
 		for (int i = 0; i < cart.size(); i++) {
-            System.out.println(cart.get(i).getProductName() + " " +
-            	cart.get(i).getQuantity() + " " + cart.get(i).getUnitPrice());
-        }
+			System.out.println(cart.get(i).getProductName() + " " +
+			                   cart.get(i).getQuantity() + " " + cart.get(i).getUnitPrice());
+		}
 	}
 	public double getTotalAmount() {
 		double total = 0;
@@ -185,7 +184,7 @@ class ShoppingCart {
 	public double getPayableAmount() {
 		double amount = getTotalAmount();
 		// System.out.println("187 " + discount);
-		amount = (1-discount)*amount;
+		amount = (1 - discount) * amount;
 		amount += (0.15 * amount);
 		return amount;
 	}
@@ -194,11 +193,11 @@ class ShoppingCart {
 	// 	discount = discount / 10;
 	// }
 	public void applycoupon(String coupon) {
-		if(discount == 0){
+		if (discount == 0) {
 			for (int i = 0; i < coupons.length; i++) {
 				if (coupons[i].equals(coupon)) {
 					// System.out.println("200 " + coupon + "->" + coupon.substring(3, coupon.length() - 1));
-					discount = Double.parseDouble(coupon.substring(3, coupon.length() - 1))/10;
+					discount = Double.parseDouble(coupon.substring(3, coupon.length() - 1)) / 10;
 					// getcoupon();
 					return;
 				}
@@ -211,8 +210,8 @@ class ShoppingCart {
 		showCart();
 		double total = getTotalAmount();
 		System.out.println("Total:" + (total));
-		System.out.println("Disc%:" + (total*discount));
-		System.out.println("Tax:" + (0.15 * (total*(1-discount))));
+		System.out.println("Disc%:" + (total * discount));
+		System.out.println("Tax:" + (0.15 * (total * (1 - discount))));
 		System.out.println("Payable amount: " + getPayableAmount());
 	}
 }
@@ -220,48 +219,48 @@ public class Solution {
 	public static void main(String[] args) {
 		ShoppingCart cart = new ShoppingCart();
 		Scanner scan = new Scanner(System.in);
-		while(scan.hasNext()) {
+		while (scan.hasNext()) {
 			String[] tokens = scan.nextLine().split(" ");
 			switch (tokens[0]) {
-				case "Item":
-					String[] items = tokens[1].split(",");
-					cart.addToCatalog(new Item(items[0], Integer.parseInt
-						            (items[1]), Double.parseDouble(items[2])));
-					// System.out.println(tokens[1]);
+			case "Item":
+				String[] items = tokens[1].split(",");
+				cart.addToCatalog(new Item(items[0], Integer.parseInt
+				                           (items[1]), Double.parseDouble(items[2])));
+				// System.out.println(tokens[1]);
 				break;
-				case "add":
-					items = tokens[1].split(",");
-					cart.addToCart(new Item(items[0], Integer.parseInt
-						            (items[1])));
-					// System.out.println(tokens[1]);
+			case "add":
+				items = tokens[1].split(",");
+				cart.addToCart(new Item(items[0], Integer.parseInt
+				                        (items[1])));
+				// System.out.println(tokens[1]);
 				break;
-				case "remove":
-					// System.out.println(tokens[1]);
-					items = tokens[1].split(",");
-					cart.removeFromCart(new Item(items[0], Integer.parseInt
-						            (items[1])));
+			case "remove":
+				// System.out.println(tokens[1]);
+				items = tokens[1].split(",");
+				cart.removeFromCart(new Item(items[0], Integer.parseInt
+				                             (items[1])));
 				break;
-				case "show":
-					// System.out.println("cart");
-					cart.show();
+			case "show":
+				// System.out.println("cart");
+				cart.show();
 				break;
-				case "totalAmount":
-					System.out.println("totalAmount: " + cart.getTotalAmount());
+			case "totalAmount":
+				System.out.println("totalAmount: " + cart.getTotalAmount());
 				break;
-				case "payableAmount":
-					System.out.println("Payable amount: " + cart.getPayableAmount());
+			case "payableAmount":
+				System.out.println("Payable amount: " + cart.getPayableAmount());
 				break;
-				case "catalog":
-					cart.showCatalog();
+			case "catalog":
+				cart.showCatalog();
 				break;
-				case "coupon":
-					// System.out.println(tokens[1]);
-					cart.applycoupon(tokens[1]);
+			case "coupon":
+				// System.out.println(tokens[1]);
+				cart.applycoupon(tokens[1]);
 				break;
-				case "print":
-					cart.printInvoice();
+			case "print":
+				cart.printInvoice();
 				break;
-				default:
+			default:
 				break;
 			}
 		}
