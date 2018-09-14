@@ -315,11 +315,11 @@ class ShoppingCart {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
-    Solution() {
+    private Solution() {
         //not used.
     }
     /**
