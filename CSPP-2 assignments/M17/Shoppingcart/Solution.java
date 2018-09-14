@@ -194,15 +194,17 @@ class ShoppingCart {
 	// 	discount = discount / 10;
 	// }
 	public void applycoupon(String coupon) {
-		for (int i = 0; i < coupons.length; i++) {
-			if (coupons[i].equals(coupon)) {
-				// System.out.println("200 " + coupon + "->" + coupon.substring(3, coupon.length() - 1));
-				discount += Double.parseDouble(coupon.substring(3, coupon.length() - 1))/10;
-				// getcoupon();
-				return;
+		if(discount == 0){
+			for (int i = 0; i < coupons.length; i++) {
+				if (coupons[i].equals(coupon)) {
+					// System.out.println("200 " + coupon + "->" + coupon.substring(3, coupon.length() - 1));
+					discount = Double.parseDouble(coupon.substring(3, coupon.length() - 1))/10;
+					// getcoupon();
+					return;
+				}
 			}
+			System.out.println("Invalid coupon");
 		}
-		System.out.println("Invalid coupon");
 	}
 	public void printInvoice() {
 		System.out.println("Name   quantity   Price");
