@@ -189,16 +189,16 @@ class ShoppingCart {
 		amount += (0.15 * amount);
 		return amount;
 	}
-	private void getcoupon() {
-		flag = true;
-		discount += discount / 10;
-	}
+	// private void getcoupon() {
+	// 	flag = true;
+	// 	discount = discount / 10;
+	// }
 	public void applycoupon(String coupon) {
 		for (int i = 0; i < coupons.length; i++) {
 			if (coupons[i].equals(coupon)) {
 				// System.out.println("200 " + coupon + "->" + coupon.substring(3, coupon.length() - 1));
-				discount = Double.parseDouble(coupon.substring(3, coupon.length() - 1));
-				getcoupon();
+				discount += Double.parseDouble(coupon.substring(3, coupon.length() - 1))/10;
+				// getcoupon();
 				return;
 			}
 		}
