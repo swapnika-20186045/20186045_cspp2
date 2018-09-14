@@ -315,7 +315,13 @@ class ShoppingCart {
 /**
  * Class for solution.
  */
-class Solution {
+public class Solution {
+    /**
+     * Constructs the object.
+     */
+    Solution() {
+        //not used.
+    }
     /**
      * main function.
      *
