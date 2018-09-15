@@ -8,13 +8,13 @@ import java.util.ArrayList;
  * Class for quiz.
  */
 class Quiz {
-	/**
-	 * Question declaration as string.
-	 */
-	private String question;
-	/**
-	 * choice declaration as String[.]
-	 */
+    /**
+     * Question declaration as string.
+     */
+    private String question;
+    /**
+     * choice declaration as String[].
+     */
     private String[] choice;
     /**
      * correct variable declaration as string.
@@ -31,29 +31,39 @@ class Quiz {
     /**
      * Constructs the object.
      */
-	Quiz() {
-	}
-	Quiz(final String question, final String[] choice, final String correct,
-    		final String maxMarks, final String penality) {
-		this.question = question;
-		this.choice = choice;
-		this.correct = correct;
-		this.maxMarks = maxMarks;
-		this.penality = penality;
-	}
+    Quiz() {
+        //not used.
+    }
+    /**
+     * Constructs the object.
+     *
+     * @param      questionn  The questionn
+     * @param      choicee    The choicee
+     * @param      correctt   The correctt
+     * @param      maxMarkss  The maximum markss
+     * @param      penalityy  The penalityy
+     */
+    Quiz(final String questionn, final String[] choicee, final String correctt,
+            final String maxMarkss, final String penalityy) {
+        this.question = questionn;
+        this.choice = choicee;
+        this.correct = correctt;
+        this.maxMarks = maxMarkss;
+        this.penality = penalityy;
+    }
 }
 /**
  * Solution class for code-eval.
  */
 public final class Solution {
-	static ArrayList<Quiz> quizes = new ArrayList<Quiz>();
-	static ArrayList<Quiz> answers = new ArrayList<Quiz>();
-	//private List<Quiz> quizes;
+    static ArrayList<Quiz> quizes = new ArrayList<Quiz>();
+    static ArrayList<Quiz> answers = new ArrayList<Quiz>();
+    //private List<Quiz> quizes;
      /**
      * Constructs the object.
      */
     private Solution() {
-	// quizes = new List<Quiz>();
+    // quizes = new List<Quiz>();
         // leave this blank
     }
     /**
@@ -104,49 +114,50 @@ public final class Solution {
      * @param      quiz           The quiz object
      * @param      questionCount  The question count
      */
-    public static void loadQuestions(final Scanner s, Quiz quiz, int questionCount) {
+    public static void loadQuestions(final Scanner s, Quiz quiz,
+                                        int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-	    try {
-	        while(questionCount > 0) {
-	            String line = s.nextLine();
-	            String[] tokens = line.split(":");
-	            String[] choices = tokens[1].split(",");
-	            if(tokens[0].equals("")){
-	                System.out.println("Error! Malformed question");
-	                return;
-	            }
-	            if(choices.length <= 1) {
-	                System.out.println("question does not have enough answer choices");
-	                return;
-	            }
-	            if(Integer.parseInt(tokens[3]) < 0){
-	                System.out.println("Invalid max marks for question about sony");
-	                return;
-	            }
-	            if(Integer.parseInt(tokens[4]) > 0){
-	                System.out.println("Invalid penalty for question about sony");
-	                return;
-	            }
-	            if(!tokens[2].equals("1") && !tokens[2].equals("2") &&
-	            	!tokens[2].equals("3") && !tokens[2].equals("4")) {
-	                System.out.println("Error!Correct answer choice number is out of range");
-	                return;
-	            }
-	            Quiz q = new Quiz(tokens[0],choices,tokens[2],tokens[3],tokens[4]);
-	            quizes.add(q);
-	            questionCount--;
-	        }
-	        if(quizes.size() != 0) {
-	            System.out.println(quizes.size() + " are added to the quiz");
-	        }else {
-	            System.out.println("Quiz does not have questions");
-	        }
-	    } catch(Exception e) {
-	        System.out.println("Error! Malformed question");
-	    }
-	}
+        try {
+            while(questionCount > 0) {
+                String line = s.nextLine();
+                String[] tokens = line.split(":");
+                String[] choices = tokens[1].split(",");
+                if(tokens[0].equals("")){
+                    System.out.println("Error! Malformed question");
+                    return;
+                }
+                if(choices.length <= 1) {
+                    System.out.println("question does not have enough answer choices");
+                    return;
+                }
+                if(Integer.parseInt(tokens[3]) < 0){
+                    System.out.println("Invalid max marks for question about sony");
+                    return;
+                }
+                if(Integer.parseInt(tokens[4]) > 0){
+                    System.out.println("Invalid penalty for question about sony");
+                    return;
+                }
+                if(!tokens[2].equals("1") && !tokens[2].equals("2") &&
+                    !tokens[2].equals("3") && !tokens[2].equals("4")) {
+                    System.out.println("Error!Correct answer choice number is out of range");
+                    return;
+                }
+                Quiz q = new Quiz(tokens[0],choices,tokens[2],tokens[3],tokens[4]);
+                quizes.add(q);
+                questionCount--;
+            }
+            if(quizes.size() != 0) {
+                System.out.println(quizes.size() + " are added to the quiz");
+            }else {
+                System.out.println("Quiz does not have questions");
+            }
+        } catch(Exception e) {
+            System.out.println("Error! Malformed question");
+        }
+    }
     /**
      * Starts a quiz.
      *
