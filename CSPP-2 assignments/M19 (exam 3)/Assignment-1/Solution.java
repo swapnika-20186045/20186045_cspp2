@@ -59,11 +59,11 @@ public final class Solution {
     /**
      * using arraylist to use quizes as list.
      */
-    static ArrayList<Quiz> quizes = new ArrayList<Quiz>();
+    private static ArrayList<Quiz> quizes = new ArrayList<Quiz>();
     /**
      * using arraylist to use answers as list.
      */
-    static ArrayList<Quiz> answers = new ArrayList<Quiz>();
+    private static ArrayList<Quiz> answers = new ArrayList<Quiz>();
     //private List<Quiz> quizes;
      /**
      * Constructs the object.
