@@ -129,7 +129,7 @@ public final class Solution {
                     return;
                 }
                 if(choices.length <= 1) {
-                    System.out.println("question does not have enough answer choices");
+                    System.out.println("trick question  does not have enough answer choices");
                     return;
                 }
                 if(Integer.parseInt(tokens[3]) < 0){
@@ -142,7 +142,7 @@ public final class Solution {
                 }
                 if(!tokens[2].equals("1") && !tokens[2].equals("2") &&
                     !tokens[2].equals("3") && !tokens[2].equals("4")) {
-                    System.out.println("Error!Correct answer choice number is out of range");
+                    System.out.println("Error! Correct answer choice number is out of range for question text 1");
                     return;
                 }
                 Quiz q = new Quiz(tokens[0],choices,tokens[2],tokens[3],tokens[4]);
