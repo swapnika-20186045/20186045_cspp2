@@ -146,8 +146,8 @@ public final class Solution {
                     System.out.println("Invalid penalty for question about sony");
                     return;
                 }
-                if (!tokens[2].equals("1") && !tokens[2].equals("2") &&
-                    !tokens[2].equals("3") && !tokens[2].equals("4")) {
+                if (!tokens[2].equals("1") && !tokens[2].equals("2")
+                     && !tokens[2].equals("3") && !tokens[2].equals("4")) {
                     System.out.println("Error! Correct answer choice number is out of range for question text 1");
                     return;
                 }
