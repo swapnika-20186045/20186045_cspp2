@@ -120,7 +120,7 @@ public final class Solution {
      * @param      quiz           The quiz object
      * @param      questionCount  The question count
      */
-    public static void loadQuestions(final Scanner s, Quiz quiz,
+    public static void loadQuestions(final Scanner s, final Quiz quiz,
                                         int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
