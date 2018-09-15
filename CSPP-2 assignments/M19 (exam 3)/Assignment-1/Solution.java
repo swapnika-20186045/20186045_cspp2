@@ -212,7 +212,7 @@ public final class Solution {
         // write your code here to display the score report
         int sum = 0;
         for(int i = 0; i < quizes.size(); i++) {
-            System.out.println(quizes.get(i));
+            System.out.println(quizes.get(i).question);
         }
     }
 }
