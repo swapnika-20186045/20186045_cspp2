@@ -120,27 +120,27 @@ public final class Solution {
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
         try {
-            while(questionCount > 0) {
+            while (questionCount > 0) {
                 String line = s.nextLine();
                 String[] tokens = line.split(":");
                 String[] choices = tokens[1].split(",");
-                if(tokens[0].equals("")){
+                if (tokens[0].equals("")){
                     System.out.println("Error! Malformed question");
                     return;
                 }
-                if(choices.length <= 1) {
+                if (choices.length <= 1) {
                     System.out.println("trick question  does not have enough answer choices");
                     return;
                 }
-                if(Integer.parseInt(tokens[3]) < 0){
+                if (Integer.parseInt(tokens[3]) < 0){
                     System.out.println("Invalid max marks for question about sony");
                     return;
                 }
-                if(Integer.parseInt(tokens[4]) > 0){
+                if (Integer.parseInt(tokens[4]) > 0){
                     System.out.println("Invalid penalty for question about sony");
                     return;
                 }
-                if(!tokens[2].equals("1") && !tokens[2].equals("2") &&
+                if (!tokens[2].equals("1") && !tokens[2].equals("2") &&
                     !tokens[2].equals("3") && !tokens[2].equals("4")) {
                     System.out.println("Error! Correct answer choice number is out of range for question text 1");
                     return;
@@ -149,12 +149,12 @@ public final class Solution {
                 quizes.add(q);
                 questionCount--;
             }
-            if(quizes.size() != 0) {
+            if (quizes.size() != 0) {
                 System.out.println(quizes.size() + " are added to the quiz");
-            }else {
+            } else {
                 System.out.println("Quiz does not have questions");
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Error! Malformed question");
         }
     }
@@ -173,7 +173,7 @@ public final class Solution {
     }
 
     /**
-     * Displays the score report
+     * Displays the score report.
      *
      * @param      quiz     The quiz object
      */
