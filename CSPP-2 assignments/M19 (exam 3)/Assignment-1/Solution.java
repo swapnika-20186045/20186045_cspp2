@@ -177,11 +177,12 @@ public final class Solution {
         // store the user respones in the quiz object
         // System.out.println(quiz.getquestions());
         for (int i = 0; i < quizes.size(); i++) {
-            System.out.println(quizes.get(i).question + quizes.get(i).maxMarks);
+            System.out.println(quizes.get(i).question + "(" + quizes.get(i).maxMarks + ")");
             for (int j = 0 ; j < quizes.get(i).choice.length - 1; j++) {
-                System.out.print(quizes.get(i).choice[j]);
+                System.out.print(quizes.get(i).choice[j] + "    ");
             }
             System.out.print(quizes.get(i).choice[quizes.get(i).choice.length - 1]);
+            System.out.println();
         }
         while (answerCount > 0) {
             //System.out.println(answerCount + " counttt");
@@ -190,7 +191,7 @@ public final class Solution {
             //System.out.println(line + " lineeeee");
             if (token[1].equals("a")) {
                 token[1] = "1";
-            } else if (token[1].equals("b") ) {
+            } else if (token[1].equals("b")) {
                 token[1] = "2";
             } else if (token[1].equals("c")) {
                 token[1] = "3";
@@ -209,5 +210,9 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
+        int sum = 0;
+        for(int i = 0; i < quizes.size(); i++) {
+            System.out.println(quizes.get(i));
+        }
     }
 }
