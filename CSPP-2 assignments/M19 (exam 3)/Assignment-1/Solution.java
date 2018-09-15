@@ -56,7 +56,13 @@ class Quiz {
  * Solution class for code-eval.
  */
 public final class Solution {
+    /**
+     * using arraylist to use quizes as list.
+     */
     static ArrayList<Quiz> quizes = new ArrayList<Quiz>();
+    /**
+     * using arraylist to use answers as list.
+     */
     static ArrayList<Quiz> answers = new ArrayList<Quiz>();
     //private List<Quiz> quizes;
      /**
@@ -124,7 +130,7 @@ public final class Solution {
                 String line = s.nextLine();
                 String[] tokens = line.split(":");
                 String[] choices = tokens[1].split(",");
-                if (tokens[0].equals("")){
+                if (tokens[0].equals("")) {
                     System.out.println("Error! Malformed question");
                     return;
                 }
@@ -145,7 +151,7 @@ public final class Solution {
                     System.out.println("Error! Correct answer choice number is out of range for question text 1");
                     return;
                 }
-                Quiz q = new Quiz(tokens[0],choices,tokens[2],tokens[3],tokens[4]);
+                Quiz q = new Quiz(tokens[0], choices, tokens[2], tokens[3], tokens[4]);
                 quizes.add(q);
                 questionCount--;
             }
