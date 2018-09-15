@@ -213,6 +213,11 @@ public final class Solution {
         int sum = 0;
         for(int i = 0; i < quizes.size(); i++) {
             System.out.println(quizes.get(i).question);
+            if (answers.get(i).equals(quizes.get(i).correct)) {
+                System.out.println("Correct Answer! - Marks Awarded: "+quizes.get(i).maxMarks);
+            } else {
+                System.out.println("Correct Answer! - Marks Awarded: "+quizes.get(i).penality);
+            }
         }
     }
 }
