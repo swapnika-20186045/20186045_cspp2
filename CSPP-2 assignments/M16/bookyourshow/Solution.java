@@ -64,6 +64,14 @@ class Show {
         return seats;
     }
     /**
+     * print the except tickets.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public String printexceptTickets() {
+        return movieName + "," + showTime;
+    }
+    /**
      * Returns a string representation of the object.
      *
      * @return     String representation of the object.
@@ -317,7 +325,7 @@ public final class Solution {
             case "get":
                 Show show = bys.getAShow(check[1], tokens[1]);
                 if (show != null) {
-                    System.out.println(show);
+                    System.out.println(show.printexceptTickets());
                 } else {
                     System.out.println("No show");
                 }
