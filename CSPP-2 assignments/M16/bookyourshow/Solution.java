@@ -77,7 +77,8 @@ class Show {
      * @return     String representation of the object.
      */
     public String toString() {
-        return movieName + "," + showTime + "," + Arrays.toString(seats).replace(", ", ",");
+        return movieName + "," + showTime + ","
+        + Arrays.toString(seats).replace(", ", ",");
     }
 }
 /**
@@ -106,6 +107,7 @@ class Patron {
      *
      * @param      customerNamee  The customer name
      * @param      phoneNumberr   The phone number
+     * @param      bookedSeatss   The booked seats
      */
     Patron(final String customerNamee, final String phoneNumberr,
         final String[] bookedSeatss) {
@@ -143,6 +145,14 @@ class Patron {
  */
 class BookYourShow {
     /**
+     * intitializing value of 10.
+     */
+    private static final int TEN = 10;
+    /**
+     * intitializing value of 20.
+     */
+    private static final int TWENTY = 20;
+    /**
      * array of shows.
      */
     private Show[] shows;
@@ -162,8 +172,8 @@ class BookYourShow {
      * Constructs the object.
      */
     BookYourShow() {
-        this.shows = new Show[10];
-        this.patrons = new Patron[20];
+        this.shows = new Show[TEN];
+        this.patrons = new Patron[TWENTY];
         this.showSize = showSize;
         this.patronSize = patronSize;
     }
@@ -256,7 +266,7 @@ class BookYourShow {
      *
      * @param      movieName     The movie name
      * @param      showTime      The showTime
-     * @param      mobileNumber  The mobile number
+     * @param      phoneNumber  The mobile number
      */
     public void printTicket(final String movieName, final String showTime,
         final String phoneNumber) {
@@ -264,7 +274,8 @@ class BookYourShow {
         if (show != null) {
             for (int i = 0; i < patronSize; i++) {
                 if (patrons[i].getphoneNumber().equals(phoneNumber)) {
-                    System.out.println(phoneNumber + " " + movieName + " " + showTime);
+                    System.out.println(phoneNumber + " " + movieName
+                        + " " + showTime);
                     return;
                 }
             }
@@ -319,7 +330,8 @@ public final class Solution {
                 for (int j = 0; j < seats.length; j++) {
                     seats[j] = tokens[k++];
                 }
-                bys.bookAShow(check[1], tokens[1], new Patron(tokens[2], tokens[2 + 1], seats));
+                bys.bookAShow(check[1], tokens[1],
+                    new Patron(tokens[2], tokens[2 + 1], seats));
                 break;
 
             case "get":
