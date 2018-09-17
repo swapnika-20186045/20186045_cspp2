@@ -66,6 +66,14 @@ public final class Solution {
     private static ArrayList<String> answers = new ArrayList<String>();
     //private List<Quiz> quizes;
     /**
+    *@variable THREE
+    **/
+    private static final int THREE = 3;
+    /**
+    *@variable FOUR
+    **/
+    private static final int FOUR = 4;
+    /**
     * Constructs the object.
     */
     private Solution() {
@@ -125,8 +133,6 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        final int THREE = 3;
-        final int FOUR = 4;
         try {
             while (questionCount > 0) {
                 String line = s.nextLine();
@@ -137,15 +143,18 @@ public final class Solution {
                     return;
                 }
                 if (choices.length <= 1) {
-                    System.out.println("trick question  does not have enough answer choices");
+                    System.out.print("trick question  does not have ");
+                    System.out.println("enough answer choices");
                     return;
                 }
                 if (Integer.parseInt(tokens[THREE]) < 0) {
-                    System.out.println("Invalid max marks for question about sony");
+                    System.out.print("Invalid max marks for question ");
+                    System.out.println("about sony");
                     return;
                 }
                 if (Integer.parseInt(tokens[FOUR]) > 0) {
-                    System.out.println("Invalid penalty for question about sony");
+                    System.out.print("Invalid penalty for question ");
+                    System.out.println("about sony");
                     return;
                 }
                 if (!tokens[2].equals("1") && !tokens[2].equals("2")
