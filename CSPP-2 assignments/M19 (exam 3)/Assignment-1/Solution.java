@@ -195,7 +195,7 @@ public final class Solution {
         for (int i = 0; i < quizes.size(); i++) {
             System.out.println(quizes.get(i).question
              + "(" + quizes.get(i).maxMarks + ")");
-            for (int j = 0 ; j < quizes.get(i).choice.length - 1; j++) {
+            for (int j = 0; j < quizes.get(i).choice.length - 1; j++) {
                 System.out.print(quizes.get(i).choice[j] + "\t");
             }
             System.out.println(quizes.get(i).choice[quizes.get(i)
@@ -228,7 +228,7 @@ public final class Solution {
         // write your code here to display the score report
         int lol = 0;
         int sum = 0;
-        for(int i = 0; i < quizes.size(); i++) {
+        for (int i = 0; i < quizes.size(); i++) {
             System.out.println(quizes.get(i).question);
             String[] ss = quizes.get(i).question.split(" ");
             if (ss[1].equals("about") && (ss[2].equals("sony")
