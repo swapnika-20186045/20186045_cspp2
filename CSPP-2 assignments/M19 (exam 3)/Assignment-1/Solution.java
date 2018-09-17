@@ -125,6 +125,8 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
+        final int THREE = 3;
+        final int FOUR = 4;
         try {
             while (questionCount > 0) {
                 String line = s.nextLine();
@@ -138,22 +140,22 @@ public final class Solution {
                     System.out.println("trick question  does not have enough answer choices");
                     return;
                 }
-                if (Integer.parseInt(tokens[3]) < 0) {
+                if (Integer.parseInt(tokens[THREE]) < 0) {
                     System.out.println("Invalid max marks for question about sony");
                     return;
                 }
-                if (Integer.parseInt(tokens[4]) > 0) {
+                if (Integer.parseInt(tokens[FOUR]) > 0) {
                     System.out.println("Invalid penalty for question about sony");
                     return;
                 }
                 if (!tokens[2].equals("1") && !tokens[2].equals("2")
                         && !tokens[2].equals("3") && !tokens[2].equals("4")) {
-                    System.out.print("Error! Correct answer choice ");
-                    System.out.println("number is out of range for question text 1");
+                    System.out.print("Error! Correct answer choice number ");
+                    System.out.println("is out of range for question text 1");
                     return;
                 }
                 Quiz q = new Quiz(tokens[0], choices, tokens[2],
-                    tokens[3], tokens[4]);
+                    tokens[THREE], tokens[FOUR]);
                 quizes.add(q);
                 questionCount--;
             }
