@@ -1,5 +1,69 @@
 ########## Testcase 0: Failed ##########
-Something is wrong with the testcase.
+Expected Output: 
+|----------------|
+| Load Questions |
+|----------------|
+4 are added to the quiz
+|------------|
+| Start Quiz |
+|------------|
+question text 1(1)
+choice 1	choice 2	choice 3	choice 4
+
+question text 2(2)
+choice 1	choice 2	choice 3	choice 4
+
+question text 3(3)
+choice 1	choice 2	choice 3	choice 4
+
+question text 4(4)
+choice 1	choice 2	choice 3	choice 4
+
+|--------------|
+| Score Report |
+|--------------|
+question text 1
+ Correct Answer! - Marks Awarded: 1
+question text 2
+ Correct Answer! - Marks Awarded: 2
+question text 3
+ Correct Answer! - Marks Awarded: 3
+question text 4
+ Correct Answer! - Marks Awarded: 4
+Total Score: 10
+
+Your Output: 
+|----------------|
+| Load Questions |
+|----------------|
+4 are added to the quiz
+|------------|
+| Start Quiz |
+|------------|
+question text 1(1)
+choice 1        choice 2        choice 3        choice 4
+
+question text 2(2)
+choice 1        choice 2        choice 3        choice 4
+
+question text 3(3)
+choice 1        choice 2        choice 3        choice 4
+
+question text 4(4)
+choice 1        choice 2        choice 3        choice 4
+
+|--------------|
+| Score Report |
+|--------------|
+question text 1
+ Correct Answer! - Marks Awarded: 1
+question text 2
+ Correct Answer! - Marks Awarded: 2
+question text 3
+ Correct Answer! - Marks Awarded: 3
+question text 4
+ Correct Answer! - Marks Awarded: 4
+Total Score: 10
 
 ----------------------------------------
 ########## Testcase 1: Failed ##########
@@ -328,235 +392,3 @@ Quiz does not have questions
 |--------------|
 | Score Report |
 |--------------|
-
-----------------------------------------
-########## Testcase 6: Passed ##########
-Expected Output: 
-|----------------|
-| Load Questions |
-|----------------|
-Error! Malformed question
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-Your Output: 
-|----------------|
-| Load Questions |
-|----------------|
-Error! Malformed question
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-----------------------------------------
-########## Testcase 7: Passed ##########
-Expected Output: 
-|----------------|
-| Load Questions |
-|----------------|
-Error! Correct answer choice number is out of range for question text 1
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-Your Output: 
-|----------------|
-| Load Questions |
-|----------------|
-Error! Correct answer choice number is out of range for question text 1
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-----------------------------------------
-########## Testcase 8: Passed ##########
-Expected Output: 
-|----------------|
-| Load Questions |
-|----------------|
-trick question  does not have enough answer choices
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-Your Output: 
-|----------------|
-| Load Questions |
-|----------------|
-trick question  does not have enough answer choices
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-----------------------------------------
-########## Testcase 9: Failed ##########
-Expected Output: 
-|----------------|
-| Load Questions |
-|----------------|
-1 are added to the quiz
-|------------|
-| Start Quiz |
-|------------|
-question about sony(1)
-choice 4	choice 2
-
-|--------------|
-| Score Report |
-|--------------|
-question about sony
- Correct Answer! - Marks Awarded: 1
-Total Score: 1
-
-Your Output: 
-|----------------|
-| Load Questions |
-|----------------|
-1 are added to the quiz
-|------------|
-| Start Quiz |
-|------------|
-question about sony(1)
-choice 4        choice 2
-
-|--------------|
-| Score Report |
-|--------------|
-question about sony
- Wrong Answer! - Penality: -1
-Total Score: -1
-
-----------------------------------------
-########## Testcase 10: Passed ##########
-Expected Output: 
-|----------------|
-| Load Questions |
-|----------------|
-Invalid max marks for question about sony
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-Your Output: 
-|----------------|
-| Load Questions |
-|----------------|
-Invalid max marks for question about sony
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-----------------------------------------
-########## Testcase 11: Passed ##########
-Expected Output: 
-|----------------|
-| Load Questions |
-|----------------|
-Invalid penalty for question about sony
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-Your Output: 
-|----------------|
-| Load Questions |
-|----------------|
-Invalid penalty for question about sony
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-----------------------------------------
-########## Testcase 12: Passed ##########
-Expected Output: 
-|----------------|
-| Load Questions |
-|----------------|
-Error! Malformed question
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-Your Output: 
-|----------------|
-| Load Questions |
-|----------------|
-Error! Malformed question
-|------------|
-| Start Quiz |
-|------------|
-|--------------|
-| Score Report |
-|--------------|
-
-----------------------------------------
-Result: 7/13 testcases passed.
-Starting audit...
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:14:12: Variable 'question' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:18:14: Variable 'choice' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:22:12: Variable 'correct' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:26:12: Variable 'maxMarks' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:30:12: Variable 'penality' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:124:38: Parameter questionCount should be final. [FinalParameters]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:138: Line is longer than 80 characters (found 94). [LineLength]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:141:45: '3' is a magic number. [MagicNumber]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:142: Line is longer than 80 characters (found 84). [LineLength]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:145:45: '4' is a magic number. [MagicNumber]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:146: Line is longer than 80 characters (found 82). [LineLength]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:151: Line is longer than 80 characters (found 114). [LineLength]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:154: Line is longer than 80 characters (found 87). [LineLength]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:154:73: '3' is a magic number. [MagicNumber]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:154:84: '4' is a magic number. [MagicNumber]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:176: Line is longer than 80 characters (found 85). [LineLength]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:176:68: Parameter answerCount should be final. [FinalParameters]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:182: Line is longer than 80 characters (found 92). [LineLength]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:183:27: ';' is preceded with whitespace. [NoWhitespaceBefore]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:186: Line is longer than 80 characters (found 86). [LineLength]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:214:12: 'for' is not followed by whitespace. [WhitespaceAround]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:217: Line is longer than 80 characters (found 97). [LineLength]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:217:72: '+' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:220: Line is longer than 80 characters (found 90). [LineLength]
-[ERROR] C:\Users\vakac\Desktop\MSIT\CSPP2\CSPP-2 assignments\M19 (exam 3)\Assignment-1\Solution.java:220:65: '+' is not preceded with whitespace. [WhitespaceAround]
-Audit done.
-Checkstyle ends with 26 errors.
-
-
-[master 8092a35] "check_style_score -> 7 of 13 passed. style score: 0/1 "
- 4 files changed, 401 insertions(+), 5 deletions(-)
- create mode 100644 CSPP-2 assignments/M19 (exam 3)/Assignment-1/out.txt
-
