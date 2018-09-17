@@ -294,8 +294,8 @@ public final class Solution {
                     System.out.println("about sony");
                     return;
                 }
-                if (Integer.parseInt(tokens[2]) < 1 || Integer.parseInt
-                    (tokens[2]) > FOUR) {
+                if (Integer.parseInt(tokens[2]) < 1 || Integer.parseInt(tokens
+                    [2]) > FOUR) {
                     System.out.print("Error! Correct answer choice number ");
                     System.out.println("is out of range for question text 1");
                     return;
@@ -371,3 +371,4 @@ public final class Solution {
         }
     }
 }
+
