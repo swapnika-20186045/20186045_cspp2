@@ -307,18 +307,22 @@ public final class Solution {
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
         int count = 0;
-        while (count < q) {
-            String line = scan.nextLine();
-            String[] token = line.split(" ");
-            Question question = quiz.getQuestion(count);
-            question.setResponse(token[1]);
-            System.out.println(question.getQuestionText() + "(" + question.getMaxMarks() + ")");
-            for (int i = 0; i < question.getChoice().length - 1; i++) {
-                System.out.print(question.getChoice()[i] + "\t");
+        try {
+            while (count < q) {
+                String line = scan.nextLine();
+                String[] token = line.split(" ");
+                Question question = quiz.getQuestion(count);
+                question.setResponse(token[1]);
+                System.out.println(question.getQuestionText() + "(" + question.getMaxMarks() + ")");
+                for (int i = 0; i < question.getChoice().length - 1; i++) {
+                    System.out.print(question.getChoice()[i] + "\t");
+                }
+                System.out.println(question.getChoice()[question.getChoice().length - 1]);
+                System.out.println();
+                count++;
             }
-            System.out.println(question.getChoice()[question.getChoice().length - 1]);
-            System.out.println();
-            count++;
+        } catch (Exception ex) {
+            return;
         }
     }
     /**
