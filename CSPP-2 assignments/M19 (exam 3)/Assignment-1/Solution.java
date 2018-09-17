@@ -157,11 +157,14 @@ public final class Solution {
             }
             if (quizes.size() != 0) {
                 System.out.println(quizes.size() + " are added to the quiz");
+                return;
             } else {
                 System.out.println("Quiz does not have questions");
+                return;
             }
         } catch (Exception e) {
             System.out.println("Error! Malformed question");
+            return;
         }
     }
     /**
