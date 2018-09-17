@@ -6,16 +6,16 @@
 | Start Quiz |
 |------------|
 question text 1(1)
-choice 1    choice 2    choice 3    choice 4
+choice 1	choice 2	choice 3	choice 4
 
 question text 2(2)
-choice 1    choice 2    choice 3    choice 4
+choice 1	choice 2	choice 3	choice 4
 
 question text 3(3)
-choice 1    choice 2    choice 3    choice 4
+choice 1	choice 2	choice 3	choice 4
 
 question text 4(4)
-choice 1    choice 2    choice 3    choice 4
+choice 1	choice 2	choice 3	choice 4
 
 |--------------|
 | Score Report |
