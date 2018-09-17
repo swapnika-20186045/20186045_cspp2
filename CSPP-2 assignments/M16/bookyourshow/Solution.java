@@ -3,7 +3,6 @@
  * @author Swapnika Vakacharla
  */
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Arrays;
 /**
  * Class for show.
@@ -65,20 +64,12 @@ class Show {
         return seats;
     }
     /**
-     * Sets the seats that are notavailable.
-     *
-     * @param      index  The index
-     */
-    public void setSeatNA(final int index) {
-        seats[index] = "N/A";
-    }
-    /**
      * Returns a string representation of the object.
      *
      * @return     String representation of the object.
      */
     public String toString() {
-        return movieName + "," + showTime;
+        return movieName + "," + showTime + "," + Arrays.toString(seats).replace(", ", ",");
     }
 }
 /**
@@ -94,6 +85,10 @@ class Patron {
      */
     private String phoneNumber;
     /**
+     * declaration of booked seats.
+     */
+    private String[] bookedSeats;
+    /**
     *default constructor.
     **/
     Patron() {
@@ -104,10 +99,11 @@ class Patron {
      * @param      customerNamee  The customer name
      * @param      phoneNumberr   The phone number
      */
-    Patron(final String customerNamee, final String phoneNumberr) {
+    Patron(final String customerNamee, final String phoneNumberr,
+        final String[] bookedSeatss) {
         this.customerName = customerNamee;
         this.phoneNumber = phoneNumberr;
-        // this.bookedSeats = bookedSeats;
+        this.bookedSeats = bookedSeatss;
     }
     /**
      * gets the customer name.
@@ -125,15 +121,13 @@ class Patron {
     public String getphoneNumber() {
         return phoneNumber;
     }
-    // public String[] getbookedSeats() {
-    //  return this.bookedSeats;
-    // }
     /**
-    *gives the name and number as a string.
-    *@return string   The string
-    **/
-    public String toString() {
-        return customerName + " " + phoneNumber;
+     * no of seats booked.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public String[] getbookedSeats() {
+        return bookedSeats;
     }
 }
 /**
@@ -141,27 +135,58 @@ class Patron {
  */
 class BookYourShow {
     /**
-     * using arraylist to show shows.
+     * array of shows.
      */
-    private ArrayList<Show> showlist;
+    private Show[] shows;
     /**
-     * using arraylist to show tickets.
+     * array of patrons.
      */
-    private ArrayList<String> ticketlist;
+    private Patron[] patrons;
+    /**
+     * size of shows array.
+     */
+    private int showSize;
+    /**
+     * size of patrons array.
+     */
+    private int patronSize;
     /**
      * Constructs the object.
      */
     BookYourShow() {
-        showlist = new ArrayList<>();
-        ticketlist = new ArrayList<>();
+        this.shows = new Show[10];
+        this.patrons = new Patron[20];
+        this.showSize = showSize;
+        this.patronSize = patronSize;
     }
     /**
-     * Adds a show to the showlist.
-     *
-     * @param      show  The show
+     * resize the array.
      */
-    public void addAShow(final Show show) {
-        showlist.add(show);
+    public void resize() {
+        shows = Arrays.copyOf(shows, shows.length);
+        patrons = Arrays.copyOf(patrons, patrons.length);
+    }
+    /**
+     * Adds a show.
+     *
+     * @param      show1  The newshow
+     */
+    public void addAShow(final Show show1) {
+        if (showSize == shows.length) {
+            resize();
+        }
+        shows[showSize++] = show1;
+    }
+    /**
+     * Adds a patron.
+     *
+     * @param      pat     { parameter_description }
+     */
+    public void addAPatron(final Patron pat) {
+        if (patronSize == patrons.length) {
+            resize();
+        }
+        patrons[patronSize++] = pat;
     }
     /**
      * Gets a show.
@@ -172,67 +197,78 @@ class BookYourShow {
      * @return     A show.
      */
     public Show getAShow(final String movieName, final String showTime) {
-        for (Show show : showlist) {
-            if (show.getName().equals(movieName) && show.getshowTime().
+        for (int i = 0; i < showSize; i++) {
+            if (shows[i].getName().equals(movieName) && shows[i].getshowTime().
                                             equals(showTime)) {
-                return show;
+                return shows[i];
             }
         }
         return null;
     }
     /**
-     * book tickets for a show.
+     * { function_description }.
      *
-     * @param      movieName  The movie name
-     * @param      showTime   The show time
-     * @param      patron     The patron
-     * @param      seats      The seats
+     * @param      show       The show
+     * @param      customerseats  The customerseats
+     *
+     * @return     { description_of_the_return_value }
      */
-    public void bookAShow(final String movieName, final String showTime,
-                          final Patron patron, final String[] seats) {
-        Show show = getAShow(movieName, showTime);
-        boolean flag = false;
-        if (show == null) {
-            System.out.println("No show");
-            return;
-        }
-        String[] seats1 = show.getseats();
-        for (String seat : seats) {
-            for (int i = 0; i < seats1.length; i++) {
-                if (seat.equals(seats1[i])) {
-                    show.setSeatNA(i);
-                    flag = true;
+    public boolean checkSeats(final Show show, final String[] customerseats) {
+        int count = 0;
+        String[] seats = show.getseats();
+        for (int i  = 0; i < seats.length; i++) {
+            for (int j = 0; j < customerseats.length; j++) {
+                if (seats[i].equals(customerseats[j])) {
+                    count += 1;
+                    seats[i] = seats[i].replace(seats[i], "N/A");
                 }
             }
         }
-        if (flag) {
-            ticketlist.add(patron.getphoneNumber() + " " + movieName
-                                                + " " + showTime);
-        }
+        return (count == customerseats.length);
     }
     /**
-     * prints the ticket.
+     * { function_description }.
      *
-     * @param      movie        The movie
-     * @param      showTime     The show time
-     * @param      phoneNumber  The phone number
+     * @param      movieName  The movie name
+     * @param      showTime   The showTime
+     * @param      pat          { parameter_description }
      */
-    public void printTicket(final String movie, final String showTime,
-                            final String phoneNumber) {
-        String t = phoneNumber + " " + movie + " " + showTime;
-        if (ticketlist.contains(t)) {
-            System.out.println(t);
+    public void bookAShow(final String movieName, final String showTime,
+        final Patron pat) {
+        addAPatron(pat);
+        Show presentshow = getAShow(movieName, showTime);
+        if (presentshow != null) {
+            checkSeats(presentshow, pat.getbookedSeats());
         } else {
-            System.out.println("Invalid");
+            System.out.println("No show");
         }
     }
     /**
-     * Shows all the shows.
+     * { function_description }.
+     *
+     * @param      movieName     The movie name
+     * @param      showTime      The showTime
+     * @param      mobileNumber  The mobile number
+     */
+    public void printTicket(final String movieName, final String showTime,
+        final String phoneNumber) {
+        Show show = getAShow(movieName, showTime);
+        if (show != null) {
+            for (int i = 0; i < patronSize; i++) {
+                if (patrons[i].getphoneNumber().equals(phoneNumber)) {
+                    System.out.println(phoneNumber + " " + movieName + " " + showTime);
+                    return;
+                }
+            }
+        }
+        System.out.println("Invalid");
+    }
+    /**
+     * Shows all.
      */
     public void showAll() {
-        for (Show show : showlist) {
-            System.out.println(show.toString() + ","
-                    + Arrays.toString(show.getseats()).replace(" ", ""));
+        for (int i = 0; i < showSize; i++) {
+            System.out.println(shows[i]);
         }
     }
 }
@@ -275,8 +311,7 @@ public final class Solution {
                 for (int j = 0; j < seats.length; j++) {
                     seats[j] = tokens[k++];
                 }
-                bys.bookAShow(check[1], tokens[1],
-                              new Patron(tokens[2], tokens[2 + 1]), seats);
+                bys.bookAShow(check[1], tokens[1], new Patron(tokens[2], tokens[2 + 1], seats));
                 break;
 
             case "get":
