@@ -215,7 +215,7 @@ public final class Solution {
                 System.out.println(" Correct Answer! - Marks Awarded: "+ quizes.get(i).maxMarks);
                 sum += Integer.parseInt(quizes.get(i).maxMarks);
             } else {
-                System.out.println(" Correct Answer! - Marks Awarded: "+ quizes.get(i).penality);
+                System.out.println(" Wrong Answer! - Penality: "+ quizes.get(i).penality);
                 sum += Integer.parseInt(quizes.get(i).penality);
             }
         }
