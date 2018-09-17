@@ -25,9 +25,9 @@ class Quiz {
      */
     String maxMarks;
     /**
-     * penality variable declaration as string.
+     * penalty variable declaration as string.
      */
-    String penality;
+    String penalty;
     /**
      * Constructs the object.
      */
@@ -41,15 +41,15 @@ class Quiz {
      * @param      choicee    The choicee
      * @param      correctt   The correctt
      * @param      maxMarkss  The maximum markss
-     * @param      penalityy  The penalityy
+     * @param      penaltyy  The penaltyy
      */
     Quiz(final String questionn, final String[] choicee, final String correctt,
-         final String maxMarkss, final String penalityy) {
+         final String maxMarkss, final String penaltyy) {
         this.question = questionn;
         this.choice = choicee;
         this.correct = correctt;
         this.maxMarks = maxMarkss;
-        this.penality = penalityy;
+        this.penalty = penaltyy;
     }
 }
 /**
@@ -148,10 +148,12 @@ public final class Solution {
                 }
                 if (!tokens[2].equals("1") && !tokens[2].equals("2")
                         && !tokens[2].equals("3") && !tokens[2].equals("4")) {
-                    System.out.println("Error! Correct answer choice number is out of range for question text 1");
+                    System.out.print("Error! Correct answer choice ");
+                    System.out.println("number is out of range for question text 1");
                     return;
                 }
-                Quiz q = new Quiz(tokens[0], choices, tokens[2], tokens[3], tokens[4]);
+                Quiz q = new Quiz(tokens[0], choices, tokens[2],
+                    tokens[3], tokens[4]);
                 quizes.add(q);
                 questionCount--;
             }
@@ -173,17 +175,20 @@ public final class Solution {
      * @param      quiz         The quiz object
      * @param      answerCount  The answer count
      */
-    public static void startQuiz(final Scanner s, final Quiz quiz, int answerCount) {
+    public static void startQuiz(final Scanner s, final Quiz quiz,
+                                    int answerCount) {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
         // System.out.println(quiz.getquestions());
         for (int i = 0; i < quizes.size(); i++) {
-            System.out.println(quizes.get(i).question + "(" + quizes.get(i).maxMarks + ")");
+            System.out.println(quizes.get(i).question
+             + "(" + quizes.get(i).maxMarks + ")");
             for (int j = 0 ; j < quizes.get(i).choice.length - 1; j++) {
                 System.out.print(quizes.get(i).choice[j] + "\t");
             }
-            System.out.println(quizes.get(i).choice[quizes.get(i).choice.length - 1]);
+            System.out.println(quizes.get(i).choice[quizes.get(i)
+                .choice.length - 1]);
             System.out.println();
         }
         while (answerCount > 0) {
@@ -215,15 +220,18 @@ public final class Solution {
         for(int i = 0; i < quizes.size(); i++) {
             System.out.println(quizes.get(i).question);
             String[] ss = quizes.get(i).question.split(" ");
-            if (ss[1].equals("about") && (ss[2].equals("sony") && quizes.get(i).choice.length == 2)) {
+            if (ss[1].equals("about") && (ss[2].equals("sony")
+             && quizes.get(i).choice.length == 2)) {
                     lol = 1;
             }
             if (answers.get(i).equals(quizes.get(i).correct) || lol == 1) {
-                System.out.println(" Correct Answer! - Marks Awarded: "+ quizes.get(i).maxMarks);
+                System.out.println(" Correct Answer! - Marks Awarded: "
+                 + quizes.get(i).maxMarks);
                 sum += Integer.parseInt(quizes.get(i).maxMarks);
             } else {
-                System.out.println(" Wrong Answer! - Penalty: "+ quizes.get(i).penality);
-                sum += Integer.parseInt(quizes.get(i).penality);
+                System.out.println(" Wrong Answer! - Penalty: "
+                 + quizes.get(i).penalty);
+                sum += Integer.parseInt(quizes.get(i).penalty);
             }
         }
         if (quizes.size() != 0) {
