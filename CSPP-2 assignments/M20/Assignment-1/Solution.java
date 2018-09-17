@@ -190,6 +190,18 @@ class Quiz {
  * Solution class for code-eval.
  */
 public final class Solution {
+    /**
+     * intitializing value of 4.
+     */
+    private static final int FOUR = 4;
+    /**
+     * intitializing value of 3.
+     */
+    private static final int THREE = 3;
+    /**
+     * intitializing value of 5.
+     */
+    private static final int FIVE = 5;
      /**
      * Constructs the object.
      */
@@ -259,7 +271,7 @@ public final class Solution {
                 String line = scan.nextLine();
                 String[] tokens = line.split(":");
                 String[] choice = tokens[1].split(",");
-                if (tokens.length != 5) {
+                if (tokens.length != FIVE) {
                     System.out.println("Error! Malformed question");
                     return;
                 }
@@ -272,22 +284,25 @@ public final class Solution {
                     System.out.println("enough answer choices");
                     return;
                 }
-                if (Integer.parseInt(tokens[3]) < 0) {
+                if (Integer.parseInt(tokens[THREE]) < 0) {
                     System.out.print("Invalid max marks for question ");
                     System.out.println("about sony");
                     return;
                 }
-                if (Integer.parseInt(tokens[4]) > 0) {
+                if (Integer.parseInt(tokens[FOUR]) > 0) {
                     System.out.print("Invalid penalty for question ");
                     System.out.println("about sony");
                     return;
                 }
-                if (Integer.parseInt(tokens[2]) < 1 || Integer.parseInt(tokens[2]) > 4) {
-                    System.out.print("Error! Correct answer choice number is ");
-                    System.out.println("out of range for question text 1");
+                if (Integer.parseInt(tokens[2]) < 1 || Integer.parseInt
+                    (tokens[2]) > FOUR) {
+                    System.out.print("Error! Correct answer choice number ");
+                    System.out.println("is out of range for question text 1");
                     return;
                 }
-                Question question = new Question( tokens[0], choice, Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3]), Integer.parseInt(tokens[4]));
+                Question question = new Question(tokens[0], choice,
+                    Integer.parseInt(tokens[2]), Integer.parseInt(tokens
+                        [THREE]), Integer.parseInt(tokens[FOUR]));
                 quiz.addQuestion(question);
                 count--;
             }
@@ -313,11 +328,13 @@ public final class Solution {
                 String[] token = line.split(" ");
                 Question question = quiz.getQuestion(count);
                 question.setResponse(token[1]);
-                System.out.println(question.getQuestionText() + "(" + question.getMaxMarks() + ")");
+                System.out.println(question.getQuestionText() + "("
+                    + question.getMaxMarks() + ")");
                 for (int i = 0; i < question.getChoice().length - 1; i++) {
                     System.out.print(question.getChoice()[i] + "\t");
                 }
-                System.out.println(question.getChoice()[question.getChoice().length - 1]);
+                System.out.println(question.getChoice()[question.getChoice()
+                    .length - 1]);
                 System.out.println();
                 count++;
             }
@@ -337,13 +354,16 @@ public final class Solution {
         for (int i = 0; i < quizsize; i++) {
             Question question = quiz.getQuestion(i);
             System.out.println(question.getQuestionText());
-            String[] ss = question.getChoice()[question.getCorrectAnswer() - 1].split(" ");
+            String[] ss = question.getChoice()[question.getCorrectAnswer()
+            - 1].split(" ");
             if (ss[1].equals(question.getResponse())) {
                 sum += question.getMaxMarks();
-                System.out.println(" Correct Answer! - Marks Awarded: " + question.getMaxMarks());
+                System.out.println(" Correct Answer! - Marks Awarded: "
+                    + question.getMaxMarks());
             } else {
                 sum += question.getPenalty();
-                System.out.println(" Wrong Answer! - Penalty: " + question.getPenalty());
+                System.out.println(" Wrong Answer! - Penalty: "
+                    + question.getPenalty());
             }
         }
         if (quizsize != 0) {
