@@ -179,16 +179,14 @@ public final class Solution {
         for (int i = 0; i < quizes.size(); i++) {
             System.out.println(quizes.get(i).question + "(" + quizes.get(i).maxMarks + ")");
             for (int j = 0 ; j < quizes.get(i).choice.length - 1; j++) {
-                System.out.print(quizes.get(i).choice[j] + "    ");
+                System.out.println(quizes.get(i).choice[j] + "\t");
             }
-            System.out.print(quizes.get(i).choice[quizes.get(i).choice.length - 1]);
+            System.out.println(quizes.get(i).choice[quizes.get(i).choice.length - 1]);
             System.out.println();
         }
         while (answerCount > 0) {
-            //System.out.println(answerCount + " counttt");
             String line = s.nextLine();
             String[] token = line.split(" ");
-            //System.out.println(line + " lineeeee");
             if (token[1].equals("a")) {
                 token[1] = "1";
             } else if (token[1].equals("b")) {
@@ -214,10 +212,15 @@ public final class Solution {
         for(int i = 0; i < quizes.size(); i++) {
             System.out.println(quizes.get(i).question);
             if (answers.get(i).equals(quizes.get(i).correct)) {
-                System.out.println("Correct Answer! - Marks Awarded: "+quizes.get(i).maxMarks);
+                System.out.println(" Correct Answer! - Marks Awarded: "+ quizes.get(i).maxMarks);
+                sum += Integer.parseInt(quizes.get(i).maxMarks);
             } else {
-                System.out.println("Correct Answer! - Marks Awarded: "+quizes.get(i).penality);
+                System.out.println(" Correct Answer! - Marks Awarded: "+ quizes.get(i).penality);
+                sum += Integer.parseInt(quizes.get(i).penality);
             }
+        }
+        if (quizes.size() != 0) {
+            System.out.println("Total Score: " + sum);
         }
     }
 }
