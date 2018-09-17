@@ -164,7 +164,6 @@ public final class Solution {
             }
         } catch (Exception e) {
             System.out.println("Error! Malformed question");
-            return;
         }
     }
     /**
