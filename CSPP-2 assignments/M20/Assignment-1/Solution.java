@@ -314,7 +314,7 @@ public final class Solution {
             question.setResponse(token[1]);
             System.out.println(question.getQuestionText() + "(" + question.getMaxMarks() + ")");
             for (int i = 0; i < question.getChoice().length - 1; i++) {
-                System.out.print(question.getChoice()[i] + "    ");
+                System.out.print(question.getChoice()[i] + "\t");
             }
             System.out.println(question.getChoice()[question.getChoice().length - 1]);
             System.out.println();
