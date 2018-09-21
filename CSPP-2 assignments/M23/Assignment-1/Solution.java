@@ -146,7 +146,7 @@ public class Solution {
         }
         System.out.println(s);
         s = "";
-        s += "\n";
+        // s += "\n";
         // if (allfiles.length != 0) {
             for (int i = 0; i < allfiles.length; i++) {
                 s += allfiles[i].getName() + "\t";
