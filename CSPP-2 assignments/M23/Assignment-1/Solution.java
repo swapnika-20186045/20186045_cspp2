@@ -16,7 +16,7 @@ class Document {
     private HashMap<String, Integer> freq;
     /**
      * function to read input file.
-     *@param f
+     *@param f The string
      **/
     Document(final String f) {
         word = readfile(f);
@@ -141,7 +141,10 @@ class Distance {
  * Class for solution.
  * main function.
  */
-public class Solution {
+public final class Solution {
+    /**
+     * Constructs the object.
+     */
     private Solution() {
         //not used
     }
