@@ -1,13 +1,15 @@
 import java.io.*;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.Arrays;
 import java.util.*;
 /**
  * Class for document.
  **/
 class Document {
-    String[] word;
+    private String[] word;
+    /**
+     * hashmap for frequency.
+     */
     HashMap<String, Integer> freq;
     /**
      * function to read input file.
