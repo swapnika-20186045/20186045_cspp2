@@ -138,6 +138,8 @@ public class Solution {
         String foldername = scan.nextLine();
         final File folder = new File(foldername);
         File[] allfiles = folder.listFiles();
+        String file1 = null;
+        String file2 = null;
         String s = "\t\t";
         for (File file: allfiles) {
             // System.out.println("maddy");
@@ -157,12 +159,15 @@ public class Solution {
                     Document d2 = new Document(foldername + "/" + allfiles[j].getName());
                     Distance d = new Distance(d1, d2);
                     s += "\t" + d.similarity() + "" + "\t";
+                    file1 = allfiles[i].getName();
+                    file2 = allfiles[j].getName();
                 }
                 s = s.trim();
                 s += "\n";
             }
             // System.out.println("\t\t");
             System.out.println(s);
+            System.out.println("Maximum similarity is between " + file1 + " and " + file2);
         // } else {
             // System.out.println("empty directory");
         // }
