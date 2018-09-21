@@ -141,7 +141,10 @@ class Distance {
  * Class for solution.
  * main function.
  */
-class Solution {
+public class Solution {
+    Solution() {
+        //not used
+    }
     /**
      * variable declaration.
      */
