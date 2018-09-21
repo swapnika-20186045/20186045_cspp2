@@ -6,16 +6,20 @@ import java.util.*;
  * Class for document.
  **/
 class Document {
+    /**
+     * words array.
+     */
     private String[] word;
     /**
      * hashmap for frequency.
      */
-    HashMap<String, Integer> freq;
+    private HashMap<String, Integer> freq;
     /**
      * function to read input file.
+     *@param f
      **/
-    Document (String f) {
-        word = ReadFile(f);
+    Document(final String f) {
+        word = readfile(f);
     }
     /**
      * Reads a file.
@@ -24,7 +28,7 @@ class Document {
      *
      * @return     String[].
      */
-    public String[] ReadFile(String f) {
+    public String[] readfile(final String f) {
         String[] strfile = null;
         String str = "";
         try {
@@ -137,7 +141,7 @@ class Distance {
  * Class for solution.
  * main function.
  */
-public class Solution {
+class Solution {
     /**
      * variable declaration.
      */
@@ -182,7 +186,6 @@ public class Solution {
                         max = d.similarity();
                         file1 = allfiles[i].getName();
                         file2 = allfiles[j].getName();
-                        
                     }
                 }
                 s = s.trim();
