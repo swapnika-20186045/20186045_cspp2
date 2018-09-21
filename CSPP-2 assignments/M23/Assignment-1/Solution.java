@@ -142,7 +142,7 @@ class Distance {
  * main function.
  */
 public class Solution {
-    Solution() {
+    private Solution() {
         //not used
     }
     /**
