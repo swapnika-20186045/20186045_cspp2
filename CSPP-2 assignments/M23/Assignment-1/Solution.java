@@ -142,7 +142,6 @@ public class Solution {
         String file2 = null;
         String s = "\t\t";
         for (File file: allfiles) {
-            // System.out.println("maddy");
             s += "\t" + file.getName();
             // System.out.println("\t" + s);
         }
@@ -150,6 +149,7 @@ public class Solution {
         s = "";
         // s += "\n";
         // if (allfiles.length != 0) {
+            int max = 0;
             for (int i = 0; i < allfiles.length; i++) {
                 s += allfiles[i].getName() + "\t";
                 // System.out.println("2nd"+ s);
@@ -159,8 +159,12 @@ public class Solution {
                     Document d2 = new Document(foldername + "/" + allfiles[j].getName());
                     Distance d = new Distance(d1, d2);
                     s += "\t" + d.similarity() + "" + "\t";
-                    file1 = allfiles[i].getName();
-                    file2 = allfiles[j].getName();
+                    if (d.similarity() > max && d.similarity() != 100) {
+                        max = d.similarity();
+                        file1 = allfiles[i].getName();
+                        file2 = allfiles[j].getName();
+                        
+                    }
                 }
                 s = s.trim();
                 s += "\n";
