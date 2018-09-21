@@ -146,8 +146,8 @@ public class Solution {
             for (int i = 0; i < allfiles.length; i++) {
                 s += allfiles[i].getName() + "\t";
                 for (int j = 0; j < allfiles.length; j++) {
-                    Document d1 = new Document(allfiles[i].getName());
-                    Document d2 = new Document(allfiles[j].getName());
+                    Document d1 = new Document(foldername + "/" + allfiles[i].getName());
+                    Document d2 = new Document(foldername + "/" + allfiles[j].getName());
                     Distance d = new Distance(d1, d2);
                     s += d.similarity() + "" + "\t";
                 }
