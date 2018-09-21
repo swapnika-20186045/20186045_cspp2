@@ -137,12 +137,14 @@ public class Solution {
         String foldername = scan.nextLine();
         final File folder = new File(foldername);
         File[] allfiles = folder.listFiles();
-        String s = "\t\t";
+        String s = "";
         for (File file: allfiles) {
             // System.out.println("maddy");
-            s += file.getName() + "\t";
+            s += "\t\t" + file.getName();
             // System.out.println("\t" + s);
         }
+        System.out.println(s);
+        s = "";
         s += "\n";
         if (allfiles.length != 0) {
             for (int i = 0; i < allfiles.length; i++) {
