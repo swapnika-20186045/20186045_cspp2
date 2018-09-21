@@ -117,14 +117,14 @@ class Distance {
      *
      * @return     double.
      */
-    public double similarity() {
+    public int similarity() {
         double a = Euclidean(doc1);
         double b = Euclidean(doc2);
         double num = a * b;
         double den = DotProduct();
         double result = den / num;
         result *= 100;
-        return Math.round(result);
+        return (int)Math.round(result);
     }
 }
 /**
@@ -137,10 +137,10 @@ public class Solution {
         String foldername = scan.nextLine();
         final File folder = new File(foldername);
         File[] allfiles = folder.listFiles();
-        String s = "";
+        String s = "\t\t";
         for (File file: allfiles) {
             // System.out.println("maddy");
-            s += "\t\t" + file.getName();
+            s += "\t" + file.getName();
             // System.out.println("\t" + s);
         }
         System.out.println(s);
