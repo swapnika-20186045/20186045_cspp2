@@ -137,14 +137,17 @@ public class Solution {
         String foldername = scan.nextLine();
         final File folder = new File(foldername);
         File[] allfiles = folder.listFiles();
-        String s = "\t";
+        String s = "\t\t";
         for (File file: allfiles) {
+            // System.out.println("maddy");
             s += file.getName() + "\t";
+            // System.out.println("\t" + s);
         }
         s += "\n";
         if (allfiles.length != 0) {
             for (int i = 0; i < allfiles.length; i++) {
                 s += allfiles[i].getName() + "\t";
+                // System.out.println("2nd"+ s);
                 // s += "\n";
                 for (int j = 0; j < allfiles.length; j++) {
                     Document d1 = new Document(foldername + "/" + allfiles[i].getName());
@@ -155,6 +158,7 @@ public class Solution {
                 s = s.trim();
                 s += "\n";
             }
+            // System.out.println("\t\t");
             System.out.println(s);
         } else {
             System.out.println("empty directory");
