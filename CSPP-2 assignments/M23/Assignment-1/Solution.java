@@ -133,6 +133,7 @@ class Distance {
  */
 public class Solution {
     public static void main(String[] args) throws Exception {
+        try {
         Scanner scan = new Scanner(System.in);
         String foldername = scan.nextLine();
         final File folder = new File(foldername);
@@ -146,7 +147,7 @@ public class Solution {
         System.out.println(s);
         s = "";
         s += "\n";
-        if (allfiles.length != 0) {
+        // if (allfiles.length != 0) {
             for (int i = 0; i < allfiles.length; i++) {
                 s += allfiles[i].getName() + "\t";
                 // System.out.println("2nd"+ s);
@@ -162,8 +163,11 @@ public class Solution {
             }
             // System.out.println("\t\t");
             System.out.println(s);
-        } else {
-            System.out.println("empty directory");
-        }
+        // } else {
+            // System.out.println("empty directory");
+        // }
+    } catch (Exception ex) {
+        System.out.println("empty directory");
     }
+}
 }
