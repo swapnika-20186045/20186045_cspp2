@@ -158,7 +158,7 @@ public class Solution {
                     Document d1 = new Document(foldername + "/" + allfiles[i].getName());
                     Document d2 = new Document(foldername + "/" + allfiles[j].getName());
                     Distance d = new Distance(d1, d2);
-                    s += "\t" + d.similarity() + "" + "\t";
+                    s += d.similarity() + "" + "\t";
                     if (d.similarity() > max && d.similarity() != 100) {
                         max = d.similarity();
                         file1 = allfiles[i].getName();
