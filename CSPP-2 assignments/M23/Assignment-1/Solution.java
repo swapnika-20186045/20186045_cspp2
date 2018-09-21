@@ -151,7 +151,7 @@ public class Solution {
         // if (allfiles.length != 0) {
             int max = 0;
             for (int i = 0; i < allfiles.length; i++) {
-                s += allfiles[i].getName();
+                s += allfiles[i].getName() + "\t";
                 // System.out.println("2nd"+ s);
                 // s += "\n";
                 for (int j = 0; j < allfiles.length; j++) {
