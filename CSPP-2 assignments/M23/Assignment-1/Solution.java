@@ -14,9 +14,9 @@ class Document {
     /**
      * function to read input file.
      **/
-	Document (String f) {
-		word = ReadFile(f);
-	}
+    Document (String f) {
+        word = ReadFile(f);
+    }
     /**
      * Reads a file.
      *
@@ -24,43 +24,47 @@ class Document {
      *
      * @return     String[].
      */
-	public String[] ReadFile(String f) {
-		String[] strfile = null;
-		String str = "";
-		try {
-			// File filename1 = new File("input000.txt");
-			Scanner scan = new Scanner(new File(f));
-			while (scan.hasNext()) {
+    public String[] ReadFile(String f) {
+        String[] strfile = null;
+        String str = "";
+        try {
+            // File filename1 = new File("input000.txt");
+            Scanner scan = new Scanner(new File(f));
+            while (scan.hasNext()) {
                 //converts to lowercase.
-				str += (scan.nextLine().toLowerCase());
-			}
-			strfile = str.split(" ");
-		} catch (FileNotFoundException e) {
-				e.printStackTrace();
-		}
-		return strfile;
-	}
+                str += (scan.nextLine().toLowerCase());
+            }
+            strfile = str.split(" ");
+        } catch (FileNotFoundException e) {
+                e.printStackTrace();
+        }
+        return strfile;
+    }
     /**
      * to check frequency of a word.
      *
      * @return     HashMap<String, Integer>.
      */
-	public HashMap<String, Integer> frequency() {
-		freq = new HashMap<String, Integer>();
-		for (int i = 0; i < word.length; i++) {
-			if (freq.containsKey(word[i])) {
-				freq.put(word[i], freq.get(word[i]) + 1);
-			} else {
-				freq.put(word[i], 1);
-			}
-		}
-		return freq;
-	}
+    public HashMap<String, Integer> frequency() {
+        freq = new HashMap<String, Integer>();
+        for (int i = 0; i < word.length; i++) {
+            if (freq.containsKey(word[i])) {
+                freq.put(word[i], freq.get(word[i]) + 1);
+            } else {
+                freq.put(word[i], 1);
+            }
+        }
+        return freq;
+    }
 }
 /**
  * Class for distance.
  */
 class Distance {
+    /**
+     * variable declaration.
+     */
+    private static final int HUNDRED = 100;
     /**
      * private declaration for a document.
      */
@@ -75,20 +79,20 @@ class Distance {
      * @param      d1    The d 1
      * @param      d2    The d 2
      */
-    Distance(Document d1, Document d2) {
+    Distance(final Document d1, final Document d2) {
         this.doc1 = d1;
         this.doc2 = d2;
     }
     /**
-     * to find Euclidean norm.
+     * to find euclidean norm.
      *
      * @param      doc   The document
      *
      * @return     double.
      */
-    public double Euclidean(Document doc) {
-    	HashMap<String,Integer> p = new HashMap<String,Integer>();
-    	p = doc.frequency();
+    public double euclidean(final Document doc) {
+        HashMap<String, Integer> p = new HashMap<String, Integer>();
+        p = doc.frequency();
         int sum = 0;
         for (String s : p.keySet()) {
             sum += Math.pow(p.get(s), 2);
@@ -101,11 +105,11 @@ class Distance {
      *
      * @return     double.
      */
-    public double DotProduct() {
-    	HashMap<String, Integer> dict1 = doc1.frequency(); 	
-    	HashMap<String, Integer> dict2 = doc2.frequency(); 	
+    public double dotproduct() {
+        HashMap<String, Integer> dict1 = doc1.frequency();
+        HashMap<String, Integer> dict2 = doc2.frequency();
         int sum = 0;
-        for ( String key : dict1.keySet()) {
+        for (String key : dict1.keySet()) {
             if (dict2.containsKey(key)) {
                 int val1 = dict1.get(key);
                 int val2 = dict2.get(key);
@@ -120,13 +124,13 @@ class Distance {
      * @return     double.
      */
     public int similarity() {
-        double a = Euclidean(doc1);
-        double b = Euclidean(doc2);
+        double a = euclidean(doc1);
+        double b = euclidean(doc2);
         double num = a * b;
-        double den = DotProduct();
+        double den = dotproduct();
         double result = den / num;
-        result *= 100;
-        return (int)Math.round(result);
+        result *= HUNDRED;
+        return (int) Math.round(result);
     }
 }
 /**
@@ -134,7 +138,18 @@ class Distance {
  * main function.
  */
 public class Solution {
-    public static void main(String[] args) throws Exception {
+    /**
+     * variable declaration.
+     */
+    private static final int HUNDRED = 100;
+    /**
+     * main function.
+     *
+     * @param      args       The arguments
+     *
+     * @throws     Exception  { exception_description }
+     */
+    public static void main(final String[] args) throws Exception {
         try {
         Scanner scan = new Scanner(System.in);
         String foldername = scan.nextLine();
@@ -157,11 +172,13 @@ public class Solution {
                 // System.out.println("2nd"+ s);
                 // s += "\n";
                 for (int j = 0; j < allfiles.length; j++) {
-                    Document d1 = new Document(foldername + "/" + allfiles[i].getName());
-                    Document d2 = new Document(foldername + "/" + allfiles[j].getName());
+                    Document d1 = new Document(foldername
+                        + "/" + allfiles[i].getName());
+                    Document d2 = new Document(foldername
+                        + "/" + allfiles[j].getName());
                     Distance d = new Distance(d1, d2);
                     s += "\t" + d.similarity() + "" + "\t";
-                    if (d.similarity() > max && d.similarity() != 100) {
+                    if (d.similarity() > max && d.similarity() != HUNDRED) {
                         max = d.similarity();
                         file1 = allfiles[i].getName();
                         file2 = allfiles[j].getName();
@@ -173,7 +190,8 @@ public class Solution {
             }
             // System.out.println("\t\t");
             System.out.println(s);
-            System.out.println("Maximum similarity is between " + file1 + " and " + file2);
+            System.out.println("Maximum similarity is between "
+                + file1 + " and " + file2);
         // } else {
             // System.out.println("empty directory");
         // }
