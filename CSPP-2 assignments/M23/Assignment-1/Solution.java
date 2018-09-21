@@ -110,7 +110,7 @@ public class Solution {
         if (allfiles.length != 0) {
             // System.out.println("Entered if");
             for (File file1: allfiles) {
-                // s += file1.getName() + "\t";
+                s += file1.getName() + "\t";
                 for (File file2: allfiles) {
                     Document d1 = new Document(file1 + "");
                     Document d2 = new Document(file2 + "");
