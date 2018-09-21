@@ -144,13 +144,13 @@ public class Solution {
         s += "\n";
         if (allfiles.length != 0) {
             for (int i = 0; i < allfiles.length; i++) {
-                s += "\t" + allfiles[i].getName() + "\t";
+                s += allfiles[i].getName() + "\t";
                 // s += "\n";
                 for (int j = 0; j < allfiles.length; j++) {
                     Document d1 = new Document(foldername + "/" + allfiles[i].getName());
                     Document d2 = new Document(foldername + "/" + allfiles[j].getName());
                     Distance d = new Distance(d1, d2);
-                    s += d.similarity() + "" + "\t";
+                    s += "\t" + d.similarity() + "" + "\t";
                 }
                 s = s.trim();
                 s += "\n";
