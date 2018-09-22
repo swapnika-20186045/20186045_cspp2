@@ -186,9 +186,9 @@ public class TodoistMain {
                     Task[] tasks = todo.getNextTask(tokens[1], n);
                     System.out.println(Arrays.deepToString(tasks));
                 break;
-                // case "total-time":
-                //     System.out.println(todo.totalTime4Completion());
-                // break;
+                case "total-time":
+                    System.out.println(todo.totalTime4Completion());
+                break;
                 default:
                 break;
             }
