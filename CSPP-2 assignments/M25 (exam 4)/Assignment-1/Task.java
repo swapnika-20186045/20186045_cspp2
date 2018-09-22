@@ -1,5 +1,3 @@
-import java.util.Scanner;
-import java.util.Arrays;
 /**
  * Class for task.
  */
@@ -45,8 +43,8 @@ class Task {
      * @param      statuss          The statuss
      */
     Task(final String titlee, final String assignedToo,
-        final int timeToCompletee, final boolean importantt,
-        final boolean urgentt, final String statuss) throws Exception {
+         final int timeToCompletee, final boolean importantt,
+         final boolean urgentt, final String statuss) throws Exception {
         this.title = titlee;
         this.assignedTo = assignedToo;
         this.timeToComplete = timeToCompletee;
@@ -55,7 +53,7 @@ class Task {
         this.status = statuss;
         if (title.equals("")) throw new Exception("Title not provided");
         if (timeToComplete < 0) throw new Exception("Invalid timeToComplete "
-            + timeToComplete);
+                    + timeToComplete);
         if (!status.equals("todo") && !status.equals("done"))
             throw new Exception("Invalid status " + status);
     }
@@ -67,9 +65,13 @@ class Task {
     public String toString() {
         String imp = "Not Important";
         String urge = "Not Urgent";
-        if (important) imp = "Important";
-        if(urgent) urge = "Urgent";
-        String str = title + ", " + assignedTo + ", " + timeToComplete + ", " + imp + ", "+ urge + ", " + status;
+        if (important) {
+            imp = "Important";
+        }
+        if (urgent) {
+            urge = "Urgent";
+        }
+        String str = title + ", " + assignedTo + ", " + timeToComplete + ", " + imp + ", " + urge + ", " + status;
         return str;
     }
 }

@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.Arrays;
 /**
  * Class for todoist.
@@ -51,7 +50,7 @@ class Todoist {
     public String toString() {
         String str = "";
         for (int i = 0; i < size; i++) {
-        String imp = "Not Important";
+            String imp = "Not Important";
             String urge = "Not Urgent";
             if (tasks[i].important) {
                 imp = "Important";
@@ -60,8 +59,8 @@ class Todoist {
                 urge = "Urgent";
             }
             str += tasks[i].title + ", " + tasks[i].assignedTo + ", "
-              + tasks[i].timeToComplete + ", " + imp + ", "+ urge + ", "
-              + tasks[i].status;
+                   + tasks[i].timeToComplete + ", " + imp + ", " + urge + ", "
+                   + tasks[i].status;
             str += "\n";
         }
         return str;
@@ -77,7 +76,7 @@ class Todoist {
         for (int i = 0; i < size; i++) {
             if (tasks[i].important && !tasks[i].urgent) {
                 if (tasks[i].assignedTo.equals(name)
-                    && tasks[i].status.equals("todo")) {
+                        && tasks[i].status.equals("todo")) {
                     return tasks[i];
                 }
             }
@@ -97,7 +96,7 @@ class Todoist {
         int num = 0;
         for (int i = 0; i < size; i++) {
             if (tasks[i].assignedTo.equals(name)
-                && tasks[i].status.equals("todo")) {
+                    && tasks[i].status.equals("todo")) {
                 if (tasks[i].important && !tasks[i].urgent) {
                     noOfTasks[num] = tasks[i];
                     num++;
@@ -124,4 +123,8 @@ class Todoist {
         return time;
     }
 }
+
+
+
+
 
