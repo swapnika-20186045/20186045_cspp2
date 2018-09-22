@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * Class for todoist main.
  */
-final class TodoistMain {
+public final class TodoistMain {
     /**
     *@variable THREE
     **/
@@ -25,6 +25,13 @@ final class TodoistMain {
     *@variable SIX
     **/
     private static final int SIX = 6;
+    /**
+     * Constructs the object.
+     */
+    private TodoistMain() {
+        //not used.
+    }
+
     /**
      * Starts a test.
      */
@@ -116,3 +123,4 @@ final class TodoistMain {
         startTest();
     }
 }
+
