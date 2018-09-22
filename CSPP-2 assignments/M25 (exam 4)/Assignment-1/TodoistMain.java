@@ -9,114 +9,124 @@ import java.util.Arrays;
  */
 
 class Todoist {
-	/**
-	 * array of tasks.
-	 */
-	Task[] tasks;
-	/**
-	 * declaration of variable size.
-	 */
-	int size;
-	/**
-	 * Constructs the object.
-	 */
-	Todoist() {
-		tasks = new Task[10];
-		size = 0;
-	}
-	/**
-	 * Adds a task.
-	 *
-	 * @param      task  The task
-	 */
-	public void addTask(final Task task) {
-		try{
-			tasks[size] = task;
-			size++;
-		} catch (Exception e) {
-			resize();
-		}
-	}
-	/**
-	 * method to change the size.
-	 */
-	private void resize() {
+    /**
+     * array of tasks.
+     */
+    Task[] tasks;
+    /**
+     * declaration of variable size.
+     */
+    int size;
+    /**
+     * Constructs the object.
+     */
+    Todoist() {
+        tasks = new Task[10];
+        size = 0;
+    }
+    /**
+     * Adds a task.
+     *
+     * @param      task  The task
+     */
+    public void addTask(final Task task) {
+        try{
+            tasks[size] = task;
+            size++;
+        } catch (Exception e) {
+            resize();
+        }
+    }
+    /**
+     * method to change the size.
+     */
+    private void resize() {
         tasks = Arrays.copyOf(tasks, 2 * size);
     }
-	public String toString() {
-		String str = "";
-		for (int i = 0; i < size; i++) {
-			String imp = "Not Important";
-			String urge = "Not Urgent";
-			if (tasks[i].important) imp = "Important";
-			if (tasks[i].urgent) urge = "Urgent";
-			str = tasks[i].title + ", " + tasks[i].assignedTo + ", " + tasks[i].timeToComplete + ", " + imp + ", "+ urge + ", " + tasks[i].status;
-		}
-		return str;
+    public String toString() {
+        String str = "";
+        for (int i = 0; i < size; i++) {
+            String imp = "Not Important";
+            String urge = "Not Urgent";
+            if (tasks[i].important) imp = "Important";
+            if (tasks[i].urgent) urge = "Urgent";
+            str = tasks[i].title + ", " + tasks[i].assignedTo + ", " + tasks[i].timeToComplete + ", " + imp + ", "+ urge + ", " + tasks[i].status;
+        }
+        return str;
+    }
+    public Task getNextTask(String name) {
+        for (int i = 0; i < size; i++) {
+            if (tasks[i].important && !tasks[i].urgent) {
+                if (tasks[i].assignedTo.equals(name) && tasks[i].status.equals("todo")) {
+                    return tasks[i];
+                }
+            }
+        }
+        return null;
     }
 }
 
 class Task {
-	/**
-	 * declaration of variable title.
-	 */
-	String title;
-	/**
-	 * declaration of variable assignedTo.
-	 */
-	String assignedTo;
-	/**
-	 * declaration of variable timeToComplete.
-	 */
-	int timeToComplete;
-	/**
-	 * declaration of variable important.
-	 */
-	boolean important;
-	/**
-	 * declaration of variable urgent.
-	 */
-	boolean urgent;
-	/**
-	 * declaration of variable status.
-	 */
-	String status;
-	/**
-	 * Constructs the object.
-	 */
-	Task() {
-		//not used.
-	}
-	/**
-	 * Constructs the object.
-	 *
-	 * @param      titlee           The titlee
-	 * @param      assignedToo      The assigned too
-	 * @param      timeToCompletee  The time to completee
-	 * @param      importantt       The importantt
-	 * @param      urgentt          The urgentt
-	 * @param      statuss          The statuss
-	 */
-	Task(final String titlee, final String assignedToo, final int timeToCompletee,
-		final boolean importantt, final boolean urgentt, final String statuss) throws Exception {
-		this.title = titlee;
-		this.assignedTo = assignedToo;
-		this.timeToComplete = timeToCompletee;
-		this.important = importantt;
-		this.urgent = urgentt;
-		this.status = statuss;
-		if (title.equals("")) throw new Exception("Title not provided");
-		if (timeToComplete < 0) throw new Exception("Invalid timeToComplete " + timeToComplete);
-		if (!status.equals("todo") && !status.equals("done")) throw new Exception("Invalid status " + status);
-	}
-	public String toString() {
-		String imp = "Not Important";
-		String urge = "Not Urgent";
-		if(important) imp = "Important";
-		if(urgent) urge = "Urgent";
-		String str = title + ", " + assignedTo + ", " + timeToComplete + ", " + imp + ", "+ urge + ", " + status;
-		return str;
-	}
+    /**
+     * declaration of variable title.
+     */
+    String title;
+    /**
+     * declaration of variable assignedTo.
+     */
+    String assignedTo;
+    /**
+     * declaration of variable timeToComplete.
+     */
+    int timeToComplete;
+    /**
+     * declaration of variable important.
+     */
+    boolean important;
+    /**
+     * declaration of variable urgent.
+     */
+    boolean urgent;
+    /**
+     * declaration of variable status.
+     */
+    String status;
+    /**
+     * Constructs the object.
+     */
+    Task() {
+        //not used.
+    }
+    /**
+     * Constructs the object.
+     *
+     * @param      titlee           The titlee
+     * @param      assignedToo      The assigned too
+     * @param      timeToCompletee  The time to completee
+     * @param      importantt       The importantt
+     * @param      urgentt          The urgentt
+     * @param      statuss          The statuss
+     */
+    Task(final String titlee, final String assignedToo, final int timeToCompletee,
+        final boolean importantt, final boolean urgentt, final String statuss) throws Exception {
+        this.title = titlee;
+        this.assignedTo = assignedToo;
+        this.timeToComplete = timeToCompletee;
+        this.important = importantt;
+        this.urgent = urgentt;
+        this.status = statuss;
+        if (title.equals("")) throw new Exception("Title not provided");
+        if (timeToComplete < 0) throw new Exception("Invalid timeToComplete " + timeToComplete);
+        if (!status.equals("todo") && !status.equals("done")) throw new Exception("Invalid status " + status);
+    }
+    public String toString() {
+        String imp = "Not Important";
+        String urge = "Not Urgent";
+        if (important) imp = "Important";
+        if(urgent) urge = "Urgent";
+        String str = title + ", " + assignedTo + ", " + timeToComplete + ", " + imp + ", "+ urge + ", " + status;
+        return str;
+    }
 }
 
 /**
@@ -136,15 +146,15 @@ public class TodoistMain {
                 case "task":
                     testTask(tokens);
                 break;
-                // case "add-task":
-                //     testAddTask(todo, tokens);
-                // break;
-                // case "print-todoist":
-                //     System.out.println(todo);
-                // break;
-                // case "get-next":
-                //     System.out.println(todo.getNextTask(tokens[1]));
-                // break;
+                case "add-task":
+                    testAddTask(todo, tokens);
+                break;
+                case "print-todoist":
+                    System.out.println(todo);
+                break;
+                case "get-next":
+                    System.out.println(todo.getNextTask(tokens[1]));
+                break;
                 // case "get-next-n":
                 //     int n = Integer.parseInt(tokens[2]);
                 //     Task[] tasks = todo.getNextTask(tokens[1], n);
