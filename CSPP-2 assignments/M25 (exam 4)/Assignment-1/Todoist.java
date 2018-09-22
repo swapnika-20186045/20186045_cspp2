@@ -1,159 +1,122 @@
 import java.util.Scanner;
 import java.util.Arrays;
-
 /**
-  * write your code below this comment
-  */
-class Task {
-	/**
-	 * declaration of variable title.
-	 */
-	String title;
-	/**
-	 * declaration of variable assignedTo.
-	 */
-	String assignedTo;
-	/**
-	 * declaration of variable timeToComplete.
-	 */
-	int timeToComplete;
-	/**
-	 * declaration of variable important.
-	 */
-	boolean important;
-	/**
-	 * declaration of variable urgent.
-	 */
-	boolean urgent;
-	/**
-	 * declaration of variable status.
-	 */
-	String status;
-	/**
-	 * Constructs the object.
-	 */
-	Task() {
-		//not used.
-	}
-	/**
-	 * Constructs the object.
-	 *
-	 * @param      titlee           The titlee
-	 * @param      assignedToo      The assigned too
-	 * @param      timeToCompletee  The time to completee
-	 * @param      importantt       The importantt
-	 * @param      urgentt          The urgentt
-	 * @param      statuss          The statuss
-	 */
-	Task(String titlee, String assignedToo, int timeToCompletee,
-		boolean importantt, boolean urgentt, String statuss) {
-		this.title = titlee;
-		this.assignedTo = assignedToo;
-		this.timeToComplete = timeToCompletee;
-		this.important = importantt;
-		this.urgent = urgentt;
-		this.status = statuss;
-	}
-	public String toString() {
-        return this.title + " " + this.assignedTo + " " + this.timeToComplete
-        + " " + this.important + " " + this.urgent + " " + this.status;
-    }
-}
-
-
-/**
- * Class for todoist main.
+ * Class for todoist.
  */
-public class Todoist {
-
+class Todoist {
     /**
-     * Starts a test.
+     * array of tasks.
      */
-    public static void startTest() {
-        Todoist todo = new Todoist();
-        Scanner s = new Scanner(System.in);
-        while (s.hasNext()) {
-            String[] tokens = s.nextLine().split(",");
-            switch (tokens[0]) {
-                case "task":
-                    testTask(tokens);
-                break;
-                case "add-task":
-                    testAddTask(todo, tokens);
-                break;
-                case "print-todoist":
-                    System.out.println(todo);
-                break;
-                case "get-next":
-                    System.out.println(todo.getNextTask(tokens[1]));
-                break;
-                case "get-next-n":
-                    int n = Integer.parseInt(tokens[2]);
-                    Task[] tasks = todo.getNextTask(tokens[1], n);
-                    System.out.println(Arrays.deepToString(tasks));
-                break;
-                case "total-time":
-                    System.out.println(todo.totalTime4Completion());
-                break;
-                default:
-                break;
+    private Task[] tasks;
+    /**
+     * declaration of variable size.
+     */
+    private int size;
+    /**
+    *@variable TEN
+    **/
+    private static final int TEN = 10;
+    /**
+     * Constructs the object.
+     */
+    Todoist() {
+        tasks = new Task[TEN];
+        size = 0;
+    }
+    /**
+     * Adds a task.
+     *
+     * @param      task  The task
+     */
+    public void addTask(final Task task) {
+        try {
+            tasks[size] = task;
+            size++;
+        } catch (Exception e) {
+            resize();
+            addTask(task);
+        }
+    }
+    /**
+     * method to change the size.
+     */
+    private void resize() {
+        tasks = Arrays.copyOf(tasks, 2 * size);
+    }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
+    public String toString() {
+        String str = "";
+        for (int i = 0; i < size; i++) {
+        String imp = "Not Important";
+            String urge = "Not Urgent";
+            if (tasks[i].important) imp = "Important";
+            if (tasks[i].urgent) urge = "Urgent";
+            str += tasks[i].title + ", " + tasks[i].assignedTo + ", "
+             + tasks[i].timeToComplete + ", " + imp + ", "+ urge + ", "
+             + tasks[i].status;
+            str += "\n";
+        }
+        return str;
+    }
+    /**
+     * Gets the next task.
+     *
+     * @param      name  The name
+     *
+     * @return     The next task.
+     */
+    public Task getNextTask(final String name) {
+        for (int i = 0; i < size; i++) {
+            if (tasks[i].important && !tasks[i].urgent) {
+                if (tasks[i].assignedTo.equals(name)
+                    && tasks[i].status.equals("todo")) {
+                    return tasks[i];
+                }
             }
         }
+        return null;
     }
-
     /**
-     * method to test add task.
+     * Gets the next task.
      *
-     * @param      todo    The todo
-     * @param      tokens  The tokens
+     * @param      name   The name
+     * @param      count  The count
+     *
+     * @return     The next task.
      */
-    public static void testAddTask(final Todoist todo, final String[] tokens) {
-        try {
-            todo.addTask(createTask(tokens));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+    public Task[] getNextTask(final String name, final int count) {
+        Task[] noOfTasks = new Task[count];
+        int num = 0;
+        for (int i = 0; i < size; i++) {
+            if (tasks[i].assignedTo.equals(name)
+                && tasks[i].status.equals("todo")) {
+                if (tasks[i].important && !tasks[i].urgent) {
+                    noOfTasks[num] = tasks[i];
+                    num++;
+                    if (num == count) {
+                        break;
+                    }
+                }
+            }
         }
+        return noOfTasks;
     }
-
     /**
-     * method to test the creation of task object.
+     * calculates total time.
      *
-     * @param      tokens  The tokens
+     * @return     { description_of_the_return_value }
      */
-    public static void testTask(final String[] tokens) {
-        try {
-            System.out.println(createTask(tokens));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+    public int totalTime4Completion() {
+        int time = 0;
+        for (int i = 0; i < size; i++) {
+            if (tasks[i].status.equals("todo")) {
+                time += tasks[i].timeToComplete;
+            }
         }
-    }
-
-    /**
-     * Creates a task object.
-     *
-     * @param      tokens     The tokens
-     *
-     * @return     Task object
-     *
-     * @throws     Exception  if task inputs are invalid
-     */
-    public static Task createTask(final String[] tokens) throws Exception {
-        String title = tokens[1];
-        String assignedTo = tokens[2];
-        int timeToComplete = Integer.parseInt(tokens[3]);
-        boolean important = tokens[4].equals("y");
-        boolean urgent = tokens[5].equals("y");
-        String status = tokens[6];
-        return new Task(
-            title, assignedTo, timeToComplete, important, urgent, status);
-    }
-
-    /**
-     * main method.
-     *
-     * @param      args  The command line arguments
-     */
-    public static void main(final String[] args) {
-        startTest();
+        return time;
     }
 }
