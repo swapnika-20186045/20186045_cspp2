@@ -57,7 +57,7 @@ class Todoist {
             if (tasks[i].urgent) urge = "Urgent";
             str += tasks[i].title + ", " + tasks[i].assignedTo + ", "
              + tasks[i].timeToComplete + ", " + imp + ", "+ urge + ", "
-             + tasks[i].status;
+              + tasks[i].status;
             str += "\n";
         }
         return str;

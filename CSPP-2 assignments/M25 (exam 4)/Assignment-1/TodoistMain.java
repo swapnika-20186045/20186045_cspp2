@@ -1,3 +1,7 @@
+/**
+ * Todolist.
+ * @author Swapnika Vakacharla
+ */
 import java.util.Scanner;
 import java.util.Arrays;
 
