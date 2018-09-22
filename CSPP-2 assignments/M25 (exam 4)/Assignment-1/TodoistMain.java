@@ -72,6 +72,9 @@ class Todoist {
                 if (tasks[i].important && !tasks[i].urgent) {
                     noOfTasks[num] = tasks[i];
                     num++;
+                    if (num == count) {
+                        break;
+                    }
                 }
             }
         }
