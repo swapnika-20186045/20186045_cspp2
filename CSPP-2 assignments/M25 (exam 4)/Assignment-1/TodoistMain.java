@@ -29,7 +29,7 @@ class Todoist {
 	 *
 	 * @param      task  The task
 	 */
-	public void addTask(Task task) {
+	public void addTask(final Task task) {
 		try{
 			tasks[size] = task;
 			size++;
@@ -86,8 +86,8 @@ class Task {
 	 * @param      urgentt          The urgentt
 	 * @param      statuss          The statuss
 	 */
-	Task(String titlee, String assignedToo, int timeToCompletee,
-		boolean importantt, boolean urgentt, String statuss) throws Exception {
+	Task(final String titlee, final String assignedToo, final int timeToCompletee,
+		final boolean importantt, final boolean urgentt, final String statuss) throws Exception {
 		this.title = titlee;
 		this.assignedTo = assignedToo;
 		this.timeToComplete = timeToCompletee;
