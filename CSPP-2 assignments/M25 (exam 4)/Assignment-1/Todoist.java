@@ -53,10 +53,14 @@ class Todoist {
         for (int i = 0; i < size; i++) {
         String imp = "Not Important";
             String urge = "Not Urgent";
-            if (tasks[i].important) imp = "Important";
-            if (tasks[i].urgent) urge = "Urgent";
+            if (tasks[i].important) {
+                imp = "Important";
+            }
+            if (tasks[i].urgent) {
+                urge = "Urgent";
+            }
             str += tasks[i].title + ", " + tasks[i].assignedTo + ", "
-             + tasks[i].timeToComplete + ", " + imp + ", "+ urge + ", "
+              + tasks[i].timeToComplete + ", " + imp + ", "+ urge + ", "
               + tasks[i].status;
             str += "\n";
         }
@@ -120,3 +124,4 @@ class Todoist {
         return time;
     }
 }
+
