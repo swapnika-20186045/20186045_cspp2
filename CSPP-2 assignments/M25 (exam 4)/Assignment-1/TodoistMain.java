@@ -46,7 +46,7 @@ class Todoist {
     public String toString() {
         String str = "";
         for (int i = 0; i < size; i++) {
-            String imp = "Not Important";
+        String imp = "Not Important";
             String urge = "Not Urgent";
             if (tasks[i].important) imp = "Important";
             if (tasks[i].urgent) urge = "Urgent";
@@ -81,7 +81,15 @@ class Todoist {
         }
         return noOfTasks;
     }
-    // public totalTime4Completion()
+    public int totalTime4Completion() {
+        int time = 0;
+        for(int i = 0; i < size; i++) {
+            if (tasks[i].status.equals("todo")) {
+                time += tasks[i].timeToComplete;
+            }
+        }
+        return time;
+    }
 }
 
 class Task {
