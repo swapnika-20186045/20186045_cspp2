@@ -87,13 +87,14 @@ class Task {
 	 * @param      statuss          The statuss
 	 */
 	Task(String titlee, String assignedToo, int timeToCompletee,
-		boolean importantt, boolean urgentt, String statuss) {
+		boolean importantt, boolean urgentt, String statuss) throws Exception {
 		this.title = titlee;
 		this.assignedTo = assignedToo;
 		this.timeToComplete = timeToCompletee;
 		this.important = importantt;
 		this.urgent = urgentt;
 		this.status = statuss;
+		if (title.equals("")) throw new Exception("Title not provided");
 	}
 	public String toString() {
 		String imp = "Not Important";
