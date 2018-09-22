@@ -12,16 +12,20 @@ class Todoist {
     /**
      * array of tasks.
      */
-    Task[] tasks;
+    private Task[] tasks;
     /**
      * declaration of variable size.
      */
-    int size;
+    private int size;
+    /**
+    *@variable TEN
+    **/
+    private static final int TEN = 10;
     /**
      * Constructs the object.
      */
     Todoist() {
-        tasks = new Task[10];
+        tasks = new Task[TEN];
         size = 0;
     }
     /**
@@ -30,7 +34,7 @@ class Todoist {
      * @param      task  The task
      */
     public void addTask(final Task task) {
-        try{
+        try {
             tasks[size] = task;
             size++;
         } catch (Exception e) {
@@ -44,6 +48,11 @@ class Todoist {
     private void resize() {
         tasks = Arrays.copyOf(tasks, 2 * size);
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String str = "";
         for (int i = 0; i < size; i++) {
@@ -51,26 +60,45 @@ class Todoist {
             String urge = "Not Urgent";
             if (tasks[i].important) imp = "Important";
             if (tasks[i].urgent) urge = "Urgent";
-            str += tasks[i].title + ", " + tasks[i].assignedTo + ", " + tasks[i].timeToComplete + ", " + imp + ", "+ urge + ", " + tasks[i].status;
+            str += tasks[i].title + ", " + tasks[i].assignedTo + ", "
+            + tasks[i].timeToComplete + ", " + imp + ", "+ urge + ", "
+            + tasks[i].status;
             str += "\n";
         }
         return str;
     }
+    /**
+     * Gets the next task.
+     *
+     * @param      name  The name
+     *
+     * @return     The next task.
+     */
     public Task getNextTask(String name) {
         for (int i = 0; i < size; i++) {
             if (tasks[i].important && !tasks[i].urgent) {
-                if (tasks[i].assignedTo.equals(name) && tasks[i].status.equals("todo")) {
+                if (tasks[i].assignedTo.equals(name)
+                    && tasks[i].status.equals("todo")) {
                     return tasks[i];
                 }
             }
         }
         return null;
     }
+    /**
+     * Gets the next task.
+     *
+     * @param      name   The name
+     * @param      count  The count
+     *
+     * @return     The next task.
+     */
     public Task[] getNextTask(String name, int count) {
         Task[] noOfTasks = new Task[count];
         int num = 0;
         for (int i = 0; i < size; i++) {
-            if (tasks[i].assignedTo.equals(name) && tasks[i].status.equals("todo")) {
+            if (tasks[i].assignedTo.equals(name)
+                && tasks[i].status.equals("todo")) {
                 if (tasks[i].important && !tasks[i].urgent) {
                     noOfTasks[num] = tasks[i];
                     num++;
@@ -82,6 +110,11 @@ class Todoist {
         }
         return noOfTasks;
     }
+    /**
+     * calculates total time.
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int totalTime4Completion() {
         int time = 0;
         for(int i = 0; i < size; i++) {
@@ -92,7 +125,9 @@ class Todoist {
         return time;
     }
 }
-
+/**
+ * Class for task.
+ */
 class Task {
     /**
      * declaration of variable title.
@@ -134,8 +169,9 @@ class Task {
      * @param      urgentt          The urgentt
      * @param      statuss          The statuss
      */
-    Task(final String titlee, final String assignedToo, final int timeToCompletee,
-        final boolean importantt, final boolean urgentt, final String statuss) throws Exception {
+    Task(final String titlee, final String assignedToo,
+        final int timeToCompletee, final boolean importantt,
+        final boolean urgentt, final String statuss) throws Exception {
         this.title = titlee;
         this.assignedTo = assignedToo;
         this.timeToComplete = timeToCompletee;
@@ -143,9 +179,16 @@ class Task {
         this.urgent = urgentt;
         this.status = statuss;
         if (title.equals("")) throw new Exception("Title not provided");
-        if (timeToComplete < 0) throw new Exception("Invalid timeToComplete " + timeToComplete);
-        if (!status.equals("todo") && !status.equals("done")) throw new Exception("Invalid status " + status);
+        if (timeToComplete < 0) throw new Exception("Invalid timeToComplete "
+            + timeToComplete);
+        if (!status.equals("todo") && !status.equals("done"))
+            throw new Exception("Invalid status " + status);
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String imp = "Not Important";
         String urge = "Not Urgent";
