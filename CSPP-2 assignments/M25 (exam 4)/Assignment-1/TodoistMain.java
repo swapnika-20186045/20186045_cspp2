@@ -95,6 +95,7 @@ class Task {
 		this.urgent = urgentt;
 		this.status = statuss;
 		if (title.equals("")) throw new Exception("Title not provided");
+		if (timeToComplete < 0) throw new Exception("Invalid timeToComplete" + timeToComplete);
 	}
 	public String toString() {
 		String imp = "Not Important";
