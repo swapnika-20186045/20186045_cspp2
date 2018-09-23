@@ -30,61 +30,62 @@ public class Solution {
 		return lcsmax + 1;
 	}
 	public static void main(String[] args) throws Exception {
-		Scanner scan = new Scanner(System.in);
-		String foldername = scan.next();
-		File folder = new File(foldername);
-		File[] filelist = folder.listFiles();
-		if (filelist.length == 1) {
-			throw new Exception("Empty Directory");
-        }
-		String[] strlist = new String[filelist.length];
-		// System.out.println(Arrays.toString(filelist));
 		try {
-			int filecount = 0;
-			for (File file : filelist) {
-				Scanner filescan = new Scanner(file);
-				String str = "";
-				while(filescan.hasNextLine()) {
-					str += filescan.nextLine() + " ";
-				}
-				// System.out.println(str);
-				strlist[filecount++] = str.trim();
-			}
-			// System.out.println(Arrays.toString(strlist));
-		} catch (FileNotFoundException e) {
-			System.out.println("file not found");
-		}
-
-		float[][] matchpercentmat = new float[filelist.length][filelist.length];
-		for (int i = 0; i < filelist.length; i++) {
-			for (int j = 0; j < filelist.length; j++) {
-				if (i == j) {
-					matchpercentmat[i][j] = 100;
-				} else {
-					// int lcs = 0 , lcstemp = 0;
-					// // System.out.println(strlist[i] + "\n" + strlist[j]);
-					// for (String eachwordi : strlist[i].replace(".", " ").split(" ")) {
-					// 	for (String eachwordj : strlist[j].replace(".", " ").split(" ")) {
-					// 		if (eachwordi.equals(eachwordj) && eachwordi.length() > lcs) {
-					// 			lcs = eachwordi.length();
-					// 		}
-					// 	}
-					// }
-					// matchpercentmat[i][j] = (lcs * 200) / (strlist[i].length() + strlist[j].length());
-
-					int lcsmax = 0;
-					if (strlist[i].length() > strlist[j].length()) {
-						lcsmax = lcs(strlist[i], strlist[j]);
-					} else {
-						lcsmax = lcs(strlist[j], strlist[i]);
+			Scanner scan = new Scanner(System.in);
+			String foldername = scan.next();
+			File folder = new File(foldername);
+			File[] filelist = folder.listFiles();
+			String[] strlist = new String[filelist.length];
+			// System.out.println(Arrays.toString(filelist));
+			try {
+				int filecount = 0;
+				for (File file : filelist) {
+					Scanner filescan = new Scanner(file);
+					String str = "";
+					while(filescan.hasNextLine()) {
+						str += filescan.nextLine() + " ";
 					}
-					matchpercentmat[i][j] = (lcsmax * 200) / (strlist[i].length() + strlist[j].length()); 
+					// System.out.println(str);
+					strlist[filecount++] = str.trim();
+				}
+				// System.out.println(Arrays.toString(strlist));
+			} catch (FileNotFoundException e) {
+				System.out.println("file not found");
+			}
+
+			float[][] matchpercentmat = new float[filelist.length][filelist.length];
+			for (int i = 0; i < filelist.length; i++) {
+				for (int j = 0; j < filelist.length; j++) {
+					if (i == j) {
+						matchpercentmat[i][j] = 100;
+					} else {
+						// int lcs = 0 , lcstemp = 0;
+						// // System.out.println(strlist[i] + "\n" + strlist[j]);
+						// for (String eachwordi : strlist[i].replace(".", " ").split(" ")) {
+						// 	for (String eachwordj : strlist[j].replace(".", " ").split(" ")) {
+						// 		if (eachwordi.equals(eachwordj) && eachwordi.length() > lcs) {
+						// 			lcs = eachwordi.length();
+						// 		}
+						// 	}
+						// }
+						// matchpercentmat[i][j] = (lcs * 200) / (strlist[i].length() + strlist[j].length());
+
+						int lcsmax = 0;
+						if (strlist[i].length() > strlist[j].length()) {
+							lcsmax = lcs(strlist[i], strlist[j]);
+						} else {
+							lcsmax = lcs(strlist[j], strlist[i]);
+						}
+						matchpercentmat[i][j] = (lcsmax * 200) / (strlist[i].length() + strlist[j].length()); 
+					}
 				}
 			}
-		}
-		// System.out.println(Arrays.toString(matchpercentmat));
-		for (int i = 0; i < matchpercentmat.length; i++) {
-			System.out.println(Arrays.toString(matchpercentmat[i]));
+			// System.out.println(Arrays.toString(matchpercentmat));
+			for (int i = 0; i < matchpercentmat.length; i++) {
+				System.out.println(Arrays.toString(matchpercentmat[i]));
+			}
+		} catch (Exception e) {
+			System.out.println("Empty Directory");
 		}
 	}
 }
