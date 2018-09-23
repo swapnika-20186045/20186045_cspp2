@@ -10,6 +10,14 @@ public class Solution {
      */
     private static final int THIRTEEN = 13;
     /**
+     * variable declaration.
+     */
+    private static final int HUNDRED = 100;
+    /**
+     * variable declaration.
+     */
+    private static final double TWOHUNDRED = 200.0;
+    /**
      * to calculate lcs.
      *
      * @param      doc1  The document 1
@@ -133,18 +141,18 @@ public class Solution {
             for (int i = 0; i < filelist.length; i++) {
                 for (int j = 0; j < filelist.length; j++) {
                     if (i == j) {
-                        matchpercentmat[i][j] = 100;
+                        matchpercentmat[i][j] = HUNDRED;
                     } else {
-                        // int lcs = 0 , lcstemp = 0;
-                        // // System.out.println(strlist[i] + "\n" + strlist[j]);
-                        // for (String eachwordi : strlist[i].replace(".", " ").split(" ")) {
-                        //  for (String eachwordj : strlist[j].replace(".", " ").split(" ")) {
-                        //      if (eachwordi.equals(eachwordj) && eachwordi.length() > lcs) {
-                        //          lcs = eachwordi.length();
-                        //      }
-                        //  }
-                        // }
-                        // matchpercentmat[i][j] = (lcs * 200) / (strlist[i].length() + strlist[j].length());
+    // int lcs = 0 , lcstemp = 0;
+    // // System.out.println(strlist[i] + "\n" + strlist[j]);
+    // for (String eachwordi : strlist[i].replace(".", " ").split(" ")) {
+    //  for (String eachwordj : strlist[j].replace(".", " ").split(" ")) {
+    //      if (eachwordi.equals(eachwordj) && eachwordi.length() > lcs) {
+    //          lcs = eachwordi.length();
+    //      }
+    //  }
+    // }
+    // matchpercentmat[i][j] = (lcs * 200) / (strlist[i].length() + strlist[j].length());
 
                         int lcsmax = 0;
                         if (!(strlist[i].equals("") || strlist[j]
@@ -156,7 +164,7 @@ public class Solution {
                                 lcsmax = lcs(strlist[j], strlist[i]);
                             }
                         }
-                        matchpercentmat[i][j] = Math.round ((lcsmax * 200.0)
+                        matchpercentmat[i][j] = Math.round ((lcsmax * TWOHUNDRED)
                             / (strlist[i].length() + strlist[j].length()));
                     }
                 }
