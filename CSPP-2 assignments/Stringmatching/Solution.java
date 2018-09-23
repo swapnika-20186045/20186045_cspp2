@@ -51,19 +51,20 @@ public class Solution {
 				res += "\t" + matchpercentmat[i][j] + "\t";
 			} res += "\n";
 		}
-		System.out.println(res);
-		int maxpercetmatch = 0;
+		System.out.print(res);
+		float maxpercetmatch = 0;
 		String file1 = "", file2 = "";
-		for(int i=0;i<filelist.length;i++){
-			for(int j=0;j<filelist.length;j++){
-				if (maxpercetmatch < matchpercentmat[i][j] && matchpercentmat[i][j] != 100){
+		for (int i = 0; i < filelist.length; i++) {
+			for (int j = 0; j < filelist.length; j++) {
+				if (i < j && maxpercetmatch < matchpercentmat[i][j]) {
 					file1 = fileListAsString[i];
 					file2 = fileListAsString[j];
+					maxpercetmatch = matchpercentmat[i][j];
 				}
 			}
 		}
 		System.out.println("Maximum similarity is between "
-                               + file1 + " and " + file2);
+		                   + file1 + " and " + file2);
 	}
 
 	public static void main(String[] args) throws Exception {
