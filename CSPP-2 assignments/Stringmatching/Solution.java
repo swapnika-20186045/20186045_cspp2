@@ -1,8 +1,14 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
+/**
+ * Class for solution.
+ */
 public class Solution {
+    /**
+     * variable declaration.
+     */
+    private static final int THIRTEEN = 13;
     /**
      * to calculate lcs.
      *
@@ -57,7 +63,7 @@ public class Solution {
         String res = "         ";
         for (String eachFile : fileListAsString) {
             // res += eachFile + "\t";
-            int numberOfSpaces = 13 - eachFile.length();
+            int numberOfSpaces = THIRTEEN - eachFile.length();
             for (int spindex = 0; spindex < numberOfSpaces; spindex++) {
                 res += " ";
             }
@@ -67,7 +73,7 @@ public class Solution {
             res += fileListAsString[i];
             for (int j = 0; j < fileListAsString.length; j++) {
                 // res += "\t" + matchpercentmat[i][j] + "\t";
-                int numberOfSpaces = 13 - (matchpercentmat[i][j] + "")
+                int numberOfSpaces = THIRTEEN - (matchpercentmat[i][j] + "")
                                      .length();
                 for (int spindex = 0; spindex < numberOfSpaces; spindex++) {
                     res += " ";
