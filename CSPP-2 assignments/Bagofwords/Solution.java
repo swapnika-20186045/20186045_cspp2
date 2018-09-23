@@ -162,7 +162,7 @@ class Distance {
         double den = dotproduct();
         double result = den / num;
         result *= HUNDRED;
-        return (int) Math.round(result);
+        return (int) (result);
     }
 }
 /**
