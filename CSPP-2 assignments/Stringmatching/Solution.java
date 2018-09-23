@@ -4,7 +4,13 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    Solution() {
+        //not used.
+    }
     /**
      * variable declaration.
      */
@@ -152,7 +158,8 @@ public class Solution {
     //      }
     //  }
     // }
-    // matchpercentmat[i][j] = (lcs * 200) / (strlist[i].length() + strlist[j].length());
+    // matchpercentmat[i][j] = (lcs * 200)
+    // / (strlist[i].length() + strlist[j].length());
 
                         int lcsmax = 0;
                         if (!(strlist[i].equals("") || strlist[j]
@@ -164,7 +171,7 @@ public class Solution {
                                 lcsmax = lcs(strlist[j], strlist[i]);
                             }
                         }
-                        matchpercentmat[i][j] = Math.round ((lcsmax * TWOHUNDRED)
+                        matchpercentmat[i][j] = Math.round((lcsmax * TWOHUNDRED)
                             / (strlist[i].length() + strlist[j].length()));
                     }
                 }
