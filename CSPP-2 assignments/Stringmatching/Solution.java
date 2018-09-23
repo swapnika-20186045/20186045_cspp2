@@ -109,10 +109,12 @@ public class Solution {
 						// matchpercentmat[i][j] = (lcs * 200) / (strlist[i].length() + strlist[j].length());
 
 						int lcsmax = 0;
-						if (strlist[i].length() > strlist[j].length()) {
-							lcsmax = lcs(strlist[i], strlist[j]);
-						} else {
-							lcsmax = lcs(strlist[j], strlist[i]);
+						if (!(strlist[i].equals("") || strlist[j].equals(""))) {
+							if (strlist[i].length() > strlist[j].length()) {
+								lcsmax = lcs(strlist[i], strlist[j]);
+							} else {
+								lcsmax = lcs(strlist[j], strlist[i]);
+							}
 						}
 						matchpercentmat[i][j] = (lcsmax * 200) / (strlist[i].length() + strlist[j].length());
 					}
