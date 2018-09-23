@@ -41,14 +41,25 @@ public class Solution {
 				}
 			}
 		}
-		String res = "\t\t";
+		String res = "         ";
 		for (String eachFile : fileListAsString) {
-			res += eachFile + "\t";
+			// res += eachFile + "\t";
+			int numberOfSpaces = 13 - eachFile.length();
+			for (int spindex = 0; spindex < numberOfSpaces; spindex++) {
+				res += " ";
+			}
+			res += eachFile;
 		} res += "\n";
 		for (int i = 0; i < fileListAsString.length; i++) {
 			res += fileListAsString[i];
 			for (int j = 0; j < fileListAsString.length; j++) {
-				res += "\t" + matchpercentmat[i][j] + "\t";
+				// res += "\t" + matchpercentmat[i][j] + "\t";
+				int numberOfSpaces = 13 - (matchpercentmat[i][j] + "").length();
+				for (int spindex = 0; spindex < numberOfSpaces; spindex++) {
+					res += " ";
+				}
+				res += matchpercentmat[i][j] + "";
+
 			} res += "\n";
 		}
 		System.out.print(res);
