@@ -39,6 +39,9 @@ class Document {
                 str += (scan.nextLine().toLowerCase());
             }
             strfile = str.split(" ");
+            for(int i=0;i<strfile.length;i++){
+                if(strfile[i]==""){System.out.println("hi");}
+            }
         } catch (FileNotFoundException e) {
                 e.printStackTrace();
         }
