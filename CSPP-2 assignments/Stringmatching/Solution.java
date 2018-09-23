@@ -46,7 +46,7 @@ public class Solution {
 			res += eachFile + "\t";
 		} res += "\n";
 		for (int i = 0; i < fileListAsString.length; i++) {
-			res += fileListAsString[i] + "\t";
+			res += fileListAsString[i];
 			for (int j = 0; j < fileListAsString.length; j++) {
 				res += "\t" + matchpercentmat[i][j] + "\t";
 			} res += "\n";
