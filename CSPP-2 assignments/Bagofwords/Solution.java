@@ -1,7 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.Arrays;
 import java.util.HashMap;
+
 /**
  * Class for document.
  **/
@@ -36,12 +38,13 @@ class Document {
             Scanner scan = new Scanner(new File(f));
             while (scan.hasNext()) {
                 //converts to lowercase.
-                str += (scan.nextLine().toLowerCase());
+                str += (scan.nextLine().toLowerCase().trim());
             }
             strfile = str.split(" ");
-            for(int i=0;i<strfile.length;i++){
-                if(strfile[i]==""){System.out.println("hi");}
-            }
+            // strfile = Arrays.remove(strfile, "");
+            // for(int i=0;i<strfile.length;i++){
+            //     if(strfile[i]==""){System.out.println("hi");}
+            // }
         } catch (FileNotFoundException e) {
                 e.printStackTrace();
         }
