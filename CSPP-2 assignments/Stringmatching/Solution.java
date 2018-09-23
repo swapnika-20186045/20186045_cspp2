@@ -34,16 +34,37 @@ public class Solution {
 				if (i == j) {
 					matchpercentmat[i][j] = 100;
 				} else {
-					int lcs = 0 , lcstemp = 0;
-					// System.out.println(strlist[i] + "\n" + strlist[j]);
-					for (String eachwordi : strlist[i].split(" ")) {
-						for (String eachwordj : strlist[j].split(" ")) {
-							if (eachwordi.equals(eachwordj) && eachwordi.length() > lcs) {
-								lcs = eachwordi.length();
+					// int lcs = 0 , lcstemp = 0;
+					// // System.out.println(strlist[i] + "\n" + strlist[j]);
+					// for (String eachwordi : strlist[i].replace(".", " ").split(" ")) {
+					// 	for (String eachwordj : strlist[j].replace(".", " ").split(" ")) {
+					// 		if (eachwordi.equals(eachwordj) && eachwordi.length() > lcs) {
+					// 			lcs = eachwordi.length();
+					// 		}
+					// 	}
+					// }
+					// matchpercentmat[i][j] = (lcs * 200) / (strlist[i].length() + strlist[j].length());
+					int lcsmax = 0, lcs = 0, temp = 0;
+					for (int indexi = 0; indexi < strlist[i].length() - 1; indexi++) {
+						int indexj = 0;
+						while (indexj < strlist[j].length() - 1) {
+							temp = i;
+							lcs = 0;
+							if (strlist[i].charAt(temp) == (strlist[j].charAt(indexj))) {
+								while (strlist[i].charAt(temp) == (strlist[j].charAt(indexj)) && indexj < strlist[j].length() - 1 && temp < strlist[i].length() - 1) {
+									lcs++;
+									indexj++;
+									temp++;
+								}
+								if (lcs > lcsmax) {
+									lcsmax = lcs;
+								}
+							} else {
+								indexj++;
 							}
 						}
 					}
-					matchpercentmat[i][j] = (lcs * 200) / (strlist[i].length() + strlist[j].length());
+					matchpercentmat[i][j] = (lcsmax * 200) / (strlist[i].length() + strlist[j].length()); 
 				}
 			}
 		}
