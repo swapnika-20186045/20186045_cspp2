@@ -13,7 +13,7 @@ class Document {
      */
     private String[] word;
     /**
-     * document size
+     * document size.
      */
     private int documentSize = 0;
     /**
