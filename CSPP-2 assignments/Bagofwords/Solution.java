@@ -50,6 +50,7 @@ class Document {
             //     if(strfile[i]==""){System.out.println("hi");}
             // }
             this.documentSize = strfile.length;
+            System.out.println(Arrays.toString(strfile));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
