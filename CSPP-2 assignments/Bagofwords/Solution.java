@@ -1,7 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.Arrays;
+// import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -50,7 +50,7 @@ class Document {
             //     if(strfile[i]==""){System.out.println("hi");}
             // }
             this.documentSize = strfile.length;
-            System.out.println(Arrays.toString(strfile));
+            // System.out.println(Arrays.toString(strfile));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -78,6 +78,9 @@ class Document {
      * @return     The document size.
      */
     public int getDocumentSize() {
+        if (this.documentSize == 1) {
+            return 0;
+        }
         return this.documentSize;
     }
 }
@@ -150,7 +153,7 @@ class Distance {
      * @return     double.
      */
     public int similarity() {
-        if (doc1.getDocumentSize() == 1 || doc2.getDocumentSize() == 1) {
+        if (doc1.getDocumentSize() == 0 || doc2.getDocumentSize() == 0) {
             return 0;
         }
         double a = euclidean(doc1);
