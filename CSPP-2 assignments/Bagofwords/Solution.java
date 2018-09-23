@@ -13,6 +13,10 @@ class Document {
      */
     private String[] word;
     /**
+     * document size
+     */
+    private int documentSize = 0;
+    /**
      * hashmap for frequency.
      */
     private HashMap<String, Integer> freq;
@@ -45,8 +49,9 @@ class Document {
             // for(int i=0;i<strfile.length;i++){
             //     if(strfile[i]==""){System.out.println("hi");}
             // }
+            this.documentSize = strfile.length;
         } catch (FileNotFoundException e) {
-                e.printStackTrace();
+            e.printStackTrace();
         }
         return strfile;
     }
@@ -65,6 +70,14 @@ class Document {
             }
         }
         return freq;
+    }
+    /**
+     * Gets the document size.
+     *
+     * @return     The document size.
+     */
+    public int getDocumentSize() {
+        return this.documentSize;
     }
 }
 /**
@@ -134,6 +147,9 @@ class Distance {
      * @return     double.
      */
     public int similarity() {
+        if (doc1.getDocumentSize() == 0 || doc2.getDocumentSize() == 0) {
+            return 0;
+        }
         double a = euclidean(doc1);
         double b = euclidean(doc2);
         double num = a * b;
@@ -167,21 +183,21 @@ public final class Solution {
      */
     public static void main(final String[] args) throws Exception {
         try {
-        Scanner scan = new Scanner(System.in);
-        String foldername = scan.nextLine();
-        final File folder = new File(foldername);
-        File[] allfiles = folder.listFiles();
-        String file1 = null;
-        String file2 = null;
-        String s = "\t";
-        for (File file: allfiles) {
-            s += "\t" + file.getName();
-            // System.out.println("\t" + s);
-        }
-        System.out.println(s);
-        s = "";
-        // s += "\n";
-        // if (allfiles.length != 0) {
+            Scanner scan = new Scanner(System.in);
+            String foldername = scan.nextLine();
+            final File folder = new File(foldername);
+            File[] allfiles = folder.listFiles();
+            String file1 = null;
+            String file2 = null;
+            String s = "\t";
+            for (File file : allfiles) {
+                s += "\t" + file.getName();
+                // System.out.println("\t" + s);
+            }
+            System.out.println(s);
+            s = "";
+            // s += "\n";
+            // if (allfiles.length != 0) {
             int max = 0;
             for (int i = 0; i < allfiles.length; i++) {
                 s += allfiles[i].getName();
@@ -189,9 +205,9 @@ public final class Solution {
                 // s += "\n";
                 for (int j = 0; j < allfiles.length; j++) {
                     Document d1 = new Document(foldername
-                        + "/" + allfiles[i].getName());
+                                               + "/" + allfiles[i].getName());
                     Document d2 = new Document(foldername
-                        + "/" + allfiles[j].getName());
+                                               + "/" + allfiles[j].getName());
                     Distance d = new Distance(d1, d2);
                     s += "\t" + d.similarity() + "" + "\t";
                     if (d.similarity() > max && d.similarity() != HUNDRED) {
@@ -206,12 +222,12 @@ public final class Solution {
             // System.out.println("\t\t");
             System.out.println(s);
             System.out.println("Maximum similarity is between "
-                + file1 + " and " + file2);
-        // } else {
+                               + file1 + " and " + file2);
+            // } else {
             // System.out.println("empty directory");
-        // }
-    } catch (Exception ex) {
-        System.out.println("empty directory");
+            // }
+        } catch (Exception ex) {
+            System.out.println("empty directory");
+        }
     }
-}
 }
