@@ -105,8 +105,8 @@ class Distance {
     Distance(final Document d1, final Document d2) {
         this.doc1 = d1;
         this.doc2 = d2;
-        System.out.println("108 "+d1);
-        System.out.println("109 "+d2);
+        // System.out.println("108 "+d1.getDocumentSize());
+        // System.out.println("109 "+d2.getDocumentSize());
     }
     /**
      * to find euclidean norm.
@@ -149,7 +149,7 @@ class Distance {
      * @return     double.
      */
     public int similarity() {
-        if (doc1.getDocumentSize() == 0 || doc2.getDocumentSize() == 0) {
+        if (doc1.getDocumentSize() == 1 || doc2.getDocumentSize() == 1) {
             return 0;
         }
         double a = euclidean(doc1);
