@@ -5,6 +5,30 @@ import java.util.HashMap;
 import java.util.Arrays;
 
 public class Solution {
+
+	public static int lcs(String doc1, String doc2){
+		int lcsmax = 0, lcs = 0, temp = 0;
+		for (int indexi = 0; indexi < doc1.length() - 1; indexi++) {
+			int indexj = 0;
+			while (indexj < doc2.length() - 1) {
+				temp = indexi;
+				lcs = 0;
+				if (doc1.charAt(temp) == (doc2.charAt(indexj))) {
+					while (doc1.charAt(temp) == (doc2.charAt(indexj)) && indexj < doc2.length() - 1 && temp < doc1.length() - 1) {
+						lcs++;
+						indexj++;
+						temp++;
+					}
+					if (lcs > lcsmax) {
+						lcsmax = lcs;
+					}
+				} else {
+					indexj++;
+				}
+			}
+		}
+		return lcsmax + 1;
+	}
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String foldername = scan.next();
@@ -44,25 +68,11 @@ public class Solution {
 					// 	}
 					// }
 					// matchpercentmat[i][j] = (lcs * 200) / (strlist[i].length() + strlist[j].length());
-					int lcsmax = 0, lcs = 0, temp = 0;
-					for (int indexi = 0; indexi < strlist[i].length() - 1; indexi++) {
-						int indexj = 0;
-						while (indexj < strlist[j].length() - 1) {
-							temp = i;
-							lcs = 0;
-							if (strlist[i].charAt(temp) == (strlist[j].charAt(indexj))) {
-								while (strlist[i].charAt(temp) == (strlist[j].charAt(indexj)) && indexj < strlist[j].length() - 1 && temp < strlist[i].length() - 1) {
-									lcs++;
-									indexj++;
-									temp++;
-								}
-								if (lcs > lcsmax) {
-									lcsmax = lcs;
-								}
-							} else {
-								indexj++;
-							}
-						}
+					int lcsmax = 0;
+					if (strlist[i].length() > strlist[j].length()) {
+						lcsmax = lcs(strlist[i], strlist[j]);
+					} else {
+						lcsmax = lcs(strlist[j], strlist[i]);
 					}
 					matchpercentmat[i][j] = (lcsmax * 200) / (strlist[i].length() + strlist[j].length()); 
 				}
