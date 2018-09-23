@@ -34,8 +34,8 @@ public class Solution {
 		String foldername = scan.next();
 		File folder = new File(foldername);
 		File[] filelist = folder.listFiles();
-		if (filelist.length == 0) {
-			throw new Exception("empty directory");
+		if (filelist.length == 1) {
+			throw new Exception("Empty Directory");
         }
 		String[] strlist = new String[filelist.length];
 		// System.out.println(Arrays.toString(filelist));
