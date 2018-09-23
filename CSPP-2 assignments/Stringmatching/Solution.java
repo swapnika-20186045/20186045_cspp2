@@ -29,11 +29,14 @@ public class Solution {
 		}
 		return lcsmax + 1;
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Scanner scan = new Scanner(System.in);
 		String foldername = scan.next();
 		File folder = new File(foldername);
 		File[] filelist = folder.listFiles();
+		if (filelist.length == 0) {
+			throw new Exception("empty directory");
+        }
 		String[] strlist = new String[filelist.length];
 		// System.out.println(Arrays.toString(filelist));
 		try {
@@ -68,6 +71,7 @@ public class Solution {
 					// 	}
 					// }
 					// matchpercentmat[i][j] = (lcs * 200) / (strlist[i].length() + strlist[j].length());
+
 					int lcsmax = 0;
 					if (strlist[i].length() > strlist[j].length()) {
 						lcsmax = lcs(strlist[i], strlist[j]);
