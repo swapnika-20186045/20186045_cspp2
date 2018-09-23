@@ -167,7 +167,7 @@ public final class Solution {
         File[] allfiles = folder.listFiles();
         String file1 = null;
         String file2 = null;
-        String s = "\t\t";
+        String s = "\t";
         for (File file: allfiles) {
             s += "\t" + file.getName();
             // System.out.println("\t" + s);
@@ -178,7 +178,7 @@ public final class Solution {
         // if (allfiles.length != 0) {
             int max = 0;
             for (int i = 0; i < allfiles.length; i++) {
-                s += allfiles[i].getName() + "\t";
+                s += allfiles[i].getName();
                 // System.out.println("2nd"+ s);
                 // s += "\n";
                 for (int j = 0; j < allfiles.length; j++) {
