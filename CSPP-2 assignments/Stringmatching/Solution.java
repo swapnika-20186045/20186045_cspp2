@@ -13,7 +13,7 @@ public class Solution {
 			while (indexj < doc2.length() - 1) {
 				temp = indexi;
 				lcs = 0;
-				if (doc1.charAt(temp) == (doc2.charAt(indexj))) {
+				if (doc1.charAt(temp) == (doc2.charAt(indexj)) && doc1.charAt(temp) != ' ') {
 					while (doc1.charAt(temp) == (doc2.charAt(indexj)) && indexj < doc2.length() - 1 && temp < doc1.length() - 1) {
 						lcs++;
 						indexj++;
@@ -49,7 +49,7 @@ public class Solution {
 				res += " ";
 			}
 			res += eachFile;
-		} res += "\n";
+		} res += " \n";
 		for (int i = 0; i < fileListAsString.length; i++) {
 			res += fileListAsString[i];
 			for (int j = 0; j < fileListAsString.length; j++) {
@@ -60,7 +60,7 @@ public class Solution {
 				}
 				res += matchpercentmat[i][j] + "";
 
-			} res += "\n";
+			} res += " \n";
 		}
 		System.out.print(res);
 		float maxpercetmatch = 0;
@@ -127,7 +127,7 @@ public class Solution {
 								lcsmax = lcs(strlist[j], strlist[i]);
 							}
 						}
-						matchpercentmat[i][j] = (lcsmax * 200) / (strlist[i].length() + strlist[j].length());
+						matchpercentmat[i][j] = Math.round ((lcsmax * 200.0) / (strlist[i].length() + strlist[j].length()));
 					}
 				}
 			}
