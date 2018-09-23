@@ -105,6 +105,8 @@ class Distance {
     Distance(final Document d1, final Document d2) {
         this.doc1 = d1;
         this.doc2 = d2;
+        System.out.println("108 "+d1);
+        System.out.println("109 "+d2);
     }
     /**
      * to find euclidean norm.
