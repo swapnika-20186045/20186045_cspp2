@@ -162,7 +162,7 @@ class Distance {
         double den = dotproduct();
         double result = den / num;
         result *= HUNDRED;
-        return (int) (result) - 2;
+        return (int) (result);
     }
 }
 /**
